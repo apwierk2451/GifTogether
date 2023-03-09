@@ -14,6 +14,9 @@
 		76853AFA29B1F9F9009428DA /* GifTogetherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AF929B1F9F9009428DA /* GifTogetherTests.swift */; };
 		76853B0429B1F9F9009428DA /* GifTogetherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */; };
 		76853B0629B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */; };
+		AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181529B3137A00BD3D61 /* Gifticon.swift */; };
+		AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181729B3201200BD3D61 /* UserInfo.swift */; };
+		AFC0E8C629B9A23F004CD1E5 /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		76853AFF29B1F9F9009428DA /* GifTogetherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GifTogetherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITests.swift; sourceTree = "<group>"; };
 		76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AF7E181529B3137A00BD3D61 /* Gifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifticon.swift; sourceTree = "<group>"; };
+		AF7E181729B3201200BD3D61 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				76853AE829B1F9F8009428DA /* GifTogetherApp.swift */,
-				76853AEA29B1F9F8009428DA /* ContentView.swift */,
+				AFC0E8C329B9A20F004CD1E5 /* View */,
+				AFC0E8C229B9A1F5004CD1E5 /* Domain */,
+				AFC0E8C429B9A227004CD1E5 /* Data */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AEE29B1F9F8009428DA /* Preview Content */,
 			);
@@ -125,6 +133,39 @@
 				76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */,
 			);
 			path = GifTogetherUITests;
+			sourceTree = "<group>";
+		};
+		AF7E181429B3136700BD3D61 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AF7E181529B3137A00BD3D61 /* Gifticon.swift */,
+				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AFC0E8C229B9A1F5004CD1E5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AF7E181429B3136700BD3D61 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AFC0E8C329B9A20F004CD1E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76853AEA29B1F9F8009428DA /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFC0E8C429B9A227004CD1E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
+				AFC0E8C629B9A23F004CD1E5 /* FirestoreRepository.swift in Sources */,
 				76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */,
+				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,7 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -457,7 +501,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
