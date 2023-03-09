@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserInfo {
+struct UserInfo: Entity {
     let name: String
     let email: String
     let phoneNumber: String

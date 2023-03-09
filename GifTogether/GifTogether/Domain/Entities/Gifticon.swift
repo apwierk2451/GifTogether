@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gifticon {
+struct Gifticon: Entity {
     let name: String
     let codeNumber: String
     let brand: Brand
