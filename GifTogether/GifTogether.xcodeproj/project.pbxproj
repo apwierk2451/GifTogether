@@ -16,7 +16,15 @@
 		76853B0629B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */; };
 		AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181529B3137A00BD3D61 /* Gifticon.swift */; };
 		AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181729B3201200BD3D61 /* UserInfo.swift */; };
-		AFC0E8C629B9A23F004CD1E5 /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */; };
+		AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C80B29B9C45C00FBC6E9 /* API.swift */; };
+		AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C80D29B9C5BC00FBC6E9 /* APIClient.swift */; };
+		AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */; };
+		AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */; };
+		AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81729B9D0AE00FBC6E9 /* Entity.swift */; };
+		AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */; };
+		AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81B29B9D2AB00FBC6E9 /* APIConfiguration.swift */; };
+		AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81D29B9D31100FBC6E9 /* APIError.swift */; };
+		AFC0E8C629B9A23F004CD1E5 /* DefaultFirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* DefaultFirestoreRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +57,15 @@
 		76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AF7E181529B3137A00BD3D61 /* Gifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifticon.swift; sourceTree = "<group>"; };
 		AF7E181729B3201200BD3D61 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
+		AF95C80B29B9C45C00FBC6E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AF95C80D29B9C5BC00FBC6E9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
+		AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonListUseCase.swift; sourceTree = "<group>"; };
+		AF95C81729B9D0AE00FBC6E9 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGifticonUseCase.swift; sourceTree = "<group>"; };
+		AF95C81B29B9D2AB00FBC6E9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		AF95C81D29B9D31100FBC6E9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AFC0E8C529B9A23F004CD1E5 /* DefaultFirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirestoreRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +120,7 @@
 				AFC0E8C329B9A20F004CD1E5 /* View */,
 				AFC0E8C229B9A1F5004CD1E5 /* Domain */,
 				AFC0E8C429B9A227004CD1E5 /* Data */,
+				AFC0E8C729B9AA9B004CD1E5 /* Infrastructure */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AEE29B1F9F8009428DA /* Preview Content */,
 			);
@@ -135,19 +152,55 @@
 			path = GifTogetherUITests;
 			sourceTree = "<group>";
 		};
-		AF7E181429B3136700BD3D61 /* Entity */ = {
+		AF7E181429B3136700BD3D61 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				AF95C81629B9D0A700FBC6E9 /* Contract */,
 				AF7E181529B3137A00BD3D61 /* Gifticon.swift */,
 				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
 			);
-			path = Entity;
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AF95C80F29B9CFC000FBC6E9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				AFC0E8C529B9A23F004CD1E5 /* DefaultFirestoreRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AF95C81029B9CFCA00FBC6E9 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		AF95C81329B9D01A00FBC6E9 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */,
+				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		AF95C81629B9D0A700FBC6E9 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				AF95C81729B9D0AE00FBC6E9 /* Entity.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		AFC0E8C229B9A1F5004CD1E5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				AF7E181429B3136700BD3D61 /* Entity */,
+				AF7E181429B3136700BD3D61 /* Entities */,
+				AF95C81329B9D01A00FBC6E9 /* UseCases */,
+				AF95C81029B9CFCA00FBC6E9 /* Interface */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -163,9 +216,28 @@
 		AFC0E8C429B9A227004CD1E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AFC0E8C529B9A23F004CD1E5 /* FirestoreRepository.swift */,
+				AF95C80F29B9CFC000FBC6E9 /* Repositories */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		AFC0E8C729B9AA9B004CD1E5 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				AFC0E8C929B9ADD2004CD1E5 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		AFC0E8C929B9ADD2004CD1E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AF95C80B29B9C45C00FBC6E9 /* API.swift */,
+				AF95C80D29B9C5BC00FBC6E9 /* APIClient.swift */,
+				AF95C81B29B9D2AB00FBC6E9 /* APIConfiguration.swift */,
+				AF95C81D29B9D31100FBC6E9 /* APIError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +370,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
-				AFC0E8C629B9A23F004CD1E5 /* FirestoreRepository.swift in Sources */,
+				AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */,
+				AFC0E8C629B9A23F004CD1E5 /* DefaultFirestoreRepository.swift in Sources */,
+				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
 				76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */,
+				AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */,
+				AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */,
 				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
+				AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */,
+				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
+				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -443,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -461,6 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -489,6 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -516,6 +598,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -535,6 +618,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
