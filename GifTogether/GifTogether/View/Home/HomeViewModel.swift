@@ -9,6 +9,7 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     var categoriesInfo: [Category] = load("categories.json")
+    @Published var gifticonsInfo: [Gifticon] = load("gifticons.json")
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Gifticon {
+struct Gifticon: Hashable, Identifiable, Codable {
+    let id: Int
     let name: String
     let codeNumber: String
     let brand: Brand
@@ -17,7 +18,7 @@ struct Gifticon {
     let expirationDate: String
     let provider: UserInfo
     
-    enum Brand {
+    enum Brand: String, Codable {
         case starbucks
         case bbq
         

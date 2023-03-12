@@ -1,0 +1,40 @@
+[
+    {
+        "id": 0,
+        "name": "뿌링클 촉촉",
+        "codeNumber": "123",
+        "brand": "bbq",
+        "originalPrice": "20000",
+        "discountedPrice": "18000",
+        "imageURL": "https://user-images.githubusercontent.com/95114036/224054115-ce17b5e6-9c8e-4964-b212-b8fee0a5ecb5.jpeg",
+        "expirationDate": "1",
+        "provider": {
+            "name": "1",
+            "email": "1",
+            "phoneNumber": "1",
+            "accountInfo": {
+                "accountNumber": "1",
+                "bank": "hana"
+            }
+        }
+    },
+    {
+        "id": 1,
+        "name": "뿌링클 촉촉",
+        "codeNumber": "123",
+        "brand": "bbq",
+        "originalPrice": "20000",
+        "discountedPrice": "18000",
+        "imageURL": "https://user-images.githubusercontent.com/95114036/224054115-ce17b5e6-9c8e-4964-b212-b8fee0a5ecb5.jpeg",
+        "expirationDate": "1",
+        "provider": {
+            "name": "1",
+            "email": "1",
+            "phoneNumber": "1",
+            "accountInfo": {
+                "accountNumber": "1",
+                "bank": "hana"
+            }
+        }
+    }
+]

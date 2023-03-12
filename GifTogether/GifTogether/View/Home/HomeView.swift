@@ -17,6 +17,8 @@ struct HomeView: View {
                     .listRowInsets(EdgeInsets())
                 CategoryRow(items: homeViewModel.categoriesInfo)
                     .listRowInsets(EdgeInsets())
+                GifticonRow(categoryName: "추천상품", items: homeViewModel.gifticonsInfo)
+                    .listRowInsets(EdgeInsets())
             }
             .listStyle(.inset)
             .navigationTitle("GifTogether")
