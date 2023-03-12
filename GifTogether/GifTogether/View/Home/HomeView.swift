@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         NavigationView {
             List {
                 PageView()
+                    .listRowInsets(EdgeInsets())
+                CategoryRow(items: homeViewModel.categoriesInfo)
                     .listRowInsets(EdgeInsets())
             }
             .listStyle(.inset)
@@ -26,5 +29,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(HomeViewModel())
     }
 }
