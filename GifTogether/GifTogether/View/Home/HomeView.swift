@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
-        NavigationView {
-            Image(systemName: "house")
+            List {
+                PageView()
+                    .listRowInsets(EdgeInsets())
+            }
+            .listStyle(.inset)
         }
-    }
 }
 
 struct HomeView_Previews: PreviewProvider {
