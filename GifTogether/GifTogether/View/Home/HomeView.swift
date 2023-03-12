@@ -10,12 +10,17 @@ import SwiftUI
 struct HomeView: View {
     
     var body: some View {
+        NavigationView {
             List {
                 PageView()
                     .listRowInsets(EdgeInsets())
             }
             .listStyle(.inset)
+            .navigationTitle("GifTogether")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing: Image(systemName: "bell"))
         }
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
