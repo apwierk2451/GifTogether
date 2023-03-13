@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                PageView()
+                BannerView()
                     .listRowInsets(EdgeInsets())
                 CategoryRow(items: homeViewModel.categoriesInfo)
                     .listRowInsets(EdgeInsets())
