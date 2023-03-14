@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection: Tab = .home
+    @StateObject private var homeViewModel = HomeViewModel()
     
     enum Tab {
         case home
@@ -20,6 +21,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selection) {
             HomeView()
+                .environmentObject(homeViewModel)
                 .tabItem {
                     Image(systemName: "house")
                 }
@@ -49,6 +51,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(HomeViewModel())
     }
 }

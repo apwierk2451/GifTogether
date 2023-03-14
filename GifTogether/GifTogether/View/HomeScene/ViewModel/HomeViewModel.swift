@@ -16,7 +16,6 @@ final class HomeViewModel: ObservableObject {
         usecase.execute { [self] gifticons in
             gifticonsInfo = gifticons
         }
-        
     }
 }
 
