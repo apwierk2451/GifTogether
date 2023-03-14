@@ -8,15 +8,16 @@
 import Foundation
 
 protocol SearchGifticonListUseCase {
-    func execute() -> [Gifticon]
+    func execute(_ completion: @escaping ([Gifticon]) -> Void)
 }
 
-struct DefaultSearchGifticonList: SearchGifticonListUseCase {
-    let firestoreRepository: FirestoreRepository
+struct DefaultSearchGifticonListUseCase: SearchGifticonListUseCase {
+    let gifticonRepository: GifticonRepository
     
-    func execute() -> [Gifticon] {
-        firestoreRepository.read().compactMap {
-            $0 as? Gifticon
+    func execute(_ completion: @escaping ([Gifticon]) -> Void) {
+        gifticonRepository.read { list in
+            guard let list = list else { return }
+            completion(list)
         }
     }
 }
