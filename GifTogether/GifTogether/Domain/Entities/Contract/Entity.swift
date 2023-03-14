@@ -6,5 +6,7 @@
 //
 
 protocol Entity {
-    
+    static var Id: String { get }
+    func toDictionary() -> Dictionary<String, Any>
+    static func toEntity(dic: [String: Any]) -> Self
 }
