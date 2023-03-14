@@ -10,6 +10,14 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     var categoriesInfo: [Category] = JSONManager.load("categories.json")
     @Published var gifticonsInfo: [Gifticon] = []
+    
+    func request() {
+        let usecase = DefaultSearchGifticonListUseCase(gifticonRepository: GifticonRepository())
+        usecase.execute { [self] gifticons in
+            gifticonsInfo = gifticons
+        }
+        
+    }
 }
 
 

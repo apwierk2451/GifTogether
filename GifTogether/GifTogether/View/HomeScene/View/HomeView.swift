@@ -25,6 +25,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: Image(systemName: "bell"))
         }
+        .task {
+            homeViewModel.request()
+        }
     }
 }
 
