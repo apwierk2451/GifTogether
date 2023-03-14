@@ -12,9 +12,9 @@ protocol RegisterGifticonUseCase {
 }
 
 struct DefaultRegisterGifticonUseCase: RegisterGifticonUseCase {
-    let firestoreRepository: FirestoreRepository
+    let gifticonRepository: GifticonRepository
     
     func execute(with item: Gifticon) {
-        firestoreRepository.create(item)
+        gifticonRepository.create(item)
     }
 }
