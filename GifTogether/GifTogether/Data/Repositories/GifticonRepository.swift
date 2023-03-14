@@ -17,13 +17,13 @@ final class GifticonRepository: FirestoreRepository {
     
         let dictionary = entity.toDictionary()
 
-        db.collection(Gifticon.Id)
+        db.collection(Gifticon.id)
             .document(entity.uuid)
             .setData(dictionary)
     }
     
     func read(_ completion: @escaping ([Gifticon]?) -> Void) {
-        db.collection(Gifticon.Id).getDocuments { querySnapshot, error in
+        db.collection(Gifticon.id).getDocuments { querySnapshot, error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -39,13 +39,13 @@ final class GifticonRepository: FirestoreRepository {
     }
     
     func update(documentId: String, to modifiedEntity: Gifticon) {
-        db.collection(Gifticon.Id)
+        db.collection(Gifticon.id)
             .document(documentId)
             .setData(modifiedEntity.toDictionary())
     }
     
     func delete(documentId: String) {
-        db.collection(Gifticon.Id)
+        db.collection(Gifticon.id)
             .document(documentId)
             .delete()
     }

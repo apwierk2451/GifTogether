@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct GifTogetherApp: App {
     @UIApplicationDelegateAdaptor (AppDelegate.self) var delegate
-    
+    @StateObject private var homeViewModel = HomeViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -17,13 +17,13 @@ final class UserInfoRepository: FirestoreRepository {
     
         let dictionary = entity.toDictionary()
 
-        db.collection(UserInfo.Id)
+        db.collection(UserInfo.id)
             .document(entity.uuid)
             .setData(dictionary)
     }
     
     func read(_ completion: @escaping ([UserInfo]?) -> Void) {
-        db.collection(UserInfo.Id).getDocuments { querySnapshot, error in
+        db.collection(UserInfo.id).getDocuments { querySnapshot, error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -39,13 +39,13 @@ final class UserInfoRepository: FirestoreRepository {
     }
     
     func update(documentId: String, to modifiedEntity: UserInfo) {
-        db.collection(UserInfo.Id)
+        db.collection(UserInfo.id)
             .document(documentId)
             .setData(modifiedEntity.toDictionary())
     }
     
     func delete(documentId: String) {
-        db.collection(UserInfo.Id)
+        db.collection(UserInfo.id)
             .document(documentId)
             .delete()
     }

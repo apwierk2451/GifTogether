@@ -37,25 +37,7 @@ struct GifticonItem: View {
 }
 
 struct GifticonItem_Previews: PreviewProvider {
-    static var gifticon = Gifticon(
-        id: 0,
-        name: "뿌링클 촉촉",
-        codeNumber: "123",
-        brand: .bbq,
-        originalPrice: "20000",
-        discountedPrice: "18000",
-        imageURL: "https://user-images.githubusercontent.com/95114036/224054115-ce17b5e6-9c8e-4964-b212-b8fee0a5ecb5.jpeg",
-        expirationDate: "",
-        provider: .init(
-            name: "",
-            email: "",
-            phoneNumber: "",
-            accountInfo: .init(
-                accountNumber: "",
-                bank: .hana
-            )
-        )
-    )
+    static var gifticon = Gifticon.stub()
     
     static var previews: some View {
         GifticonItem(gifticon: gifticon)

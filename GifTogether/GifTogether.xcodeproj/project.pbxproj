@@ -14,6 +14,18 @@
 		76853AFA29B1F9F9009428DA /* GifTogetherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AF929B1F9F9009428DA /* GifTogetherTests.swift */; };
 		76853B0429B1F9F9009428DA /* GifTogetherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */; };
 		76853B0629B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */; };
+		76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80E29C06930005B01E5 /* FavoriteView.swift */; };
+		76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80F29C06930005B01E5 /* ProfileView.swift */; };
+		76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81029C06930005B01E5 /* SearchView.swift */; };
+		76BFE81C29C06931005B01E5 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81229C06931005B01E5 /* BannerView.swift */; };
+		76BFE81D29C06931005B01E5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81329C06931005B01E5 /* HomeViewModel.swift */; };
+		76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81429C06931005B01E5 /* CategoryItem.swift */; };
+		76BFE81F29C06931005B01E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81529C06931005B01E5 /* HomeView.swift */; };
+		76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81629C06931005B01E5 /* GifticonItem.swift */; };
+		76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81729C06931005B01E5 /* GifticonRow.swift */; };
+		76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81829C06931005B01E5 /* CategoryRow.swift */; };
+		76BFE82629C069C4005B01E5 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 76BFE82429C069C4005B01E5 /* categories.json */; };
+		76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE82A29C06CFE005B01E5 /* Category.swift */; };
 		AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */; };
 		AF480EE029BDF333000AEC8D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF480EDF29BDF333000AEC8D /* FirebaseFirestore */; };
 		AF7D02EF29BB085500878A91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF7D02EE29BB085500878A91 /* FirebaseAuth */; };
@@ -65,6 +77,18 @@
 		76853AFF29B1F9F9009428DA /* GifTogetherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GifTogetherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITests.swift; sourceTree = "<group>"; };
 		76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76BFE80E29C06930005B01E5 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		76BFE80F29C06930005B01E5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		76BFE81029C06930005B01E5 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		76BFE81229C06931005B01E5 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		76BFE81329C06931005B01E5 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		76BFE81429C06931005B01E5 /* CategoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		76BFE81529C06931005B01E5 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		76BFE81629C06931005B01E5 /* GifticonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifticonItem.swift; sourceTree = "<group>"; };
+		76BFE81729C06931005B01E5 /* GifticonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifticonRow.swift; sourceTree = "<group>"; };
+		76BFE81829C06931005B01E5 /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		76BFE82429C069C4005B01E5 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		76BFE82A29C06CFE005B01E5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		AF7D02F229BB220600878A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AF7E181529B3137A00BD3D61 /* Gifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifticon.swift; sourceTree = "<group>"; };
@@ -144,8 +168,8 @@
 				AFC0E8C229B9A1F5004CD1E5 /* Domain */,
 				AFC0E8C429B9A227004CD1E5 /* Data */,
 				AFC0E8C729B9AA9B004CD1E5 /* Infrastructure */,
-				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AEE29B1F9F8009428DA /* Preview Content */,
+				76BFE82329C069C4005B01E5 /* Resources */,
 			);
 			path = GifTogether;
 			sourceTree = "<group>";
@@ -175,6 +199,28 @@
 			path = GifTogetherUITests;
 			sourceTree = "<group>";
 		};
+		76BFE81129C06931005B01E5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				76BFE81529C06931005B01E5 /* HomeView.swift */,
+				76BFE81229C06931005B01E5 /* BannerView.swift */,
+				76BFE81829C06931005B01E5 /* CategoryRow.swift */,
+				76BFE81429C06931005B01E5 /* CategoryItem.swift */,
+				76BFE81729C06931005B01E5 /* GifticonRow.swift */,
+				76BFE81629C06931005B01E5 /* GifticonItem.swift */,
+				76BFE81329C06931005B01E5 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		76BFE82329C069C4005B01E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76BFE82429C069C4005B01E5 /* categories.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		AF480EDE29BDF333000AEC8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,8 +233,8 @@
 			children = (
 				AF95C81629B9D0A700FBC6E9 /* Contract */,
 				AF7E181529B3137A00BD3D61 /* Gifticon.swift */,
+				76BFE82A29C06CFE005B01E5 /* Category.swift */,
 				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
-				76BFE7DE29BDB7EA005B01E5 /* Category.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -245,10 +291,10 @@
 			isa = PBXGroup;
 			children = (
 				76853AEA29B1F9F8009428DA /* ContentView.swift */,
-				76BFE7C429B9D330005B01E5 /* Home */,
-				76BFE7BC29B9CEB9005B01E5 /* SearchView.swift */,
-				76BFE7BE29B9D005005B01E5 /* FavoriteView.swift */,
-				76BFE7C029B9D011005B01E5 /* ProfileView.swift */,
+				76BFE81129C06931005B01E5 /* Home */,
+				76BFE80F29C06930005B01E5 /* ProfileView.swift */,
+				76BFE80E29C06930005B01E5 /* FavoriteView.swift */,
+				76BFE81029C06930005B01E5 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76853AF029B1F9F8009428DA /* Preview Assets.xcassets in Resources */,
-				76BFE7E829BDBAFE005B01E5 /* categories.json in Resources */,
+				76BFE82629C069C4005B01E5 /* categories.json in Resources */,
 				76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */,
 				AF7D02F329BB220600878A91 /* GoogleService-Info.plist in Resources */,
 			);
@@ -433,23 +479,33 @@
 			files = (
 				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
-				76BFE7DD29BDB76D005B01E5 /* CategoryRow.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
+				76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */,
+				76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */,
 				AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */,
 				AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */,
+				76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */,
 				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
 				AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */,
 				76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */,
+				76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */,
 				AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */,
+				76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */,
 				AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */,
 				AFD2E85129C01E7D0081CBA4 /* CreateUserUseCase.swift in Sources */,
+				76BFE81C29C06931005B01E5 /* BannerView.swift in Sources */,
+				76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */,
 				AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */,
+				76BFE81F29C06931005B01E5 /* HomeView.swift in Sources */,
 				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
 				AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
+				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
+				76BFE81D29C06931005B01E5 /* HomeViewModel.swift in Sources */,
 				AFD2E85329C0212D0081CBA4 /* UserInfoRepository.swift in Sources */,
 				AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */,
+				76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */,
 				AF9C26C629C0502F00AE1144 /* FetchUseInfoUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

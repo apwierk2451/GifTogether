@@ -9,7 +9,7 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     var categoriesInfo: [Category] = JSONManager.load("categories.json")
-    @Published var gifticonsInfo: [Gifticon] = JSONManager.load("gifticons.json")
+    @Published var gifticonsInfo: [Gifticon] = []
 }
 
 
