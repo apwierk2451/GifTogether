@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct UserInfo {
+struct UserInfo: Hashable, Codable {
     let name: String
     let email: String
     let phoneNumber: String
     let accountInfo: AccountInfo
     
-    struct AccountInfo {
+    struct AccountInfo: Hashable, Codable {
         let accountNumber: String
         let bank: Bank
         
-        enum Bank {
+        enum Bank: String, Codable {
             case nonghyub
             case hana
         }

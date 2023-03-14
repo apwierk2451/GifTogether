@@ -8,19 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Tab = .home
+    
+    enum Tab {
+        case home
+        case search
+        case favorite
+        case profile
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $selection) {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house")
+                }
+                .tag(Tab.home)
+            SearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                }
+                .tag(Tab.search)
+            
+            FavoriteView()
+                .tabItem {
+                    Image(systemName: "heart")
+
+                }
+                .tag(Tab.favorite)
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person.crop.circle.fill")
+                }
+                .tag(Tab.profile)
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(HomeViewModel())
     }
 }
