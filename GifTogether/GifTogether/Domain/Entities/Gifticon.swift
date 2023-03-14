@@ -8,7 +8,7 @@
 import Foundation
 
 struct Gifticon: Entity {
-    static let Id: String = "gifticon"
+    static let id: String = "gifticon"
     
     let uuid: String
     let name: String
