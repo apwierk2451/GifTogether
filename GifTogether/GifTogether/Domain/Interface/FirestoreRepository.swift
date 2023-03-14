@@ -8,8 +8,10 @@
 import Foundation
 
 protocol FirestoreRepository {
-    func create(_ entity: Entity)
-    func read() -> [Entity]
-    func update(_ entity: Entity, to modifiedEntity: Entity)
-    func delete(_ entity: Entity)
+    associatedtype T: Entity
+    
+    func create(_ entity: T)
+    func read(_ completion: @escaping ([T]?) -> Void)
+    func update(documentId: String, to modifiedEntity: T)
+    func delete(documentId: String)
 }
