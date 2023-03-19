@@ -17,6 +17,7 @@ struct UserInfo: Entity {
     
     func toDictionary() -> Dictionary<String, Any> {
         return [
+            "uuid": uuid,
             "name": name,
             "email": email,
             "phoneNumber": phoneNumber
