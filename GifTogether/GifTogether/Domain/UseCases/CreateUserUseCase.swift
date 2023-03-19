@@ -13,7 +13,7 @@ struct LoginInfo {
 }
 
 protocol CreateUserUseCase {
-    func execute(with loginInfo: LoginInfo)
+    func execute(with loginInfo: LoginInfo, _ completion: @escaping (String?) -> Void)
 }
 
 final class DefaultCreateUserUseCase: CreateUserUseCase {
@@ -28,12 +28,12 @@ final class DefaultCreateUserUseCase: CreateUserUseCase {
         self.userInfoRepository = firestoreService
     }
     
-    func execute(with loginInfo: LoginInfo){
-        firebaseAuthService.createUser(
-            email: loginInfo.id,
-            password: loginInfo.password
-        ) { [weak self] userUID in
-            guard let userUID = userUID else { return }
+    func execute(with loginInfo: LoginInfo, _ completion: @escaping (String?) -> Void) {
+        firebaseAuthService.createUser(email: loginInfo.id, password: loginInfo.password ) { [weak self] userUID in
+            guard let userUID = userUID else {
+                completion(nil)
+                return
+            }
             let email = loginInfo.id
             let vendorName = loginInfo.vendorName
             let phoneNumber = loginInfo.phoneNumber
@@ -45,6 +45,7 @@ final class DefaultCreateUserUseCase: CreateUserUseCase {
             )
             
             self?.userInfoRepository.create(userInfo)
+            completion(userUID)
         }
     }
 }
