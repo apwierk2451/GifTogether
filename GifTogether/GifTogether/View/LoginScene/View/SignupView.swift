@@ -74,7 +74,6 @@ struct SignupView: View {
             .onChange(of: nickName) { newValue in
                 if newValue.isValidNickName() {
                     isValidNickName = true
-                    
                 } else {
                     isValidNickName = false
                 }
@@ -88,7 +87,6 @@ struct SignupView: View {
             .onChange(of: password) { newValue in
                 if newValue.isValidPassword() {
                     isValidPassword = true
-                    
                 } else {
                     isValidPassword = false
                 }
