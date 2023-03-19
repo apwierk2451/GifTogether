@@ -27,13 +27,13 @@ final class UserInfoRepository: FirestoreRepository {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                var gifticons = [UserInfo]()
+                var userInfoList = [UserInfo]()
                 for document in querySnapshot!.documents {
                     let dic = document.data()
-                    let gifticon = UserInfo.toEntity(dic: dic)
-                    gifticons.append(gifticon)
+                    let userInfo = UserInfo.toEntity(dic: dic)
+                    userInfoList.append(userInfo)
                 }
-                completion(gifticons)
+                completion(userInfoList)
             }
         }
     }
