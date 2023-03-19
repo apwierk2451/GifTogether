@@ -8,8 +8,9 @@
 import FirebaseAuth
 
 protocol LoginUseCase {
-    func execute(with loginInfo: LoginInfo,
-                 _ completion: @escaping (String) -> Void)
+    func execute(with email: String,
+                 password: String,
+                 _ completion: @escaping (String?) -> Void)
 }
 
 final class DefaultLoginUseCase: LoginUseCase {
@@ -19,16 +20,15 @@ final class DefaultLoginUseCase: LoginUseCase {
         self.firebaseAuthService = firebaseAuthService
     }
     
-    func execute(with loginInfo: LoginInfo,
-                 _ completion: @escaping (String) -> Void) {
+    func execute(with email: String,
+                 password: String,
+                 _ completion: @escaping (String?) -> Void) {
         
         firebaseAuthService.logIn(
-            email: loginInfo.id,
-            password: loginInfo.password
+            email: email,
+            password: password
         ) { userUID in
-            if let userUID = userUID {
-                completion(userUID)
-            }
+            completion(userUID)
         }
     }
 }

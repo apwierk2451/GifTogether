@@ -11,9 +11,14 @@ final class HomeViewModel: ObservableObject {
     var categoriesInfo: [Category] = JSONManager.load("categories.json")
     @Published var gifticonsInfo: [Gifticon] = []
     
+    private let searchGifticonUseCase: SearchGifticonListUseCase
+    
+    init(searchGifticonUseCase: SearchGifticonListUseCase) {
+        self.searchGifticonUseCase = searchGifticonUseCase
+    }
+    
     func request() {
-        let usecase = DefaultSearchGifticonListUseCase(gifticonRepository: GifticonRepository())
-        usecase.execute { [self] gifticons in
+        searchGifticonUseCase.execute { [self] gifticons in
             gifticonsInfo = gifticons
         }
     }

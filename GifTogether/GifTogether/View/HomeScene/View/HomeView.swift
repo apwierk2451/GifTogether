@@ -11,20 +11,19 @@ struct HomeView: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
-        NavigationView {
-            List {
-                BannerView()
-                    .listRowInsets(EdgeInsets())
-                CategoryRow(items: homeViewModel.categoriesInfo)
-                    .listRowInsets(EdgeInsets())
-                GifticonRow(categoryName: "추천상품", items: homeViewModel.gifticonsInfo)
-                    .listRowInsets(EdgeInsets())
-            }
-            .listStyle(.inset)
-            .navigationTitle("GifTogether")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: Image(systemName: "bell"))
+        List {
+            BannerView()
+                .listRowInsets(EdgeInsets())
+            CategoryRow(items: homeViewModel.categoriesInfo)
+                .listRowInsets(EdgeInsets())
+            GifticonRow(categoryName: "추천상품", items: homeViewModel.gifticonsInfo)
+                .listRowInsets(EdgeInsets())
         }
+        .listStyle(.inset)
+        .navigationTitle("GifTogether")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: Image(systemName: "bell"))
+        .navigationBarBackButtonHidden()
         .task {
             homeViewModel.request()
         }
@@ -34,6 +33,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(HomeViewModel())
+            .environmentObject(DIContainer().makeHomeViewModel())
     }
 }
