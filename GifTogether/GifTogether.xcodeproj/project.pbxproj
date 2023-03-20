@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2829C8564200C9CCBB /* ExDivider.swift */; };
 		76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AE829B1F9F8009428DA /* GifTogetherApp.swift */; };
 		76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AEA29B1F9F8009428DA /* ContentView.swift */; };
 		76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76853AEC29B1F9F8009428DA /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		76853AFA29B1F9F9009428DA /* GifTogetherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AF929B1F9F9009428DA /* GifTogetherTests.swift */; };
 		76853B0429B1F9F9009428DA /* GifTogetherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */; };
 		76853B0629B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */; };
+		7687476D29C30A7E00F6067D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687476C29C30A7E00F6067D /* DetailView.swift */; };
+		7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687476E29C30A9800F6067D /* GifticonDetail.swift */; };
+		7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477229C30C1100F6067D /* GifticonPurchase.swift */; };
 		76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80E29C06930005B01E5 /* FavoriteView.swift */; };
 		76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80F29C06930005B01E5 /* ProfileView.swift */; };
 		76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81029C06930005B01E5 /* SearchView.swift */; };
@@ -67,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7609DD2829C8564200C9CCBB /* ExDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDivider.swift; sourceTree = "<group>"; };
 		76853AE529B1F9F8009428DA /* GifTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853AE829B1F9F8009428DA /* GifTogetherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherApp.swift; sourceTree = "<group>"; };
 		76853AEA29B1F9F8009428DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +82,9 @@
 		76853AFF29B1F9F9009428DA /* GifTogetherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GifTogetherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853B0329B1F9F9009428DA /* GifTogetherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITests.swift; sourceTree = "<group>"; };
 		76853B0529B1F9F9009428DA /* GifTogetherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7687476C29C30A7E00F6067D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		7687476E29C30A9800F6067D /* GifticonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonDetail.swift; sourceTree = "<group>"; };
+		7687477229C30C1100F6067D /* GifticonPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonPurchase.swift; sourceTree = "<group>"; };
 		76BFE80E29C06930005B01E5 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		76BFE80F29C06930005B01E5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		76BFE81029C06930005B01E5 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -233,6 +241,10 @@
 				76BFE81429C06931005B01E5 /* CategoryItem.swift */,
 				76BFE81729C06931005B01E5 /* GifticonRow.swift */,
 				76BFE81629C06931005B01E5 /* GifticonItem.swift */,
+				7687476C29C30A7E00F6067D /* DetailView.swift */,
+				7687476E29C30A9800F6067D /* GifticonDetail.swift */,
+				7687477229C30C1100F6067D /* GifticonPurchase.swift */,
+				7609DD2829C8564200C9CCBB /* ExDivider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +556,7 @@
 				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
+				7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */,
 				76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */,
 				76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */,
 				AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */,
@@ -557,10 +570,12 @@
 				76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */,
 				AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */,
 				AFD2E85129C01E7D0081CBA4 /* CreateUserUseCase.swift in Sources */,
+				7687476D29C30A7E00F6067D /* DetailView.swift in Sources */,
 				76BFE81C29C06931005B01E5 /* BannerView.swift in Sources */,
 				76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */,
 				AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */,
 				76BFE81F29C06931005B01E5 /* HomeView.swift in Sources */,
+				7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */,
 				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
 				AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
@@ -571,6 +586,7 @@
 				AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */,
 				76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */,
 				AF9C26C629C0502F00AE1144 /* FetchUseInfoUseCase.swift in Sources */,
+				7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

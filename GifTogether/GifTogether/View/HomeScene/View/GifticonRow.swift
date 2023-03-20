@@ -32,7 +32,7 @@ struct GifticonRow: View {
                     
                     ForEach(items, id: \.uuid) { gifticon in
                         NavigationLink {
-                            // DetailView
+                            DetailView(gifticon: gifticon)
                         } label: {
                             GifticonItem(gifticon: gifticon)
                         }
