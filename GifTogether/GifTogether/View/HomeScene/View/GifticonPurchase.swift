@@ -51,6 +51,10 @@ struct GifticonPurchase: View {
         }
         .padding()
         
+        NavigationLink(destination: PaymentView(gifticon: gifticon),
+                       isActive: self.$isPaymentPresented) {
+            EmptyView()
+        }.hidden()
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7609DD2329C843C000C9CCBB /* PaymentGifticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2229C843C000C9CCBB /* PaymentGifticon.swift */; };
+		7609DD2529C844C200C9CCBB /* PaymentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2429C844C200C9CCBB /* PaymentPrice.swift */; };
+		7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2629C8493100C9CCBB /* PaymentButton.swift */; };
 		7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2829C8564200C9CCBB /* ExDivider.swift */; };
 		76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AE829B1F9F8009428DA /* GifTogetherApp.swift */; };
 		76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AEA29B1F9F8009428DA /* ContentView.swift */; };
@@ -19,6 +22,7 @@
 		7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687476E29C30A9800F6067D /* GifticonDetail.swift */; };
 		7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477229C30C1100F6067D /* GifticonPurchase.swift */; };
 		7687477529C32F6200F6067D /* PurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477429C32F6200F6067D /* PurchaseSheet.swift */; };
+		7687477729C57B0A00F6067D /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477629C57B0A00F6067D /* PaymentView.swift */; };
 		76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80E29C06930005B01E5 /* FavoriteView.swift */; };
 		76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80F29C06930005B01E5 /* ProfileView.swift */; };
 		76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81029C06930005B01E5 /* SearchView.swift */; };
@@ -72,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7609DD2229C843C000C9CCBB /* PaymentGifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGifticon.swift; sourceTree = "<group>"; };
+		7609DD2429C844C200C9CCBB /* PaymentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPrice.swift; sourceTree = "<group>"; };
+		7609DD2629C8493100C9CCBB /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
 		7609DD2829C8564200C9CCBB /* ExDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDivider.swift; sourceTree = "<group>"; };
 		76853AE529B1F9F8009428DA /* GifTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853AE829B1F9F8009428DA /* GifTogetherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherApp.swift; sourceTree = "<group>"; };
@@ -87,6 +94,7 @@
 		7687476E29C30A9800F6067D /* GifticonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonDetail.swift; sourceTree = "<group>"; };
 		7687477229C30C1100F6067D /* GifticonPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonPurchase.swift; sourceTree = "<group>"; };
 		7687477429C32F6200F6067D /* PurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSheet.swift; sourceTree = "<group>"; };
+		7687477629C57B0A00F6067D /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		76BFE80E29C06930005B01E5 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		76BFE80F29C06930005B01E5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		76BFE81029C06930005B01E5 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -247,6 +255,10 @@
 				7687476E29C30A9800F6067D /* GifticonDetail.swift */,
 				7687477229C30C1100F6067D /* GifticonPurchase.swift */,
 				7687477429C32F6200F6067D /* PurchaseSheet.swift */,
+				7687477629C57B0A00F6067D /* PaymentView.swift */,
+				7609DD2229C843C000C9CCBB /* PaymentGifticon.swift */,
+				7609DD2429C844C200C9CCBB /* PaymentPrice.swift */,
+				7609DD2629C8493100C9CCBB /* PaymentButton.swift */,
 				7609DD2829C8564200C9CCBB /* ExDivider.swift */,
 			);
 			path = View;
@@ -559,6 +571,7 @@
 				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
+				7687477729C57B0A00F6067D /* PaymentView.swift in Sources */,
 				7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */,
 				76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */,
 				76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */,
@@ -581,7 +594,10 @@
 				76BFE81F29C06931005B01E5 /* HomeView.swift in Sources */,
 				7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */,
 				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
+				7609DD2329C843C000C9CCBB /* PaymentGifticon.swift in Sources */,
+				7609DD2529C844C200C9CCBB /* PaymentPrice.swift in Sources */,
 				AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */,
+				7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
