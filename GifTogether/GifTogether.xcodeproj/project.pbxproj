@@ -18,6 +18,7 @@
 		7687476D29C30A7E00F6067D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687476C29C30A7E00F6067D /* DetailView.swift */; };
 		7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687476E29C30A9800F6067D /* GifticonDetail.swift */; };
 		7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477229C30C1100F6067D /* GifticonPurchase.swift */; };
+		7687477529C32F6200F6067D /* PurchaseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7687477429C32F6200F6067D /* PurchaseSheet.swift */; };
 		76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80E29C06930005B01E5 /* FavoriteView.swift */; };
 		76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE80F29C06930005B01E5 /* ProfileView.swift */; };
 		76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81029C06930005B01E5 /* SearchView.swift */; };
@@ -85,6 +86,7 @@
 		7687476C29C30A7E00F6067D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7687476E29C30A9800F6067D /* GifticonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonDetail.swift; sourceTree = "<group>"; };
 		7687477229C30C1100F6067D /* GifticonPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonPurchase.swift; sourceTree = "<group>"; };
+		7687477429C32F6200F6067D /* PurchaseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSheet.swift; sourceTree = "<group>"; };
 		76BFE80E29C06930005B01E5 /* FavoriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		76BFE80F29C06930005B01E5 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		76BFE81029C06930005B01E5 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				7687476C29C30A7E00F6067D /* DetailView.swift */,
 				7687476E29C30A9800F6067D /* GifticonDetail.swift */,
 				7687477229C30C1100F6067D /* GifticonPurchase.swift */,
+				7687477429C32F6200F6067D /* PurchaseSheet.swift */,
 				7609DD2829C8564200C9CCBB /* ExDivider.swift */,
 			);
 			path = View;
@@ -560,6 +563,7 @@
 				76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */,
 				76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */,
 				AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */,
+				7687477529C32F6200F6067D /* PurchaseSheet.swift in Sources */,
 				AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */,
 				76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */,
 				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
@@ -753,6 +757,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,6 +787,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
