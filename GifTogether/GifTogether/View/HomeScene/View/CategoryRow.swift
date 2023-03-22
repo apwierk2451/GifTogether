@@ -23,7 +23,7 @@ struct CategoryRow: View {
                     
                     ForEach(items, id: \.id) { category in
                         NavigationLink {
-                            // DetailView
+                            // TODO: CategoryView
                         } label: {
                             CategoryItem(category: category)
                         }
