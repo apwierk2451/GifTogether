@@ -16,7 +16,7 @@ struct GifticonRow: View {
             HStack(alignment: .center) {
                
                 NavigationLink {
-                    // CategoryView
+                    // TODO: GridView
                 } label: {
                     Text(categoryName)
                         .font(.title)

@@ -10,7 +10,7 @@ import SwiftUI
 struct PaymentButton: View {
     var body: some View {
         Button {
-            // 결제 진행 
+            // TODO: 결제 진행 
         } label: {
             Text("결제하기")
                 .font(.title2)

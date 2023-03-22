@@ -15,7 +15,7 @@ struct GifticonPurchase: View {
     var body: some View {
         HStack {
             Button {
-                // 기프티콘 찜 개수 + 1
+                // TODO: 기프티콘 찜 개수 + 1
             } label: {
                 VStack {
                     Image(systemName: "heart")
