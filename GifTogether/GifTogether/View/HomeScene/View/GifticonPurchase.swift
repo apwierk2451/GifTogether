@@ -9,8 +9,8 @@ import SwiftUI
 
 struct GifticonPurchase: View {
     var gifticon: Gifticon
-    @State private var isSheetPresented = false
-    @State private var isPaymentPresented = false
+    @State private var shouldShowSheetPresent = false
+    @State private var shouldShowPaymentPresent = false
     
     var body: some View {
         HStack {
@@ -31,7 +31,7 @@ struct GifticonPurchase: View {
             )
             
             Button {
-                self.isSheetPresented = true
+                self.shouldShowSheetPresent = true
             } label: {
                 Text("구매하기")
                     .foregroundColor(.white)
@@ -41,10 +41,10 @@ struct GifticonPurchase: View {
                     .background(Color.red)
                     .cornerRadius(15)
             }
-            .sheet(isPresented: self.$isSheetPresented) {
+            .sheet(isPresented: self.$shouldShowSheetPresent) {
                 PurchaseSheet(gifticon: gifticon,
-                              isSheetPresented: $isSheetPresented,
-                              isPaymentPresented: $isPaymentPresented
+                              isSheetPresented: $shouldShowSheetPresent,
+                              isPaymentPresented: $shouldShowPaymentPresent
                 )
                 .presentationDetents([.fraction(0.4)])
             }
@@ -52,7 +52,7 @@ struct GifticonPurchase: View {
         .padding()
         
         NavigationLink(destination: PaymentView(gifticon: gifticon),
-                       isActive: self.$isPaymentPresented) {
+                       isActive: self.$shouldShowPaymentPresent) {
             EmptyView()
         }.hidden()
     }

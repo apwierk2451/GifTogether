@@ -46,6 +46,9 @@ struct PurchaseSheet_Previews: PreviewProvider {
     static var gifticon = Gifticon.stub()
     
     static var previews: some View {
-        PurchaseSheet(gifticon: gifticon, isSheetPresented: .constant(true), isPaymentPresented: .constant(true))
+        PurchaseSheet(gifticon: gifticon,
+                      isSheetPresented: .constant(true),
+                      isPaymentPresented: .constant(true)
+        )
     }
 }
