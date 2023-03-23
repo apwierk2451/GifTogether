@@ -56,6 +56,8 @@
 		AFA5EA0E29C6A3270041C1BD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA0D29C6A3270041C1BD /* SettingView.swift */; };
 		AFA5EA1029C6A5F20041C1BD /* AgreementOfUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA0F29C6A5F20041C1BD /* AgreementOfUtilization.swift */; };
 		AFA5EA1229C6A6370041C1BD /* PersonalInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA1129C6A6370041C1BD /* PersonalInfomation.swift */; };
+		AFA5EA1429C6CCF10041C1BD /* SaleGifticonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA1329C6CCF10041C1BD /* SaleGifticonList.swift */; };
+		AFA5EA1629C6CED40041C1BD /* SaleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA1529C6CED40041C1BD /* SaleItem.swift */; };
 		AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */; };
 		AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */; };
 		AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */; };
@@ -139,6 +141,8 @@
 		AFA5EA0D29C6A3270041C1BD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		AFA5EA0F29C6A5F20041C1BD /* AgreementOfUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementOfUtilization.swift; sourceTree = "<group>"; };
 		AFA5EA1129C6A6370041C1BD /* PersonalInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfomation.swift; sourceTree = "<group>"; };
+		AFA5EA1329C6CCF10041C1BD /* SaleGifticonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleGifticonList.swift; sourceTree = "<group>"; };
+		AFA5EA1529C6CED40041C1BD /* SaleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleItem.swift; sourceTree = "<group>"; };
 		AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRepository.swift; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 			children = (
 				76BFE80F29C06930005B01E5 /* ProfileView.swift */,
 				AF9790F529C57AA5009AB08D /* ProfileRow.swift */,
+				AFA5EA1329C6CCF10041C1BD /* SaleGifticonList.swift */,
+				AFA5EA1529C6CED40041C1BD /* SaleItem.swift */,
 				AFA5EA0D29C6A3270041C1BD /* SettingView.swift */,
 				AFA5EA0F29C6A5F20041C1BD /* AgreementOfUtilization.swift */,
 				AFA5EA1129C6A6370041C1BD /* PersonalInfomation.swift */,
@@ -664,6 +670,7 @@
 				AFF8DC1A29C43A21003FB914 /* String+.swift in Sources */,
 				AFA5EA1229C6A6370041C1BD /* PersonalInfomation.swift in Sources */,
 				AFF8DC2229C44CE9003FB914 /* MainView.swift in Sources */,
+				AFA5EA1429C6CCF10041C1BD /* SaleGifticonList.swift in Sources */,
 				AFA5EA1029C6A5F20041C1BD /* AgreementOfUtilization.swift in Sources */,
 				76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */,
 				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
@@ -703,6 +710,7 @@
 				AF9C26C629C0502F00AE1144 /* FetchUseInfoUseCase.swift in Sources */,
 				7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */,
 				AFF8DC2629C45F05003FB914 /* NormalButton.swift in Sources */,
+				AFA5EA1629C6CED40041C1BD /* SaleItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,7 +877,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,7 +907,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
