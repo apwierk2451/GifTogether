@@ -11,7 +11,7 @@ struct ProfileRow: View {
     var userInfo: UserInfo
     
     var body: some View {
-        HStack() {
+        HStack {
             Circle()
                 .frame(width: 100, height: 100)
                 .foregroundColor(.cyan)
