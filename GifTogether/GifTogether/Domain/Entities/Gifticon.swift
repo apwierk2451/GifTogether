@@ -62,44 +62,16 @@ struct Gifticon: Entity {
                         expirationDate: expirationDate,
                         providerUID: providerUID)
     }
-    
-    enum Brand: String {
-        case starbucks
-        case bbq
-        
-        var name: String {
-            switch self {
-            case .starbucks:
-                return "스타벅스"
-            case .bbq:
-                return "비비큐"
-            }
-        }
-        var imageURL: String {
-            switch self {
-            case .starbucks:
-                return "스타벅스 브랜드 이미지 url"
-            case .bbq:
-                return "비비큐 브랜드 이미지 url"
-            }
-        }
-    }
-    
-    enum Category: String {
-        case coffee
-        case food
-        case movie
-        case iceCream
-    }
 }
+
 
 extension Gifticon {
     
     static func stub(uuid: String = "",
                      name: String = "",
                      codeNumber: String = "",
-                     brand: Brand = .bbq,
-                     category: Category = .coffee,
+                     brand: Brand = .kyochon,
+                     category: Category = .chicken,
                      originalPrice: String = "",
                      discountedPrice: String = "",
                      imageURL: String = "",
