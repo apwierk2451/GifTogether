@@ -23,7 +23,7 @@ struct CategoryRow: View {
                     
                     ForEach(items, id: \.brand) { category in
                         NavigationLink {
-                            // TODO: CategoryView
+                            CategoryView(category: category)
                         } label: {
                             CategoryItem(category: category)
                         }
@@ -31,7 +31,6 @@ struct CategoryRow: View {
                     }
                 }
             }
-            .frame(height: 185)
         }
     }
 }
