@@ -37,7 +37,6 @@ struct MainView: View {
             FavoriteView()
                 .tabItem {
                     Image(systemName: "heart")
-
                 }
                 .tag(Tab.favorite)
 
