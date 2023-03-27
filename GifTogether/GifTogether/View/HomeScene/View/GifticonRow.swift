@@ -25,7 +25,7 @@ struct GifticonRow: View {
                         .padding(.leading, 15)
                     
                 }
-                .padding()
+                .padding(.top)
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 10) {

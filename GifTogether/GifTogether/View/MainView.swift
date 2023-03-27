@@ -41,7 +41,7 @@ struct MainView: View {
                 }
                 .tag(Tab.favorite)
 
-            ProfileView(shouldShowMainView: $logout)
+            ProfileView(isMainViewPresented: $logout)
                 .environmentObject(myPageViewModel)
                 .tabItem {
                     Image(systemName: "person.crop.circle.fill")

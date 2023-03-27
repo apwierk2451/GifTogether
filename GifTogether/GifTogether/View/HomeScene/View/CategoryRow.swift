@@ -21,9 +21,9 @@ struct CategoryRow: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 10) {
                     
-                    ForEach(items, id: \.id) { category in
+                    ForEach(items, id: \.brand) { category in
                         NavigationLink {
-                            // TODO: CategoryView
+                            CategoryView(category: category)
                         } label: {
                             CategoryItem(category: category)
                         }
@@ -31,13 +31,12 @@ struct CategoryRow: View {
                     }
                 }
             }
-            .frame(height: 185)
         }
     }
 }
 
 struct CategoryRow_Previews: PreviewProvider {
-    static var convenience = [Category(id: 0, name: "편의점", imageName: "chicken")]
+    static var convenience = [Category.chicken]
     
     static var previews: some View {
         CategoryRow(items: convenience)

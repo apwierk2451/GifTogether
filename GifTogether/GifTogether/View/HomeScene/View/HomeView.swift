@@ -14,7 +14,8 @@ struct HomeView: View {
         List {
             BannerView()
                 .listRowInsets(EdgeInsets())
-            CategoryRow(items: homeViewModel.categoriesInfo)
+            CategoryRow(items: Category.allCases)
+                .padding(.top)
                 .listRowInsets(EdgeInsets())
             GifticonRow(categoryName: "추천상품", items: homeViewModel.gifticonsInfo)
                 .listRowInsets(EdgeInsets())

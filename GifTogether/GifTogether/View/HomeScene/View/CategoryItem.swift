@@ -19,7 +19,7 @@ struct CategoryItem: View {
                 .shadow(radius: 10)
             
             VStack {
-                Text(category.name)
+                Text(category.title)
                     .font(.title2)
                     .bold()
                     .foregroundColor(.black)
@@ -29,7 +29,7 @@ struct CategoryItem: View {
 }
 
 struct CategoryItem_Previews: PreviewProvider {
-    static var category = Category(id: 0, name: "편의점", imageName: "chicken")
+    static var category = Category.mart
     
     static var previews: some View {
         CategoryItem(category: category)

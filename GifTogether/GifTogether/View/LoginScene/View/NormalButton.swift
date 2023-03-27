@@ -13,12 +13,10 @@ struct NormalButton: View {
     
     var body: some View {
         Text(title)
-        .padding()
-        .padding(.leading, 160)
-        .padding(.trailing, 160)
-        .background(Color(isValid ? .systemGreen : .systemGray))
-        .foregroundColor(.white)
-        .cornerRadius(16)
+            .frame(width: UIScreen.main.bounds.size.width-32, height: 50)
+            .background(Color(isValid ? .systemGreen : .systemGray))
+            .foregroundColor(.white)
+            .cornerRadius(16)
     }
 }
 

@@ -11,16 +11,14 @@ struct DetailView: View {
     var gifticon: Gifticon
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
-                    GifticonDetail(gifticon: gifticon)
-                        .listRowInsets(EdgeInsets())
-                }
-                GifticonPurchase(gifticon: gifticon)
-                    .navigationTitle("상세보기")
-                    .navigationBarTitleDisplayMode(.inline)
+        VStack {
+            ScrollView {
+                GifticonDetail(gifticon: gifticon)
+                    .listRowInsets(EdgeInsets())
             }
+            GifticonPurchase(gifticon: gifticon)
+                .navigationTitle("상세보기")
+                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

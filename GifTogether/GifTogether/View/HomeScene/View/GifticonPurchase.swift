@@ -46,7 +46,6 @@ struct GifticonPurchase: View {
                               isSheetPresented: $shouldShowSheetPresent,
                               isPaymentPresented: $shouldShowPaymentPresent
                 )
-                .presentationDetents([.fraction(0.4)])
             }
         }
         .padding()
