@@ -29,9 +29,8 @@ struct FilterBar: View {
             .foregroundColor(.black)
             .sheet(isPresented: self.$shouldShowSheetPresent) {
                 filterSheet
-//                    .presentationDetents([.fraction(0.4)])
+                // TODO: sheet height를 중간으로 지정하기
             }
-            
         }
         .padding()
     }

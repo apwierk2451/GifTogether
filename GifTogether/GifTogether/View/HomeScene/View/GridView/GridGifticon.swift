@@ -55,7 +55,6 @@ struct GridGifticon: View {
                     .foregroundColor(.black)
                 }
             }
-        
     }
 }
 
