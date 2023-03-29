@@ -22,7 +22,7 @@ struct GridView: View {
                          NavigationLink {
                              DetailView(gifticon: gifticon)
                          } label: {
-                             GridGifticon(gifticon: gifticon, isHeart: true)
+                             GridGifticon(gifticon: gifticon, isHeart: false)
                                  .padding()
                          }
                      }
