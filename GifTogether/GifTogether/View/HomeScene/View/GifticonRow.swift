@@ -16,16 +16,16 @@ struct GifticonRow: View {
             HStack(alignment: .center) {
                
                 NavigationLink {
-                    // TODO: GridView
+                    GridView(gifticons: items, title: categoryName)
                 } label: {
                     Text(categoryName)
                         .font(.title)
                         .foregroundColor(.black)
                         .bold()
                         .padding(.leading, 15)
-                    
                 }
                 .padding(.top)
+                .padding(.trailing)
             }
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 10) {
