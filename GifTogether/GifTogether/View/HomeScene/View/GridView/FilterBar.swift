@@ -47,45 +47,16 @@ struct FilterBar: View {
         ScrollView {
             VStack {
                 Spacer(minLength: 20)
-                Button {
-                    filter = .최신순
-                    shouldShowSheetPresent = false
-                } label: {
-                    Text("\(Filter.최신순.rawValue)")
-                        .padding()
-                }
-               
-                Divider()
-                Button {
-                    filter = .인기순
-                    shouldShowSheetPresent = false
-                } label: {
-                    Text("\(Filter.인기순.rawValue)")
-                        .padding()
-                }
-                Divider()
-                Button {
-                    filter = .할인율순
-                    shouldShowSheetPresent = false
-                } label: {
-                    Text("\(Filter.할인율순.rawValue)")
-                        .padding()
-                }
-                Divider()
-                Button {
-                    filter = .낮은가격순
-                    shouldShowSheetPresent = false
-                } label: {
-                    Text("\(Filter.낮은가격순.rawValue)")
-                        .padding()
-                }
-                Divider()
-                Button {
-                    filter = .높은가격순
-                    shouldShowSheetPresent = false
-                } label: {
-                    Text("\(Filter.높은가격순.rawValue)")
-                        .padding()
+                
+                ForEach(Filter.allCases, id: \.self) { filter in
+                    Button {
+                        self.filter = filter
+                        shouldShowSheetPresent = false
+                    } label: {
+                        Text("\(filter.rawValue)")
+                            .padding()
+                    }
+                    Divider()
                 }
             }
             .foregroundColor(.black)
