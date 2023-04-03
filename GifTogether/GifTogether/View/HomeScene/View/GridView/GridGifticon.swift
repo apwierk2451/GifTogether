@@ -18,7 +18,7 @@ struct GridGifticon: View {
             .cornerRadius(16)
             .shadow(radius: 16)
             .overlay {
-                GridGifticonItem(gifticon: gifticon, isHeart: isHeart)
+                GridGifticonItem(gifticon: gifticon, isHeart: $isHeart)
             }
     }
 }

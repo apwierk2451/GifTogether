@@ -17,8 +17,10 @@ struct HomeView: View {
             CategoryRow(items: Category.allCases)
                 .padding(.top)
                 .listRowInsets(EdgeInsets())
-            GifticonRow(categoryName: "추천상품", items: homeViewModel.gifticonsInfo)
-                .listRowInsets(EdgeInsets())
+            GifticonRow(categoryName: "추천상품",
+                        items: homeViewModel.gifticonsInfo
+            )
+            .listRowInsets(EdgeInsets())
         }
         .listStyle(.inset)
         .navigationTitle("GifTogether")

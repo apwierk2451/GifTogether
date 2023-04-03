@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GridGifticonItem: View {
     var gifticon: Gifticon
-    @State var isHeart: Bool
+    @Binding var isHeart: Bool
     
     var body: some View {
         VStack {
@@ -55,6 +55,6 @@ struct GridGifticonItem_Previews: PreviewProvider {
     static var gifticon = Gifticon.stub()
     
     static var previews: some View {
-        GridGifticonItem(gifticon: gifticon, isHeart: false)
+        GridGifticonItem(gifticon: gifticon, isHeart: .constant(false))
     }
 }
