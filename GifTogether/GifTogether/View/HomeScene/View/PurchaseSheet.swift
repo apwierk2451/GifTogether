@@ -28,8 +28,8 @@ struct PurchaseSheet: View {
             }
             
             Button("결제하기") {
-                isSheetPresented = false
-                isPaymentPresented = true
+                isSheetPresented.toggle()
+                isPaymentPresented.toggle()
             }
             .foregroundColor(.white)
             .frame(height: 20)

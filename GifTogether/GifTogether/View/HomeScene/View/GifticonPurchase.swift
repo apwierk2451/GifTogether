@@ -31,7 +31,7 @@ struct GifticonPurchase: View {
             )
             
             Button {
-                self.shouldShowSheetPresent = true
+                self.shouldShowSheetPresent.toggle()
             } label: {
                 Text("구매하기")
                     .foregroundColor(.white)
