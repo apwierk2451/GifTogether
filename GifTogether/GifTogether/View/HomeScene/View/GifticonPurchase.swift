@@ -41,12 +41,12 @@ struct GifticonPurchase: View {
                     .background(Color.red)
                     .cornerRadius(15)
             }
-            .sheet(isPresented: self.$shouldShowSheetPresent) {
+            .halfSheet(showSheet: self.$shouldShowSheetPresent, sheetView: {
                 PurchaseSheet(gifticon: gifticon,
                               isSheetPresented: $shouldShowSheetPresent,
                               isPaymentPresented: $shouldShowPaymentPresent
                 )
-            }
+            })
         }
         .padding()
         

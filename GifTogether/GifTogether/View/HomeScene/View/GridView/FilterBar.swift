@@ -27,10 +27,9 @@ struct FilterBar: View {
                     .rotationEffect(Angle(degrees: 270))
             }
             .foregroundColor(.black)
-            .sheet(isPresented: self.$shouldShowSheetPresent) {
+            .halfSheet(showSheet: $shouldShowSheetPresent, sheetView: {
                 filterSheet
-                // TODO: sheet height를 중간으로 지정하기
-            }
+            })
         }
         .padding()
     }
@@ -71,3 +70,4 @@ struct FilterBar_Previews: PreviewProvider {
         FilterBar(gifticons: gifticons)
     }
 }
+

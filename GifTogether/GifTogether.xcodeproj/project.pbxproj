@@ -39,6 +39,7 @@
 		76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81829C06931005B01E5 /* CategoryRow.swift */; };
 		76BFE82629C069C4005B01E5 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 76BFE82429C069C4005B01E5 /* categories.json */; };
 		76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE82A29C06CFE005B01E5 /* Category.swift */; };
+		76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1699E29DABF0C00A9923E /* HalfSheet.swift */; };
 		AF00628729CAD49100727953 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00628629CAD49100727953 /* CategoryView.swift */; };
 		AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */; };
 		AF211D4F29CC25D50024F5F4 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF211D4E29CC25D50024F5F4 /* Brand.swift */; };
@@ -136,6 +137,7 @@
 		76BFE81829C06931005B01E5 /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		76BFE82429C069C4005B01E5 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		76BFE82A29C06CFE005B01E5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		76F1699E29DABF0C00A9923E /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 		AF00628629CAD49100727953 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		AF211D4E29CC25D50024F5F4 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				AFF8DC1929C43A21003FB914 /* String+.swift */,
+				76F1699E29DABF0C00A9923E /* HalfSheet.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */,
 				AF9790F629C57AA5009AB08D /* ProfileRow.swift in Sources */,
 				AFF8DC1529C427EA003FB914 /* LoginView.swift in Sources */,
+				76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
 				AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
@@ -921,7 +925,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = SWPBG3YXG5;
+				DEVELOPMENT_TEAM = RF7GLLKTJB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -935,7 +939,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -951,7 +955,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = SWPBG3YXG5;
+				DEVELOPMENT_TEAM = RF7GLLKTJB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -965,7 +969,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
