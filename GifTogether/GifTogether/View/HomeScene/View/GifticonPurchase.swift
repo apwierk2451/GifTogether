@@ -31,7 +31,7 @@ struct GifticonPurchase: View {
             )
             
             Button {
-                self.shouldShowSheetPresent = true
+                self.shouldShowSheetPresent.toggle()
             } label: {
                 Text("구매하기")
                     .foregroundColor(.white)
@@ -41,12 +41,12 @@ struct GifticonPurchase: View {
                     .background(Color.red)
                     .cornerRadius(15)
             }
-            .sheet(isPresented: self.$shouldShowSheetPresent) {
+            .halfSheet(showSheet: self.$shouldShowSheetPresent, sheetView: {
                 PurchaseSheet(gifticon: gifticon,
                               isSheetPresented: $shouldShowSheetPresent,
                               isPaymentPresented: $shouldShowPaymentPresent
                 )
-            }
+            })
         }
         .padding()
         

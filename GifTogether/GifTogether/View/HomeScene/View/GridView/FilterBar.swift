@@ -19,7 +19,7 @@ struct FilterBar: View {
             Spacer()
             
             Button {
-                self.shouldShowSheetPresent = true
+                self.shouldShowSheetPresent.toggle()
             } label: {
                 Text("\(filter.rawValue)")
                 
@@ -27,10 +27,9 @@ struct FilterBar: View {
                     .rotationEffect(Angle(degrees: 270))
             }
             .foregroundColor(.black)
-            .sheet(isPresented: self.$shouldShowSheetPresent) {
+            .halfSheet(showSheet: $shouldShowSheetPresent, sheetView: {
                 filterSheet
-                // TODO: sheet height를 중간으로 지정하기
-            }
+            })
         }
         .padding()
     }
@@ -51,7 +50,7 @@ struct FilterBar: View {
                 ForEach(Filter.allCases, id: \.self) { filter in
                     Button {
                         self.filter = filter
-                        shouldShowSheetPresent = false
+                        shouldShowSheetPresent.toggle()
                     } label: {
                         Text("\(filter.rawValue)")
                             .padding()
@@ -71,3 +70,4 @@ struct FilterBar_Previews: PreviewProvider {
         FilterBar(gifticons: gifticons)
     }
 }
+
