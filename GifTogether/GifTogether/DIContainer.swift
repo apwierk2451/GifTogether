@@ -37,7 +37,6 @@ final class DIContainer {
         return SearchViewModel(
             searchGifticonUseCase: makeSearchGifticonUseCase(),
             fetchRecentGifticonQueriesUseCase: makeFetchRecentGifticonQueriesUseCase(),
-            deleteGifticonQueryUseCase: makeDeleteGifticonQueryUseCase(),
             deleteAllGifticonQueriesUseCase: makeDeleteAllGifticonQueriesUseCase()
         )
     }
@@ -75,12 +74,6 @@ final class DIContainer {
     
     func makeFetchRecentGifticonQueriesUseCase() -> FetchRecentGifticonQueriesUseCase {
         return DefaultFetchRecentGifticonQueriesUseCase(
-            gifticonQueriesRepository: makeGifticonQueriesRepository()
-        )
-    }
-    
-    func makeDeleteGifticonQueryUseCase() -> DeleteGifticonQueryUseCase {
-        return DefaultDeleteGifticonQueryUseCase(
             gifticonQueriesRepository: makeGifticonQueriesRepository()
         )
     }
