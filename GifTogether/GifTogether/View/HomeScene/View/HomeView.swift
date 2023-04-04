@@ -18,8 +18,7 @@ struct HomeView: View {
                 .padding(.top)
                 .listRowInsets(EdgeInsets())
             GifticonRow(categoryName: "추천상품",
-                        items: homeViewModel.gifticonsInfo
-            )
+                        items: homeViewModel.gifticonsInfo)
             .listRowInsets(EdgeInsets())
         }
         .listStyle(.inset)
