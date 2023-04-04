@@ -9,6 +9,11 @@ import Foundation
 
 final class DIContainer {
     
+    // MARK: - Persistent Storage
+    lazy var gifticonQueriesStorage: GifticonQueriesStorage = CoreDataGifticonQueriesStorage(
+        maxStorageLimit: 10
+    )
+    
     // MARK: - Login ViewModel
     func makeLoginViewModel() -> LoginViewModel {
         return LoginViewModel(
@@ -27,6 +32,15 @@ final class DIContainer {
         return MyPageViewModel(fetchUserInfoUseCase: makeFetchUserInfoUseCase())
     }
     
+    // MARK: - Search ViewModel
+    func makeSearchViewModel() -> SearchViewModel {
+        return SearchViewModel(
+            searchGifticonUseCase: makeSearchGifticonUseCase(),
+            fetchRecentGifticonQueriesUseCase: makeFetchRecentGifticonQueriesUseCase(),
+            deleteGifticonQueryUseCase: makeDeleteGifticonQueryUseCase(),
+            deleteAllGifticonQueriesUseCase: makeDeleteAllGifticonQueriesUseCase()
+        )
+    }
     
     // MARK: - UseCases
     func makeLoginUseCase() -> LoginUseCase {
@@ -52,6 +66,31 @@ final class DIContainer {
         )
     }
     
+    func makeSearchGifticonUseCase() -> SearchGifticonUseCase {
+        return DefaultSearchGifticonUseCase(
+            gifticonRepository: makeGifticonRepository(),
+            gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeFetchRecentGifticonQueriesUseCase() -> FetchRecentGifticonQueriesUseCase {
+        return DefaultFetchRecentGifticonQueriesUseCase(
+            gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeDeleteGifticonQueryUseCase() -> DeleteGifticonQueryUseCase {
+        return DefaultDeleteGifticonQueryUseCase(
+            gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeDeleteAllGifticonQueriesUseCase() -> DeleteAllGifticonQueriesUseCase {
+        return DefaultDeleteAllGifticonQueriesUseCase(
+            gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
     // MARK: - Data
     func makeFirebaseAuthService() -> DefaultFirebaseAuthService {
         return DefaultFirebaseAuthService()
@@ -63,5 +102,11 @@ final class DIContainer {
     
     func makeGifticonRepository() -> GifticonRepository {
         return GifticonRepository()
+    }
+    
+    func makeGifticonQueriesRepository() -> GifticonQueriesRepository {
+        return DefaultGifticonQueriesRepository(
+            gifticonQueriesPersistentStorage: gifticonQueriesStorage
+        )
     }
 }
