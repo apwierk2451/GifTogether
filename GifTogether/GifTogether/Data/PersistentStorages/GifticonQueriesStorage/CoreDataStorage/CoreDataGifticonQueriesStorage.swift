@@ -69,10 +69,10 @@ extension CoreDataGifticonQueriesStorage: GifticonQueriesStorage {
     }
 }
 
-// MARK: - Private
-extension CoreDataGifticonQueriesStorage {
+// MARK: - Private Extension
+private extension CoreDataGifticonQueriesStorage {
 
-    private func cleanUpQueries(for query: GifticonQuery,
+    func cleanUpQueries(for query: GifticonQuery,
                                 inContext context: NSManagedObjectContext) throws {
         
         let request: NSFetchRequest = GifticonQueryEntity.fetchRequest()
@@ -84,7 +84,7 @@ extension CoreDataGifticonQueriesStorage {
         removeQueries(limit: maxStorageLimit - 1, in: result, inContext: context)
     }
 
-    private func removeDuplicates(for query: GifticonQuery,
+    func removeDuplicates(for query: GifticonQuery,
                                   in queries: inout [GifticonQueryEntity],
                                   inContext context: NSManagedObjectContext) {
         queries
@@ -93,7 +93,7 @@ extension CoreDataGifticonQueriesStorage {
         queries.removeAll { $0.query == query.query }
     }
 
-    private func removeQueries(limit: Int,
+    func removeQueries(limit: Int,
                                in queries: [GifticonQueryEntity],
                                inContext context: NSManagedObjectContext) {
         
