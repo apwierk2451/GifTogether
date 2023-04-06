@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
 
-#if canImport(UIKit)
 extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(
@@ -18,4 +18,3 @@ extension View {
         )
     }
 }
-#endif
