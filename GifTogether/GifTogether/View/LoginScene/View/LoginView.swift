@@ -90,17 +90,22 @@ struct LoginView: View {
             }
             .padding(.top, 100)
         }
-        .overlay(content: {
+        .overlay {
             if showLoading && !viewModel.isSuccessLogin {
                 ProgressView().controlSize(.large)
             }
-        })
+        }
         .alert("사용자 정보가 존재하지 않습니다.", isPresented: $showError) {
             Button("OK", role: .cancel) {
                 showError = false
             }
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            if UserDefaults.standard.value(forKey: "userUID") != nil {
+                shouldShowMainView = true
+            }
+        }
     }
     
     private func tryLogin() {
@@ -108,6 +113,8 @@ struct LoginView: View {
             if isComplete {
                 shouldShowMainView = true
                 showLoading = false
+                email = ""
+                password = ""
             } else {
                 showError = true
                 showLoading = false

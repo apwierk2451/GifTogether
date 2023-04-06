@@ -15,3 +15,14 @@ protocol FirestoreRepository {
     func update(documentId: String, to modifiedEntity: T)
     func delete(documentId: String)
 }
+
+enum FirestoreError: LocalizedError {
+    case readError
+    
+    var errorDescription: String? {
+        switch self {
+        case .readError:
+            return "Firestore 데이터 읽어오기에 실패했습니다."
+        }
+    }
+}

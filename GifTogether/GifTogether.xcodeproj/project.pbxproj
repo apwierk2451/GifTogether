@@ -42,8 +42,23 @@
 		76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1699E29DABF0C00A9923E /* HalfSheet.swift */; };
 		AF00628729CAD49100727953 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00628629CAD49100727953 /* CategoryView.swift */; };
 		AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */; };
+		AF1ECBDE29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */; };
+		AF1ECBDF29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */; };
+		AF1ECBE229D57519005F635D /* GifticonQueryEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */; };
 		AF211D4F29CC25D50024F5F4 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF211D4E29CC25D50024F5F4 /* Brand.swift */; };
 		AF480EE029BDF333000AEC8D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF480EDF29BDF333000AEC8D /* FirebaseFirestore */; };
+		AF6C035C29D59AC80023FE23 /* GifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */; };
+		AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */; };
+		AF6C036029D59C800023FE23 /* SearchGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */; };
+		AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */; };
+		AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */; };
+		AF7AE95729D5022F00002135 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95629D5022F00002135 /* SearchBar.swift */; };
+		AF7AE95B29D50EA900002135 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */; };
+		AF7AE95E29D50ED400002135 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */; };
+		AF7AE96129D56A1700002135 /* GifticonQueriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */; };
+		AF7AE96329D56A7A00002135 /* GifticonQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96229D56A7A00002135 /* GifticonQuery.swift */; };
+		AF7AE96629D56B4000002135 /* CoreDataGifticonQueriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96529D56B4000002135 /* CoreDataGifticonQueriesStorage.swift */; };
+		AF7CFD2E29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */; };
 		AF7D02EF29BB085500878A91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF7D02EE29BB085500878A91 /* FirebaseAuth */; };
 		AF7D02F129BB085500878A91 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF7D02F029BB085500878A91 /* FirebaseFirestore */; };
 		AF7D02F329BB220600878A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7D02F229BB220600878A91 /* GoogleService-Info.plist */; };
@@ -69,6 +84,8 @@
 		AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */; };
 		AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */; };
 		AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */; };
+		AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */; };
+		AFD0908129DB023C002A3CA6 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0908029DB023C002A3CA6 /* View+.swift */; };
 		AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */; };
 		AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */; };
 		AFD2E85129C01E7D0081CBA4 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */; };
@@ -140,7 +157,22 @@
 		76F1699E29DABF0C00A9923E /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 		AF00628629CAD49100727953 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
+		AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+Mapping.swift"; sourceTree = "<group>"; };
 		AF211D4E29CC25D50024F5F4 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesRepository.swift; sourceTree = "<group>"; };
+		AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGifticonQueriesRepository.swift; sourceTree = "<group>"; };
+		AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonUseCase.swift; sourceTree = "<group>"; };
+		AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecentGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
+		AF7AE95629D5022F00002135 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
+		AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesStorage.swift; sourceTree = "<group>"; };
+		AF7AE96229D56A7A00002135 /* GifticonQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQuery.swift; sourceTree = "<group>"; };
+		AF7AE96529D56B4000002135 /* CoreDataGifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGifticonQueriesStorage.swift; sourceTree = "<group>"; };
+		AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
 		AF7D02F229BB220600878A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AF7E181529B3137A00BD3D61 /* Gifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifticon.swift; sourceTree = "<group>"; };
 		AF7E181729B3201200BD3D61 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -164,6 +196,8 @@
 		AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRepository.swift; sourceTree = "<group>"; };
+		AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTestView.swift; sourceTree = "<group>"; };
+		AFD0908029DB023C002A3CA6 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirebaseAuthService.swift; sourceTree = "<group>"; };
 		AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
@@ -221,6 +255,8 @@
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
+				AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */,
+				AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */,
 				76853AE729B1F9F8009428DA /* GifTogether */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
@@ -356,6 +392,7 @@
 		AF0AD2D329C074C800EBAC5E /* SearchScene */ = {
 			isa = PBXGroup;
 			children = (
+				AF6C036129D59F780023FE23 /* ViewModel */,
 				AF0AD2D529C0751A00EBAC5E /* View */,
 			);
 			path = SearchScene;
@@ -373,6 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				76BFE81029C06930005B01E5 /* SearchView.swift */,
+				AF7AE95629D5022F00002135 /* SearchBar.swift */,
+				AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,11 +424,63 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AF1ECBE029D5750A005F635D /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */,
+			);
+			path = EntityMapping;
+			sourceTree = "<group>";
+		};
 		AF480EDE29BDF333000AEC8D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF6C036129D59F780023FE23 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AF7AE95829D50E4800002135 /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				AF7AE95F29D569F300002135 /* GifticonQueriesStorage */,
+				AF7AE95929D50E7900002135 /* CoreDataStorage */,
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
+		AF7AE95929D50E7900002135 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */,
+				AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		AF7AE95F29D569F300002135 /* GifticonQueriesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */,
+				AF7AE96429D56B1F00002135 /* CoreDataStorage */,
+			);
+			path = GifticonQueriesStorage;
+			sourceTree = "<group>";
+		};
+		AF7AE96429D56B1F00002135 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				AF7AE96529D56B4000002135 /* CoreDataGifticonQueriesStorage.swift */,
+				AF1ECBE029D5750A005F635D /* EntityMapping */,
+			);
+			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 		AF7E181429B3136700BD3D61 /* Entities */ = {
@@ -400,6 +491,7 @@
 				AF211D4E29CC25D50024F5F4 /* Brand.swift */,
 				76BFE82A29C06CFE005B01E5 /* Category.swift */,
 				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
+				AF7AE96229D56A7A00002135 /* GifticonQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -409,6 +501,7 @@
 			children = (
 				AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */,
 				AFD2E85229C0212D0081CBA4 /* UserInfoRepository.swift */,
+				AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -418,6 +511,7 @@
 			children = (
 				AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */,
 				AF18058129BE077E00E181D2 /* FirebaseAuthService.swift */,
+				AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -429,7 +523,10 @@
 				AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */,
 				AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */,
 				AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */,
+				AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */,
+				AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */,
 				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
+				AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -489,8 +586,9 @@
 		AFC0E8C429B9A227004CD1E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AFD2E84B29C01E040081CBA4 /* Service */,
 				AF95C80F29B9CFC000FBC6E9 /* Repositories */,
+				AFD2E84B29C01E040081CBA4 /* Service */,
+				AF7AE95829D50E4800002135 /* PersistentStorages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -535,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				AFF8DC1929C43A21003FB914 /* String+.swift */,
+				AFD0908029DB023C002A3CA6 /* View+.swift */,
 				76F1699E29DABF0C00A9923E /* HalfSheet.swift */,
 			);
 			path = Utils;
@@ -703,6 +802,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF98867229CD3A8000F85EE4 /* BrandLogo.swift in Sources */,
+				AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */,
 				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
 				AFA5EA0E29C6A3270041C1BD /* SettingView.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
@@ -710,6 +810,7 @@
 				7687477729C57B0A00F6067D /* PaymentView.swift in Sources */,
 				7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */,
 				76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */,
+				AF7AE95E29D50ED400002135 /* CoreDataStorage.xcdatamodeld in Sources */,
 				76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */,
 				AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */,
 				7687477529C32F6200F6067D /* PurchaseSheet.swift in Sources */,
@@ -720,8 +821,10 @@
 				AFF8DC2229C44CE9003FB914 /* MainView.swift in Sources */,
 				76311D6029D17F5B008555D5 /* FilterBar.swift in Sources */,
 				AFA5EA1429C6CCF10041C1BD /* SaleGifticonList.swift in Sources */,
+				AF7AE95B29D50EA900002135 /* CoreDataStorage.swift in Sources */,
 				AFA5EA1029C6A5F20041C1BD /* AgreementOfUtilization.swift in Sources */,
 				76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */,
+				AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */,
 				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
 				AFF8DC2029C446DE003FB914 /* LoginViewModel.swift in Sources */,
 				AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */,
@@ -730,6 +833,7 @@
 				AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */,
 				AFA5EA0C29C6999A0041C1BD /* MyPageViewModel.swift in Sources */,
 				AF00628729CAD49100727953 /* CategoryView.swift in Sources */,
+				AF7AE96629D56B4000002135 /* CoreDataGifticonQueriesStorage.swift in Sources */,
 				AFF8DC2429C453F5003FB914 /* DIContainer.swift in Sources */,
 				76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */,
 				AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */,
@@ -739,10 +843,12 @@
 				7687476D29C30A7E00F6067D /* DetailView.swift in Sources */,
 				76BFE81C29C06931005B01E5 /* BannerView.swift in Sources */,
 				76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */,
+				AF1ECBDF29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift in Sources */,
 				AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */,
 				76BFE81F29C06931005B01E5 /* HomeView.swift in Sources */,
 				7687476F29C30A9800F6067D /* GifticonDetail.swift in Sources */,
 				AF211D4F29CC25D50024F5F4 /* Brand.swift in Sources */,
+				AF1ECBDE29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift in Sources */,
 				AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */,
 				7609DD2329C843C000C9CCBB /* PaymentGifticon.swift in Sources */,
 				7609DD2529C844C200C9CCBB /* PaymentPrice.swift in Sources */,
@@ -750,18 +856,28 @@
 				7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */,
 				AF9790F629C57AA5009AB08D /* ProfileRow.swift in Sources */,
 				AFF8DC1529C427EA003FB914 /* LoginView.swift in Sources */,
+				AF6C035C29D59AC80023FE23 /* GifticonQueriesRepository.swift in Sources */,
 				76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
 				AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */,
+				AF7CFD2E29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift in Sources */,
+				AFD0908129DB023C002A3CA6 /* View+.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
+				AF7AE95729D5022F00002135 /* SearchBar.swift in Sources */,
+				AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */,
+				AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */,
 				76311D6429D17F92008555D5 /* GridView.swift in Sources */,
+				AF7AE96329D56A7A00002135 /* GifticonQuery.swift in Sources */,
 				76311D6229D17F77008555D5 /* GridGifticon.swift in Sources */,
 				76BFE81D29C06931005B01E5 /* HomeViewModel.swift in Sources */,
 				AFD2E85329C0212D0081CBA4 /* UserInfoRepository.swift in Sources */,
 				AFF8DC1729C43371003FB914 /* SignupView.swift in Sources */,
 				7691783F29D442600093CD95 /* GridGifticonItem.swift in Sources */,
+				AF1ECBE229D57519005F635D /* GifticonQueryEntity+Mapping.swift in Sources */,
+				AF6C036029D59C800023FE23 /* SearchGifticonUseCase.swift in Sources */,
 				AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */,
+				AF7AE96129D56A1700002135 /* GifticonQueriesStorage.swift in Sources */,
 				76BFE81A29C06931005B01E5 /* ProfileView.swift in Sources */,
 				AF9C26C629C0502F00AE1144 /* FetchUseInfoUseCase.swift in Sources */,
 				7687477329C30C1100F6067D /* GifticonPurchase.swift in Sources */,
@@ -1120,6 +1236,19 @@
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */,
+			);
+			currentVersion = AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */;
+			path = CoreDataStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 76853ADD29B1F9F8009428DA /* Project object */;
 }

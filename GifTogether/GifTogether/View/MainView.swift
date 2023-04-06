@@ -11,6 +11,7 @@ struct MainView: View {
     @State private var selection: Tab = .home
     @StateObject private var homeViewModel = DIContainer().makeHomeViewModel()
     @StateObject private var myPageViewModel = DIContainer().makeMyPageViewModel()
+    @StateObject private var searchViewModel = DIContainer().makeSearchViewModel()
     
     @Binding var logout: Bool
     enum Tab {
@@ -28,7 +29,9 @@ struct MainView: View {
                     Image(systemName: "house")
                 }
                 .tag(Tab.home)
+            
             SearchView()
+                .environmentObject(searchViewModel)
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
