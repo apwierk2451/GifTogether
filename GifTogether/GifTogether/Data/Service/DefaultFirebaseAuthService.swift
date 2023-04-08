@@ -47,4 +47,16 @@ final class DefaultFirebaseAuthService: FirebaseAuthService {
             throw FirebaseAuthServiceError.failToFetch
         }
     }
+    
+    func deleteAccount() {
+        let user = Auth.auth().currentUser
+        
+        user?.delete(completion: { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("계정 삭제 완료")
+            }
+        })
+    }
 }
