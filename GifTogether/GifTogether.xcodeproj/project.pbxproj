@@ -53,7 +53,6 @@
 		AF6C036029D59C800023FE23 /* SearchGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */; };
 		AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */; };
 		AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */; };
-		AF7AE95729D5022F00002135 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95629D5022F00002135 /* SearchBar.swift */; };
 		AF7AE95B29D50EA900002135 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */; };
 		AF7AE95E29D50ED400002135 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */; };
 		AF7AE96129D56A1700002135 /* GifticonQueriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */; };
@@ -93,6 +92,7 @@
 		AFD2E85329C0212D0081CBA4 /* UserInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E85229C0212D0081CBA4 /* UserInfoRepository.swift */; };
 		AFDFA32629C8190E00D456FE /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFA32529C8190E00D456FE /* CategoryList.swift */; };
 		AFDFA32829C8239900D456FE /* CategoryIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDFA32729C8239900D456FE /* CategoryIndicator.swift */; };
+		AFF6EA1C29E0171A00C805C3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */; };
 		AFF8DC1529C427EA003FB914 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8DC1429C427EA003FB914 /* LoginView.swift */; };
 		AFF8DC1729C43371003FB914 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8DC1629C43371003FB914 /* SignupView.swift */; };
 		AFF8DC1A29C43A21003FB914 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8DC1929C43A21003FB914 /* String+.swift */; };
@@ -168,7 +168,6 @@
 		AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonUseCase.swift; sourceTree = "<group>"; };
 		AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecentGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
-		AF7AE95629D5022F00002135 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesStorage.swift; sourceTree = "<group>"; };
@@ -206,6 +205,7 @@
 		AFD2E85229C0212D0081CBA4 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		AFDFA32529C8190E00D456FE /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		AFDFA32729C8239900D456FE /* CategoryIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIndicator.swift; sourceTree = "<group>"; };
+		AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AFF8DC1429C427EA003FB914 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AFF8DC1629C43371003FB914 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		AFF8DC1929C43A21003FB914 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -412,7 +412,6 @@
 			isa = PBXGroup;
 			children = (
 				76BFE81029C06930005B01E5 /* SearchView.swift */,
-				AF7AE95629D5022F00002135 /* SearchBar.swift */,
 				AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */,
 			);
 			path = View;
@@ -638,6 +637,7 @@
 				AFF8DC1929C43A21003FB914 /* String+.swift */,
 				AFD0908029DB023C002A3CA6 /* View+.swift */,
 				76F1699E29DABF0C00A9923E /* HalfSheet.swift */,
+				AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -821,6 +821,7 @@
 				AFDFA32829C8239900D456FE /* CategoryIndicator.swift in Sources */,
 				AFF8DC1A29C43A21003FB914 /* String+.swift in Sources */,
 				AFA5EA1229C6A6370041C1BD /* PersonalInfomation.swift in Sources */,
+				AFF6EA1C29E0171A00C805C3 /* SearchBar.swift in Sources */,
 				AFF8DC2229C44CE9003FB914 /* MainView.swift in Sources */,
 				76311D6029D17F5B008555D5 /* FilterBar.swift in Sources */,
 				AFA5EA1429C6CCF10041C1BD /* SaleGifticonList.swift in Sources */,
@@ -868,7 +869,6 @@
 				AFD0908129DB023C002A3CA6 /* View+.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
-				AF7AE95729D5022F00002135 /* SearchBar.swift in Sources */,
 				AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */,
 				AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */,
 				76311D6429D17F92008555D5 /* GridView.swift in Sources */,

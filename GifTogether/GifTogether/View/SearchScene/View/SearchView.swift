@@ -9,14 +9,20 @@ import SwiftUI
 
 struct SearchView: View {
     @EnvironmentObject var viewModel: SearchViewModel
+    @State private var shouldShowNextView: Bool = false
     @State private var searchText = ""
     
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText)
-                    .environmentObject(viewModel)
+                SearchBar(text: $searchText, shouldShowNextView: $shouldShowNextView)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                
+                NavigationLink(isActive: $shouldShowNextView) {
+                    GridTestView(title: searchText)
+                } label: {
+                    EmptyView()
+                }
                 
                 List {
                     Text(viewModel.searchQueries.isEmpty ? "최근 검색어 없음" : "최근 검색어 목록")
@@ -29,7 +35,7 @@ struct SearchView: View {
                         NavigationLink {
                             GridTestView(
                                 title: gifticonQuery.query
-                            ).environmentObject(viewModel)
+                            )
                         } label: {
                             Text(gifticonQuery.query)
                         }
@@ -61,5 +67,3 @@ struct SearchView_Previews: PreviewProvider {
             .environmentObject(DIContainer().makeSearchViewModel())
     }
 }
-
-
