@@ -17,6 +17,7 @@ struct SignupView: View {
     @State var isValidPassword: Bool = false
     @State var isSubmitLoginInfo: Bool = false
     @State var showLoading: Bool = false
+    @State var showSuccessAlert: Bool = false
     @State var showError: Bool = false
     
     @State var email: String = ""
@@ -94,6 +95,7 @@ struct SignupView: View {
             
             NormalButton(isValid: isValidButton, title: "회원가입")
                 .onTapGesture {
+                    hideKeyboard()
                     showLoading = true
                     tryCreateUser()
                 }
@@ -105,16 +107,33 @@ struct SignupView: View {
             .foregroundColor(.secondary)
             
             Spacer()
+            ZStack {
+                ToastMessage(isSuccessAlert: false, message: "회원가입에 실패했습니다 😭")
+                    .scaleEffect(showError ? 1.0 : 0.0)
+                    .animation(.ripple(), value: showError)
+                    .onChange(of: showError) { isShowError in
+                        guard isShowError else { return }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            showError = false
+                        }
+                    }
+                
+                ToastMessage(isSuccessAlert: true, message: "회원가입에 성공했습니다 🎉")
+                    .scaleEffect(showSuccessAlert ? 1.0 : 0.0)
+                    .animation(.ripple(), value: showSuccessAlert)
+                    .onChange(of: showSuccessAlert) { isShowSuccessAlert in
+                        guard isShowSuccessAlert else { return }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            showSuccessAlert = false
+                            shouldShowSignupView = false
+                        }
+                    }
+            }
         }
         .padding(.top, 30)
-        .overlay(content: {
+        .overlay {
             if showLoading && !viewModel.isSuccessSignup {
                 ProgressView().controlSize(.large)
-            }
-        })
-        .alert("회원가입에 실패하였습니다.", isPresented: $showError) {
-            Button("확인") {
-                showError = false
             }
         }
         .navigationBarBackButtonHidden()
@@ -131,7 +150,7 @@ struct SignupView: View {
         ) { isComplete in
             if isComplete {
                 showLoading = false
-                shouldShowSignupView = false
+                showSuccessAlert = true
             } else {
                 showLoading = false
                 showError = true
