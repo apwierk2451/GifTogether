@@ -13,11 +13,10 @@ struct FavoriteView: View {
     var body: some View {
         NavigationView {
             GridView(gifticons: favoriteViewModel.filteredGifticons, title: "찜한 상품")
-                .onAppear {
-                    favoriteViewModel.fetchUserInfo()
-                }
         }
-        
+        .task {
+            favoriteViewModel.fetchFavoriteGifticons()
+        }
     }
 }
 

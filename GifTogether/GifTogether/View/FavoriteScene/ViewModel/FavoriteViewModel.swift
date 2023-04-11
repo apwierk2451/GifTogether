@@ -58,7 +58,23 @@ final class FavoriteViewModel: ObservableObject {
         }
     }
     
-    func updateGifticonInfo(gifticonUUID: String, to gifticon: Gifticon) {
+    func didTappedAddFavoriteButton(to gifticon: Gifticon) {
+        var changeGifticon = gifticon
+        changeGifticon.favoriteCount += 1
+        updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
+        
+        addFavoriteGifticon(gifticonUUID: gifticon.uuid)
+    }
+    
+    func didTappedDeleteFavoriteButton(to gifticon: Gifticon) {
+        var changeGifticon = gifticon
+        changeGifticon.favoriteCount -= 1
+        updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
+        
+        deleteFavoriteGifticon(gifticonUUID: gifticon.uuid)
+    }
+    
+    private func updateGifticonInfo(gifticonUUID: String, to gifticon: Gifticon) {
         updateGifticonUseCase.execute(gifticonUUID: gifticonUUID, gifticon: gifticon)
     }
     

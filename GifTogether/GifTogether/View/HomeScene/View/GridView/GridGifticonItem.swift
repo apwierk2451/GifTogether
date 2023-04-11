@@ -29,19 +29,12 @@ struct GridGifticonItem: View {
                         
                         Button {
                             if isHeart {
-                                var changeGifticon = gifticon
-                                changeGifticon.favoriteCount = gifticon.favoriteCount - 1
-                                viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
-                                
-                                viewModel.deleteFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                                viewModel.didTappedDeleteFavoriteButton(to: gifticon)
                             } else {
-                                var changeGifticon = gifticon
-                                changeGifticon.favoriteCount = gifticon.favoriteCount + 1
-                                viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
-                                
-                                viewModel.addFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                                viewModel.didTappedAddFavoriteButton(to: gifticon)
                             }
                             isHeart.toggle()
+                            viewModel.fetchFavoriteGifticons()
                         } label: {
                             Image(systemName: isHeart ? "heart.fill" : "heart")
                                 .foregroundColor(.pink)

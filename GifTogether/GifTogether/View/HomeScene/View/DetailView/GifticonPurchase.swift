@@ -20,18 +20,10 @@ struct GifticonPurchase: View {
             Button {
                 if isHeart {
                     favoriteCount -= 1
-                    var changeGifticon = gifticon
-                    changeGifticon.favoriteCount = favoriteCount
-                    viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
-                    
-                    viewModel.deleteFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                    viewModel.didTappedDeleteFavoriteButton(to: gifticon)
                 } else {
                     favoriteCount += 1
-                    var changeGifticon = gifticon
-                    changeGifticon.favoriteCount = favoriteCount
-                    viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
-                    
-                    viewModel.addFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                    viewModel.didTappedAddFavoriteButton(to: gifticon)
                 }
                 isHeart.toggle()
             } label: {
