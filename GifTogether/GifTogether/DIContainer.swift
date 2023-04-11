@@ -24,7 +24,7 @@ final class DIContainer {
     
     // MARK: - Home ViewModel
     func makeHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(searchGifticonUseCase: makeSearchGifticonUseCase())
+        return HomeViewModel(fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase())
     }
     
     // MARK: - MyPage ViewModel
@@ -47,12 +47,11 @@ final class DIContainer {
     func makeFavoriteViewModel() -> FavoriteViewModel {
         return FavoriteViewModel(
             fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
-            searchGifticonUseCase: makeSearchGifticonUseCase(),
+            fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase(),
             updateUserInfoUseCase: makeFavoriteUseCase(),
             updateGifticonUseCase: makeUpdateGifticonUsecase()
         )
     }
-    
     
     // MARK: - UseCases
     func makeLoginUseCase() -> LoginUseCase {
@@ -66,8 +65,8 @@ final class DIContainer {
         )
     }
     
-    func makeSearchGifticonUseCase() -> SearchGifticonListUseCase {
-        return DefaultSearchGifticonListUseCase(
+    func makeFetchAllGifticonsUseCase() -> FetchAllGifticonsUseCase {
+        return DefaultFetchAllGifticonsUseCase(
             gifticonRepository: makeGifticonRepository()
         )
     }

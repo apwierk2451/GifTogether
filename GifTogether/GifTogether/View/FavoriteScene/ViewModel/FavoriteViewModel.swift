@@ -10,7 +10,7 @@ import Combine
 
 final class FavoriteViewModel: ObservableObject {
     private let fetchUserInfoUseCase: FetchUseInfoUseCase
-    private let searchGifticonUseCase: SearchGifticonListUseCase
+    private let fetchAllGifticonsUseCase: FetchAllGifticonsUseCase
     private let updateUserInfoUseCase: UpdateUserInfoUseCase
     private let updateGifticonUseCase: UpdateGifticonUseCase
     
@@ -18,12 +18,12 @@ final class FavoriteViewModel: ObservableObject {
     
     init(
         fetchUserInfoUseCase: FetchUseInfoUseCase,
-        searchGifticonUseCase: SearchGifticonListUseCase,
+        fetchAllGifticonsUseCase: FetchAllGifticonsUseCase,
         updateUserInfoUseCase: UpdateUserInfoUseCase,
         updateGifticonUseCase: UpdateGifticonUseCase
     ) {
         self.fetchUserInfoUseCase = fetchUserInfoUseCase
-        self.searchGifticonUseCase = searchGifticonUseCase
+        self.fetchAllGifticonsUseCase = fetchAllGifticonsUseCase
         self.updateUserInfoUseCase = updateUserInfoUseCase
         self.updateGifticonUseCase = updateGifticonUseCase
     }
@@ -80,7 +80,7 @@ final class FavoriteViewModel: ObservableObject {
     }
     
     func fetchGifticonInfo(gifticonUUID: String, completion: @escaping (Gifticon) -> Void) {
-        searchGifticonUseCase.execute { gifticons in
+        fetchAllGifticonsUseCase.execute { gifticons in
             let gifticonInfo = gifticons.filter { $0.uuid == gifticonUUID }
             completion(gifticonInfo[0])
         }

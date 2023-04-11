@@ -10,14 +10,14 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     @Published var gifticonsInfo: [Gifticon] = []
     
-    private let searchGifticonUseCase: SearchGifticonListUseCase
+    private let fetchAllGifticonsUseCase: FetchAllGifticonsUseCase
     
-    init(searchGifticonUseCase: SearchGifticonListUseCase) {
-        self.searchGifticonUseCase = searchGifticonUseCase
+    init(fetchAllGifticonsUseCase: FetchAllGifticonsUseCase) {
+        self.fetchAllGifticonsUseCase = fetchAllGifticonsUseCase
     }
     
     func request() {
-        searchGifticonUseCase.execute { [self] gifticons in
+        fetchAllGifticonsUseCase.execute { [self] gifticons in
             gifticonsInfo = gifticons
         }
     }

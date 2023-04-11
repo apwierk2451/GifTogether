@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SearchGifticonListUseCase {
+protocol FetchAllGifticonsUseCase {
     func execute(_ completion: @escaping ([Gifticon]) -> Void)
 }
 
-struct DefaultSearchGifticonListUseCase: SearchGifticonListUseCase {
+struct DefaultFetchAllGifticonsUseCase: FetchAllGifticonsUseCase {
     let gifticonRepository: GifticonRepository
     
     func execute(_ completion: @escaping ([Gifticon]) -> Void) {
