@@ -22,13 +22,14 @@ struct GridView: View {
                          NavigationLink {
                              DetailView(gifticon: gifticon)
                          } label: {
-                             GridGifticon(gifticon: gifticon, isHeart: false)
+                             GridGifticon(gifticon: gifticon)
                                  .padding()
                          }
                      }
                  }
             }
             .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

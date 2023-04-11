@@ -11,24 +11,51 @@ struct GifticonPurchase: View {
     var gifticon: Gifticon
     @State private var shouldShowSheetPresent = false
     @State private var shouldShowPaymentPresent = false
+    @State var favoriteCount: Int = 0
+    @State var isHeart: Bool = true
+    @EnvironmentObject var viewModel: FavoriteViewModel
     
     var body: some View {
         HStack {
             Button {
-                // TODO: 기프티콘 찜 개수 + 1
+                if isHeart {
+                    favoriteCount -= 1
+                    var changeGifticon = gifticon
+                    changeGifticon.favoriteCount = favoriteCount
+                    viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
+                    
+                    viewModel.deleteFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                } else {
+                    favoriteCount += 1
+                    var changeGifticon = gifticon
+                    changeGifticon.favoriteCount = favoriteCount
+                    viewModel.updateGifticonInfo(gifticonUUID: gifticon.uuid, to: changeGifticon)
+                    
+                    viewModel.addFavoriteGifticon(gifticonUUID: gifticon.uuid)
+                }
+                isHeart.toggle()
             } label: {
                 VStack {
-                    Image(systemName: "heart")
-                    Text("23")
+                    Image(systemName: isHeart ? "heart.fill" : "heart")
+                    Text("\(favoriteCount)")
                 }
             }
-            .foregroundColor(.gray)
+            .foregroundColor(.red)
             .frame(height: 20)
             .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(Color.gray, lineWidth: 1)
             )
+            .onAppear {
+                viewModel.checkFavortieGifticon(uuid: gifticon.uuid) { isHeart in
+                    self.isHeart = isHeart
+                }
+                favoriteCount = gifticon.favoriteCount
+                viewModel.fetchGifticonInfo(gifticonUUID: gifticon.uuid) { gifticon in
+                    favoriteCount = gifticon.favoriteCount
+                }
+            }
             
             Button {
                 self.shouldShowSheetPresent.toggle()
