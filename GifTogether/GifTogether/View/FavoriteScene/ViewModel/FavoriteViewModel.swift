@@ -29,15 +29,11 @@ final class FavoriteViewModel: ObservableObject {
         self.updateGifticonUseCase = updateGifticonUseCase
     }
     
-    func fetchUserInfo() {
-        filteredGifticons = []
-        fetchUserInfoUseCase.execute(with: userUID) { userInfo in
-            self.searchGifticonUseCase.execute { [weak self] gifticons in
-                gifticons.forEach { gifticon in
-                    if userInfo.favoriteList.contains(gifticon.uuid) {
-                        self?.filteredGifticons.append(gifticon)
-                    }
+    func fetchFavoriteGifticons() {
         if let userUID = userUID {
+            fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                self.fetchAllGifticonsUseCase.execute { [weak self] gifticons in
+                    self?.filteredGifticons = gifticons.filter { userInfo.favoriteList.contains($0.uuid) }
                 }
             }
         }
