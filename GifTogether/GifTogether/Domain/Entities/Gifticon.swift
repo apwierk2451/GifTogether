@@ -20,6 +20,7 @@ struct Gifticon: Entity {
     let imageURL: String
     let expirationDate: String
     let providerUID: String
+    var favoriteCount: Int
     
     func toDictionary() -> Dictionary<String, Any> {
         return [
@@ -32,7 +33,8 @@ struct Gifticon: Entity {
             "discountedPrice": discountedPrice,
             "imageURL": imageURL,
             "expirationDate": expirationDate,
-            "providerUID": providerUID
+            "providerUID": providerUID,
+            "favoriteCount": favoriteCount
         ]
     }
     
@@ -46,7 +48,8 @@ struct Gifticon: Entity {
               let discountedPrice = dic["discountedPrice"] as? String,
               let imageURL = dic["imageURL"] as? String,
               let expirationDate = dic["expirationDate"] as? String,
-              let providerUID = dic["providerUID"] as? String else {
+              let providerUID = dic["providerUID"] as? String,
+              let favoriteCount = dic["favoriteCount"] as? Int else {
             
             return .stub()
         }
@@ -60,7 +63,8 @@ struct Gifticon: Entity {
                         discountedPrice: discountedPrice,
                         imageURL: imageURL,
                         expirationDate: expirationDate,
-                        providerUID: providerUID)
+                        providerUID: providerUID,
+                        favoriteCount: favoriteCount)
     }
 }
 
@@ -76,7 +80,8 @@ extension Gifticon {
                      discountedPrice: String = "",
                      imageURL: String = "",
                      expirationDate: String = "",
-                     providerUID: String = "") -> Self {
+                     providerUID: String = "",
+                     favoriteCount: Int = 0) -> Self {
         .init(uuid: uuid,
               name: name,
               codeNumber: codeNumber,
@@ -86,6 +91,7 @@ extension Gifticon {
               discountedPrice: discountedPrice,
               imageURL: imageURL,
               expirationDate: expirationDate,
-              providerUID: providerUID)
+              providerUID: providerUID,
+              favoriteCount: favoriteCount)
     }
 }
