@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SettingView: View {
     @EnvironmentObject var viewModel: MyPageViewModel
-    @Binding var isMainViewPresented: Bool
-    @State var isEnableAlarm: Bool = false
+    @State var isEnableAlarm = UIApplication.shared.isRegisteredForRemoteNotifications
     @State var showLogoutAlert: Bool = false
     @State var showDeleteAccountAlert: Bool = false
     @State var showDeleteAccountSuccessAlert: Bool = false
+    @Binding var isMainViewPresented: Bool
     
     var body: some View {
         VStack() {
@@ -26,6 +26,15 @@ struct SettingView: View {
                 ) {
                     Toggle(isOn: $isEnableAlarm) {
                         Text("이벤트/ 마케팅 알림")
+                    }
+                    .onChange(of: isEnableAlarm) { newValue in
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                        // MARK: 알림 설정 값 수정이 되는지 확인 후 구현하기
+//                        if newValue {
+//                            UIApplication.shared.registerForRemoteNotifications()
+//                        } else {
+//                            UIApplication.shared.unregisterForRemoteNotifications()
+//                        }
                     }
                 }
                 
