@@ -41,7 +41,8 @@ final class DefaultCreateUserUseCase: CreateUserUseCase {
                 uuid: userUID,
                 name: vendorName,
                 email: email,
-                phoneNumber: phoneNumber
+                phoneNumber: phoneNumber,
+                favoriteList: []
             )
             
             self?.userInfoRepository.create(userInfo)

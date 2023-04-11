@@ -14,13 +14,15 @@ struct UserInfo: Entity {
     let name: String
     let email: String
     let phoneNumber: String
+    var favoriteList: [String]
     
     func toDictionary() -> Dictionary<String, Any> {
         return [
             "uuid": uuid,
             "name": name,
             "email": email,
-            "phoneNumber": phoneNumber
+            "phoneNumber": phoneNumber,
+            "favoriteList": favoriteList
         ]
     }
     
@@ -28,14 +30,16 @@ struct UserInfo: Entity {
         guard let uuid = dic["uuid"] as? String,
               let name = dic["name"] as? String,
               let email = dic["email"] as? String,
-              let phoneNumber = dic["phoneNumber"] as? String else {
+              let phoneNumber = dic["phoneNumber"] as? String,
+              let favoriteList = dic["favoriteList"] as? [String] else {
             return .stub()
         }
         
         return UserInfo(uuid: uuid,
                         name: name,
                         email: email,
-                        phoneNumber: phoneNumber)
+                        phoneNumber: phoneNumber,
+                        favoriteList: favoriteList)
     }
 }
 
@@ -44,10 +48,12 @@ extension UserInfo {
     static func stub(uuid: String = "",
                      name: String = "",
                      email: String = "",
-                     phoneNumber: String = "") -> Self {
+                     phoneNumber: String = "",
+                     favoriteList: [String] = []) -> Self {
         .init(uuid: uuid,
               name: name,
               email: email,
-              phoneNumber: phoneNumber)
+              phoneNumber: phoneNumber,
+              favoriteList: favoriteList)
     }
 }
