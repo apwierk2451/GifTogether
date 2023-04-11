@@ -29,7 +29,10 @@ final class DIContainer {
     
     // MARK: - MyPage ViewModel
     func makeMyPageViewModel() -> MyPageViewModel {
-        return MyPageViewModel(fetchUserInfoUseCase: makeFetchUserInfoUseCase())
+        return MyPageViewModel(
+            fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
+            deleteAccountUseCase: makeDeleteAccountUseCase()
+        )
     }
     
     // MARK: - Search ViewModel
@@ -81,6 +84,13 @@ final class DIContainer {
     func makeDeleteAllGifticonQueriesUseCase() -> DeleteAllGifticonQueriesUseCase {
         return DefaultDeleteAllGifticonQueriesUseCase(
             gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeDeleteAccountUseCase() -> DeleteAccountUseCase {
+        return DefaultDeleteAccountUseCase(
+            firebaseAuthService: makeFirebaseAuthService(),
+            userInfoRepository: makeUserInfoRepository()
         )
     }
     

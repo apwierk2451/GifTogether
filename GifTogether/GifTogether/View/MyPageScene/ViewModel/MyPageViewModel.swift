@@ -9,11 +9,16 @@ import Combine
 
 final class MyPageViewModel: ObservableObject {
     private let fetchUserInfoUseCase: FetchUseInfoUseCase
+    private let deleteAccountUseCase: DeleteAccountUseCase
     
     @Published var userInfo: UserInfo = .stub()
     
-    init(fetchUserInfoUseCase: FetchUseInfoUseCase) {
+    init(
+        fetchUserInfoUseCase: FetchUseInfoUseCase,
+        deleteAccountUseCase: DeleteAccountUseCase
+    ) {
         self.fetchUserInfoUseCase = fetchUserInfoUseCase
+        self.deleteAccountUseCase = deleteAccountUseCase
     }
     
     func fetchUserInfo() {
@@ -22,6 +27,14 @@ final class MyPageViewModel: ObservableObject {
         }
         fetchUserInfoUseCase.execute(with: userUID) { userInfo in
             self.userInfo = userInfo
+        }
+    }
+    
+    func deleteAccount(_ completion: @escaping () -> Void) {
+        deleteAccountUseCase.execute { result in
+            if result == true {
+                completion()
+            }
         }
     }
 }

@@ -67,13 +67,15 @@ struct LoginView: View {
                 
                 NormalButton(isValid: isValidButton, title: "로그인")
                     .onTapGesture {
+                        hideKeyboard()
                         showLoading = true
                         tryLogin()
                     }
                     .disabled(!isValidButton.wrappedValue)
                 
                 NavigationLink(isActive: $shouldShowSignupView) {
-                    SignupView(shouldShowSignupView:$shouldShowSignupView).environmentObject(viewModel)
+                    SignupView(shouldShowSignupView:$shouldShowSignupView)
+                        .environmentObject(viewModel)
                 } label: {
                     Text("회원가입")
                 }
@@ -87,17 +89,22 @@ struct LoginView: View {
                 .disabled(true)
                 
                 Spacer()
+                
+                ToastMessage(isSuccessAlert: false, message: "사용자 정보가 존재하지 않습니다.")
+                    .scaleEffect(showError ? 1.0 : 0.0)
+                    .animation(.ripple(), value: showError)
+                    .onChange(of: showError) { isShowError in
+                        guard isShowError else { return }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            showError = false
+                        }
+                    }
             }
             .padding(.top, 100)
         }
         .overlay {
             if showLoading && !viewModel.isSuccessLogin {
                 ProgressView().controlSize(.large)
-            }
-        }
-        .alert("사용자 정보가 존재하지 않습니다.", isPresented: $showError) {
-            Button("OK", role: .cancel) {
-                showError = false
             }
         }
         .navigationBarBackButtonHidden()

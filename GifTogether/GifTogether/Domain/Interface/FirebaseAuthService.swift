@@ -15,6 +15,8 @@ protocol FirebaseAuthService {
                password: String,
                _ completion: @escaping (String?) -> Void)
     func fetchUserUID() throws -> String
+    
+    func deleteAccount()
 }
 
 enum FirebaseAuthServiceError: LocalizedError {
