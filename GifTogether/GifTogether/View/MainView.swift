@@ -11,6 +11,7 @@ struct MainView: View {
     @State private var selection: Tab = .home
     @StateObject private var homeViewModel = DIContainer().makeHomeViewModel()
     @StateObject private var myPageViewModel = DIContainer().makeMyPageViewModel()
+    @StateObject private var favoriteViewModel = DIContainer().makeFavoriteViewModel()
     @StateObject private var searchViewModel = DIContainer().makeSearchViewModel()
     
     @Binding var logout: Bool
@@ -38,6 +39,7 @@ struct MainView: View {
                 .tag(Tab.search)
 
             FavoriteView()
+                .environmentObject(favoriteViewModel)
                 .tabItem {
                     Image(systemName: "heart")
                 }

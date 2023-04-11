@@ -44,6 +44,16 @@ final class DIContainer {
         )
     }
     
+    func makeFavoriteViewModel() -> FavoriteViewModel {
+        return FavoriteViewModel(
+            fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
+            searchGifticonUseCase: makeSearchGifticonUseCase(),
+            updateUserInfoUseCase: makeFavoriteUseCase(),
+            updateGifticonUseCase: makeUpdateGifticonUsecase()
+        )
+    }
+    
+    
     // MARK: - UseCases
     func makeLoginUseCase() -> LoginUseCase {
         return DefaultLoginUseCase(firebaseAuthService: makeFirebaseAuthService())
@@ -68,6 +78,12 @@ final class DIContainer {
         )
     }
     
+    func makeFavoriteUseCase() -> UpdateUserInfoUseCase {
+        return DefaultUpdateUserInfoUseCase(
+            userInfoRepository: makeUserInfoRepository()
+        )
+    }
+    
     func makeSearchGifticonUseCase() -> SearchGifticonUseCase {
         return DefaultSearchGifticonUseCase(
             gifticonRepository: makeGifticonRepository(),
@@ -84,6 +100,12 @@ final class DIContainer {
     func makeDeleteAllGifticonQueriesUseCase() -> DeleteAllGifticonQueriesUseCase {
         return DefaultDeleteAllGifticonQueriesUseCase(
             gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeUpdateGifticonUsecase() -> UpdateGifticonUseCase {
+        return DefaultUpdateGifticonUseCase(
+            gifticonRepository: makeGifticonRepository()
         )
     }
     

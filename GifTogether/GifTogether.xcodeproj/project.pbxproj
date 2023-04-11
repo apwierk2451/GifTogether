@@ -11,9 +11,12 @@
 		7609DD2529C844C200C9CCBB /* PaymentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2429C844C200C9CCBB /* PaymentPrice.swift */; };
 		7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2629C8493100C9CCBB /* PaymentButton.swift */; };
 		7609DD2929C8564200C9CCBB /* ExDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7609DD2829C8564200C9CCBB /* ExDivider.swift */; };
+		762A506129E3E2AC00317450 /* UpdateGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */; };
 		76311D6029D17F5B008555D5 /* FilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76311D5F29D17F5B008555D5 /* FilterBar.swift */; };
 		76311D6229D17F77008555D5 /* GridGifticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76311D6129D17F77008555D5 /* GridGifticon.swift */; };
 		76311D6429D17F92008555D5 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76311D6329D17F92008555D5 /* GridView.swift */; };
+		76817F1729DC2C8B0034232F /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76817F1629DC2C8B0034232F /* FavoriteViewModel.swift */; };
+		76817F1929DD825C0034232F /* UpdateUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */; };
 		76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AE829B1F9F8009428DA /* GifTogetherApp.swift */; };
 		76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76853AEA29B1F9F8009428DA /* ContentView.swift */; };
 		76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76853AEC29B1F9F8009428DA /* Assets.xcassets */; };
@@ -259,6 +262,14 @@
 			path = GridView;
 			sourceTree = "<group>";
 		};
+		76817F1529DC2C790034232F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76817F1629DC2C8B0034232F /* FavoriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +419,7 @@
 		AF0AD2D429C074D100EBAC5E /* FavoriteScene */ = {
 			isa = PBXGroup;
 			children = (
+				76817F1529DC2C790034232F /* ViewModel */,
 				AF0AD2D629C0752100EBAC5E /* View */,
 			);
 			path = FavoriteScene;
@@ -534,6 +546,8 @@
 				AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */,
 				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
 				AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */,
+				76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */,
+				762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -870,6 +884,8 @@
 				AF6C035C29D59AC80023FE23 /* GifticonQueriesRepository.swift in Sources */,
 				76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */,
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
+				762A506129E3E2AC00317450 /* UpdateGifticonUseCase.swift in Sources */,
+				76817F1929DD825C0034232F /* UpdateUserInfoUseCase.swift in Sources */,
 				AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */,
 				AF7CFD2E29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift in Sources */,
 				AFD0908129DB023C002A3CA6 /* View+.swift in Sources */,
@@ -878,6 +894,7 @@
 				AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */,
 				AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */,
 				76311D6429D17F92008555D5 /* GridView.swift in Sources */,
+				76817F1729DC2C8B0034232F /* FavoriteViewModel.swift in Sources */,
 				AF7AE96329D56A7A00002135 /* GifticonQuery.swift in Sources */,
 				76311D6229D17F77008555D5 /* GridGifticon.swift in Sources */,
 				76BFE81D29C06931005B01E5 /* HomeViewModel.swift in Sources */,
@@ -1052,7 +1069,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RF7GLLKTJB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1082,7 +1099,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RF7GLLKTJB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
