@@ -18,8 +18,10 @@ struct HomeView: View {
                 CategoryRow(items: Category.allCases)
                     .padding(.top)
                     .listRowInsets(EdgeInsets())
-                GifticonRow(categoryName: "추천상품",
-                            items: homeViewModel.gifticonsInfo)
+                GifticonRow(
+                    categoryName: "추천상품",
+                    items: homeViewModel.gifticonsInfo
+                )
                 .navigationTitle("GifTogether")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarItems(trailing: Image(systemName: "bell"))
