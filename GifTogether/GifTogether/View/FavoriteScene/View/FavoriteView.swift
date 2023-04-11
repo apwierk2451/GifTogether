@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    @EnvironmentObject var favoriteViewModel: FavoriteViewModel
+    
     var body: some View {
-        Text("FavoriteView")
+        NavigationView {
+            GridView(gifticons: favoriteViewModel.filteredGifticons, title: "찜한 상품")
+                .onAppear {
+                    favoriteViewModel.fetchUserInfo()
+                }
+        }
+        
     }
 }
 
