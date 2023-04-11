@@ -22,9 +22,7 @@ struct GifticonRow: View {
                         .font(.title)
                         .foregroundColor(.black)
                         .bold()
-                        .padding(.leading, 15)
                 }
-                .padding(.top)
                 .padding(.trailing)
             }
             ScrollView(.horizontal, showsIndicators: false) {
