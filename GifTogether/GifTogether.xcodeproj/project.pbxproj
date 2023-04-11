@@ -125,9 +125,12 @@
 		7609DD2429C844C200C9CCBB /* PaymentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPrice.swift; sourceTree = "<group>"; };
 		7609DD2629C8493100C9CCBB /* PaymentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButton.swift; sourceTree = "<group>"; };
 		7609DD2829C8564200C9CCBB /* ExDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDivider.swift; sourceTree = "<group>"; };
+		762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGifticonUseCase.swift; sourceTree = "<group>"; };
 		76311D5F29D17F5B008555D5 /* FilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBar.swift; sourceTree = "<group>"; };
 		76311D6129D17F77008555D5 /* GridGifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridGifticon.swift; sourceTree = "<group>"; };
 		76311D6329D17F92008555D5 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		76817F1629DC2C8B0034232F /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserInfoUseCase.swift; sourceTree = "<group>"; };
 		76853AE529B1F9F8009428DA /* GifTogether.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifTogether.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76853AE829B1F9F8009428DA /* GifTogetherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTogetherApp.swift; sourceTree = "<group>"; };
 		76853AEA29B1F9F8009428DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
