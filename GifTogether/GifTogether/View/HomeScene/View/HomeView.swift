@@ -11,21 +11,23 @@ struct HomeView: View {
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
-        List {
-            BannerView()
-                .listRowInsets(EdgeInsets())
-            CategoryRow(items: Category.allCases)
-                .padding(.top)
-                .listRowInsets(EdgeInsets())
-            GifticonRow(categoryName: "추천상품",
-                        items: homeViewModel.gifticonsInfo)
+        NavigationView {
+            List {
+                BannerView()
+                    .listRowInsets(EdgeInsets())
+                CategoryRow(items: Category.allCases)
+                    .padding(.top)
+                    .listRowInsets(EdgeInsets())
+                GifticonRow(categoryName: "추천상품",
+                            items: homeViewModel.gifticonsInfo)
+                .navigationTitle("GifTogether")
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing: Image(systemName: "bell"))
+                .navigationBarBackButtonHidden()
+            }
             .listRowInsets(EdgeInsets())
+            .listStyle(.inset)
         }
-        .listStyle(.inset)
-        .navigationTitle("GifTogether")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(trailing: Image(systemName: "bell"))
-        .navigationBarBackButtonHidden()
         .task {
             homeViewModel.request()
         }
