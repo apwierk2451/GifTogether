@@ -13,6 +13,7 @@ final class FavoriteViewModel: ObservableObject {
     private let fetchAllGifticonsUseCase: FetchAllGifticonsUseCase
     private let updateUserInfoUseCase: UpdateUserInfoUseCase
     private let updateGifticonUseCase: UpdateGifticonUseCase
+    private let userUID = UserDefaults.standard.object(forKey: "userUID") as? String
     
     @Published var filteredGifticons: [Gifticon] = []
     
@@ -29,9 +30,6 @@ final class FavoriteViewModel: ObservableObject {
     }
     
     func fetchUserInfo() {
-        guard let userUID = UserDefaults.standard.object(forKey: "userUID") as? String else {
-            return
-        }
         filteredGifticons = []
         fetchUserInfoUseCase.execute(with: userUID) { userInfo in
             self.searchGifticonUseCase.execute { [weak self] gifticons in
@@ -39,36 +37,14 @@ final class FavoriteViewModel: ObservableObject {
                     if userInfo.favoriteList.contains(gifticon.uuid) {
                         self?.filteredGifticons.append(gifticon)
                     }
+        if let userUID = userUID {
                 }
             }
         }
     }
     
-    func addFavoriteGifticon(gifticonUUID: String) {
-        guard let userUID = UserDefaults.standard.object(forKey: "userUID") as? String else {
-            return
-        }
-        fetchUserInfoUseCase.execute(with: userUID) { userInfo in
-            var changeUserInfo = userInfo
-            changeUserInfo.favoriteList.append(gifticonUUID)
-            self.updateUserInfoUseCase.execute(userUID: userUID, userInfo: changeUserInfo)
-        }
-    }
-    
-    func deleteFavoriteGifticon(gifticonUUID: String) {
-        guard let userUID = UserDefaults.standard.object(forKey: "userUID") as? String else {
-            return
-        }
-        fetchUserInfoUseCase.execute(with: userUID) { userInfo in
-            var changeUserInfo = userInfo
-            let changeFavoriteList = userInfo.favoriteList.filter { $0 != gifticonUUID }
-            changeUserInfo.favoriteList = changeFavoriteList
-            self.updateUserInfoUseCase.execute(userUID: userUID, userInfo: changeUserInfo)
-        }
-    }
-    
     func checkFavortieGifticon(uuid: String, completion: @escaping (Bool) -> Void) {
-        if let userUID = UserDefaults.standard.object(forKey: "userUID") as? String {
+        if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in
                 if userInfo.favoriteList.contains(uuid) {
                     completion(true)
@@ -88,5 +64,26 @@ final class FavoriteViewModel: ObservableObject {
     
     func updateGifticonInfo(gifticonUUID: String, to gifticon: Gifticon) {
         updateGifticonUseCase.execute(gifticonUUID: gifticonUUID, gifticon: gifticon)
+    }
+    
+    private func addFavoriteGifticon(gifticonUUID: String) {
+        if let userUID = userUID {
+            fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                var changeUserInfo = userInfo
+                changeUserInfo.favoriteList.append(gifticonUUID)
+                self.updateUserInfoUseCase.execute(userUID: userUID, userInfo: changeUserInfo)
+            }
+        }
+    }
+    
+    private func deleteFavoriteGifticon(gifticonUUID: String) {
+        if let userUID = userUID {
+            fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                var changeUserInfo = userInfo
+                let changeFavoriteList = userInfo.favoriteList.filter { $0 != gifticonUUID }
+                changeUserInfo.favoriteList = changeFavoriteList
+                self.updateUserInfoUseCase.execute(userUID: userUID, userInfo: changeUserInfo)
+            }
+        }
     }
 }
