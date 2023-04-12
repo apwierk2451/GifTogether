@@ -26,7 +26,7 @@ struct GridTestView: View {
                             NavigationLink(isActive: $shouldShowDetailView) {
                                 DetailView(gifticon: gifticon)
                             } label: {
-                                GridGifticon(gifticon: gifticon, isHeart: false)
+                                GridGifticon(gifticon: gifticon)
                                     .padding()
                             }
                         }

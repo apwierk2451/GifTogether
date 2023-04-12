@@ -10,6 +10,7 @@ import SwiftUI
 struct GridGifticonItem: View {
     var gifticon: Gifticon
     @Binding var isHeart: Bool
+    @EnvironmentObject var viewModel: FavoriteViewModel
     
     var body: some View {
         VStack {
@@ -27,7 +28,13 @@ struct GridGifticonItem: View {
                         Spacer()
                         
                         Button {
+                            if isHeart {
+                                viewModel.didTappedDeleteFavoriteButton(to: gifticon)
+                            } else {
+                                viewModel.didTappedAddFavoriteButton(to: gifticon)
+                            }
                             isHeart.toggle()
+                            viewModel.fetchFavoriteGifticons()
                         } label: {
                             Image(systemName: isHeart ? "heart.fill" : "heart")
                                 .foregroundColor(.pink)

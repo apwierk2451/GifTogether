@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     var gifticon: Gifticon
-    
+    var favoriteViewModel = DIContainer().makeFavoriteViewModel()    
     var body: some View {
         VStack {
             ScrollView {
@@ -17,6 +17,7 @@ struct DetailView: View {
                     .listRowInsets(EdgeInsets())
             }
             GifticonPurchase(gifticon: gifticon)
+                .environmentObject(favoriteViewModel)
                 .navigationTitle("상세보기")
                 .navigationBarTitleDisplayMode(.inline)
         }

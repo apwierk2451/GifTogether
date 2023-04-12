@@ -50,7 +50,7 @@ struct FilterBar: View {
                 ForEach(Filter.allCases, id: \.self) { filter in
                     Button {
                         self.filter = filter
-                        shouldShowSheetPresent.toggle()
+                        shouldShowSheetPresent = false
                     } label: {
                         Text("\(filter.rawValue)")
                             .padding()

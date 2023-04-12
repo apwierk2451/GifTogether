@@ -24,7 +24,7 @@ final class DIContainer {
     
     // MARK: - Home ViewModel
     func makeHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(searchGifticonUseCase: makeSearchGifticonUseCase())
+        return HomeViewModel(fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase())
     }
     
     // MARK: - MyPage ViewModel
@@ -44,6 +44,15 @@ final class DIContainer {
         )
     }
     
+    func makeFavoriteViewModel() -> FavoriteViewModel {
+        return FavoriteViewModel(
+            fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
+            fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase(),
+            updateUserInfoUseCase: makeFavoriteUseCase(),
+            updateGifticonUseCase: makeUpdateGifticonUsecase()
+        )
+    }
+    
     // MARK: - UseCases
     func makeLoginUseCase() -> LoginUseCase {
         return DefaultLoginUseCase(firebaseAuthService: makeFirebaseAuthService())
@@ -56,14 +65,20 @@ final class DIContainer {
         )
     }
     
-    func makeSearchGifticonUseCase() -> SearchGifticonListUseCase {
-        return DefaultSearchGifticonListUseCase(
+    func makeFetchAllGifticonsUseCase() -> FetchAllGifticonsUseCase {
+        return DefaultFetchAllGifticonsUseCase(
             gifticonRepository: makeGifticonRepository()
         )
     }
     
     func makeFetchUserInfoUseCase() -> FetchUseInfoUseCase {
         return DefaultFetchUseInfoUseCase(
+            userInfoRepository: makeUserInfoRepository()
+        )
+    }
+    
+    func makeFavoriteUseCase() -> UpdateUserInfoUseCase {
+        return DefaultUpdateUserInfoUseCase(
             userInfoRepository: makeUserInfoRepository()
         )
     }
@@ -84,6 +99,12 @@ final class DIContainer {
     func makeDeleteAllGifticonQueriesUseCase() -> DeleteAllGifticonQueriesUseCase {
         return DefaultDeleteAllGifticonQueriesUseCase(
             gifticonQueriesRepository: makeGifticonQueriesRepository()
+        )
+    }
+    
+    func makeUpdateGifticonUsecase() -> UpdateGifticonUseCase {
+        return DefaultUpdateGifticonUseCase(
+            gifticonRepository: makeGifticonRepository()
         )
     }
     

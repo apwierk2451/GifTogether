@@ -19,7 +19,7 @@ struct GifticonItem: View {
             }
             .clipShape(Circle())
             .frame(width: 100, height: 100)
-            .shadow(radius: 10)
+            .shadow(radius: 4)
             
             VStack(alignment: .leading) {
                 Text(gifticon.brand.name)
