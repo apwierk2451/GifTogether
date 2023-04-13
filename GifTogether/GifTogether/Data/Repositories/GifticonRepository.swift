@@ -25,6 +25,7 @@ final class GifticonRepository: FirestoreRepository {
     func read(_ completion: @escaping ([Gifticon]?) -> Void) {
         db.collection(Gifticon.id).getDocuments { querySnapshot, error in
             if let error = error {
+                completion(nil)
                 print(error.localizedDescription)
             } else {
                 var gifticons = [Gifticon]()
@@ -36,6 +37,23 @@ final class GifticonRepository: FirestoreRepository {
                 completion(gifticons)
             }
         }
+    }
+    
+    func readOne(uuid: String, _ completion: @escaping (Gifticon?) -> Void) {
+        db.collection(Gifticon.id)
+            .document(uuid)
+            .getDocument { documentSnapshot, error in
+                guard error == nil else {
+                    completion(nil)
+                    return
+                }
+                guard let dic = documentSnapshot?.data() else {
+                    completion(nil)
+                    return
+                }
+                let gifticon = Gifticon.toEntity(dic: dic)
+                completion(gifticon)
+            }
     }
     
     func update(documentId: String, to modifiedEntity: Gifticon) {

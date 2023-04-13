@@ -12,6 +12,7 @@ protocol FirestoreRepository {
     
     func create(_ entity: T)
     func read(_ completion: @escaping ([T]?) -> Void)
+    func readOne(uuid: String, _ completion: @escaping (T?) -> Void)
     func update(documentId: String, to modifiedEntity: T)
     func delete(documentId: String)
 }
