@@ -21,8 +21,15 @@ struct CategoryView: View {
             CategoryList(category: $category)
             LazyVGrid(columns: columns) {
                 ForEach(category.brand, id: \.name) { brand in
-                    BrandLogo(brand: brand)
-                    // TODO: Brand의 상품들을 보여주는 GridView로 이동하는 NavigationLink연결
+                    NavigationLink {
+                        GridTestView(isFromCategoryView: true,
+                                     passedBrand: brand,
+                                     title: brand.name)
+                            .environmentObject(DIContainer().makeSearchViewModel())
+                        // TODO: searchViewModel이 추가적으로 사용되고 있다..
+                    } label: {
+                        BrandLogo(brand: brand)
+                    }
                 }
             }
             Spacer()
