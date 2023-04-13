@@ -32,6 +32,7 @@ final class FavoriteViewModel: ObservableObject {
     func fetchFavoriteGifticons() {
         if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                guard let userInfo = userInfo else { return }
                 self.fetchAllGifticonsUseCase.execute { [weak self] gifticons in
                     self?.filteredGifticons = gifticons.filter { userInfo.favoriteList.contains($0.uuid) }
                 }
@@ -42,6 +43,7 @@ final class FavoriteViewModel: ObservableObject {
     func checkFavortieGifticon(uuid: String, completion: @escaping (Bool) -> Void) {
         if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                guard let userInfo = userInfo else { return }
                 if userInfo.favoriteList.contains(uuid) {
                     completion(true)
                 } else {
@@ -81,6 +83,7 @@ final class FavoriteViewModel: ObservableObject {
     private func addFavoriteGifticon(gifticonUUID: String) {
         if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                guard let userInfo = userInfo else { return }
                 var changeUserInfo = userInfo
                 changeUserInfo.favoriteList.append(gifticonUUID)
                 self.updateUserInfoUseCase.execute(userUID: userUID, userInfo: changeUserInfo)
@@ -91,6 +94,7 @@ final class FavoriteViewModel: ObservableObject {
     private func deleteFavoriteGifticon(gifticonUUID: String) {
         if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in
+                guard let userInfo = userInfo else { return }
                 var changeUserInfo = userInfo
                 let changeFavoriteList = userInfo.favoriteList.filter { $0 != gifticonUUID }
                 changeUserInfo.favoriteList = changeFavoriteList
