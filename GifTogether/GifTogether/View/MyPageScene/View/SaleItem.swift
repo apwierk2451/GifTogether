@@ -8,15 +8,8 @@
 import SwiftUI
 
 struct SaleItem: View {
-    var gifticon = Gifticon.stub(
-        uuid: "123123",
-        name: "아메리카노",
-        codeNumber: "123",
-        brand: .starbucks,
-        category: .chicken,
-        originalPrice: "5000",
-        discountedPrice: "4500",
-        imageURL: "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/7/2/3/2/2/3/lgClf/4076723223_B.jpg")
+    var gifticon: Gifticon
+    
     var body: some View {
         VStack() {
             AsyncImage(url: URL(string:gifticon.imageURL)) { phase in
@@ -29,6 +22,7 @@ struct SaleItem: View {
                     Image(systemName: "nosign")
                         .resizable()
                         .scaledToFit()
+                        .scaleEffect(0.6)
                         .frame(width: 150, height: 150)
                 } else {
                     ProgressView()
@@ -57,6 +51,6 @@ struct SaleItem: View {
 
 struct SaleItem_Previews: PreviewProvider {
     static var previews: some View {
-        SaleItem()
+        SaleItem(gifticon: .stub())
     }
 }

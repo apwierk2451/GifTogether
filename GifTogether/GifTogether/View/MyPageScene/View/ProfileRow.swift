@@ -38,6 +38,11 @@ struct ProfileRow: View {
 
 struct ProfileRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileRow(userInfo: UserInfo(uuid: "", name: "wongbing", email: "wb233@naver.com", phoneNumber: "01012341212", favoriteList: []))
+        ProfileRow(
+            userInfo: UserInfo(uuid: "", name: "wongbing",
+                               email: "wb233@naver.com",
+                               phoneNumber: "01012341212",
+                               favoriteList: [],
+                               salesList: []))
     }
 }
