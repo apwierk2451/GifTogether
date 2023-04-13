@@ -19,7 +19,7 @@ struct SearchView: View {
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 
                 NavigationLink(isActive: $shouldShowNextView) {
-                    GridTestView(title: searchText)
+                    GridTestView(isFromCategoryView: false, title: searchText)
                 } label: {
                     EmptyView()
                 }
@@ -34,6 +34,7 @@ struct SearchView: View {
                     ) { gifticonQuery in
                         NavigationLink {
                             GridTestView(
+                                isFromCategoryView: false,
                                 title: gifticonQuery.query
                             )
                         } label: {

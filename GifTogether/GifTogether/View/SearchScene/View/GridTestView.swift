@@ -9,8 +9,10 @@ import SwiftUI
 
 struct GridTestView: View {
     @EnvironmentObject var viewModel: SearchViewModel
+    @State var isFromCategoryView: Bool
     @State var isCompleteLoading: Bool = false
     @State var shouldShowDetailView: Bool = false
+    var passedBrand: Brand? = nil
 
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     var title: String
@@ -43,8 +45,14 @@ struct GridTestView: View {
             }
         }
         .task {
-            viewModel.search(text: title, maxCount: 10) {
-                isCompleteLoading = true
+            if isFromCategoryView {
+                viewModel.search(brand: passedBrand ?? .bbq) {
+                    isCompleteLoading = true
+                }
+            } else {
+                viewModel.search(text: title, maxCount: 10) {
+                    isCompleteLoading = true
+                }
             }
         }
         .onDisappear {
@@ -58,7 +66,7 @@ struct GridTestView_Previews: PreviewProvider {
     static var gifticons = [Gifticon.stub()]
     
     static var previews: some View {
-        GridTestView(title: "추천상품")
+        GridTestView(isFromCategoryView: true, title: "추천상품")
             .environmentObject(DIContainer().makeSearchViewModel())
     }
 }
