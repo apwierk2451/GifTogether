@@ -58,7 +58,7 @@ struct HomeView: View {
                             .scaleEffect(showHiddenMenu ? 1.0 : 0)
                             .animation(.ripple(), value: showHiddenMenu)
                             .sheet(isPresented: $showModal) {
-                                RegisterView(shouldPresent: $showModal)
+                                CategorySelectView(shouldPresent: $showModal)
                             }
                             .onTapGesture {
                                 showModal = true

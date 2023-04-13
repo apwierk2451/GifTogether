@@ -18,6 +18,7 @@ struct BrandLogo: View {
                 .frame(width: 80, height: 80)
             Text(brand.name)
                 .font(.headline)
+                .foregroundColor(.secondary)
         }
         .padding()
         .background(Color(uiColor: .white))

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     var gifticon: Gifticon
-    var favoriteViewModel = DIContainer().makeFavoriteViewModel()    
+    var favoriteViewModel = DIContainer().makeFavoriteViewModel()
     var body: some View {
         VStack {
             ScrollView {
