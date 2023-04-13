@@ -7,7 +7,7 @@
 
 protocol FetchUseInfoUseCase {
     func execute(with userUID: String,
-                 _ completion: @escaping (UserInfo) -> Void)
+                 _ completion: @escaping (UserInfo?) -> Void)
 }
 
 final class DefaultFetchUseInfoUseCase: FetchUseInfoUseCase {
@@ -18,13 +18,9 @@ final class DefaultFetchUseInfoUseCase: FetchUseInfoUseCase {
     }
     
     func execute(with userUID: String,
-                 _ completion: @escaping (UserInfo) -> Void) {
-        
-        userInfoRepository.read { userInfoList in
-            if let userInfoList = userInfoList {
-                let userInfo = userInfoList.filter { $0.uuid == userUID }[0]
-                completion(userInfo)
-            }
+                 _ completion: @escaping (UserInfo?) -> Void) {
+        userInfoRepository.readOne(uuid: userUID) { userInfo in
+            completion(userInfo)
         }
     }
 }
