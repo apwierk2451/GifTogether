@@ -20,11 +20,10 @@ struct DefaultRegisterGifticonUseCase: RegisterGifticonUseCase {
         guard let userUID = UserDefaults.standard.string(forKey: "userUID") else {
             return
         }
-        userInfoRepository.read { userInfoList in
-            guard let userInfoList = userInfoList else { return }
-            var fetchedUserInfo = userInfoList.filter { $0.uuid == userUID }[0]
-            fetchedUserInfo.salesList.append(item.uuid)
-            userInfoRepository.update(documentId: userUID, to: fetchedUserInfo)
+        userInfoRepository.readOne(uuid: userUID) { userInfo in
+            guard var userInfo = userInfo else { return }
+            userInfo.salesList.append(item.uuid)
+            userInfoRepository.update(documentId: userUID, to: userInfo)
         }
     }
 }
