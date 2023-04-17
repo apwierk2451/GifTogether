@@ -94,7 +94,6 @@
 		AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */; };
 		AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */; };
 		AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */; };
-		AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */; };
 		AFD0908129DB023C002A3CA6 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0908029DB023C002A3CA6 /* View+.swift */; };
 		AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */; };
 		AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */; };
@@ -218,7 +217,6 @@
 		AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRepository.swift; sourceTree = "<group>"; };
-		AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTestView.swift; sourceTree = "<group>"; };
 		AFD0908029DB023C002A3CA6 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirebaseAuthService.swift; sourceTree = "<group>"; };
 		AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -288,8 +286,6 @@
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
-				AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */,
-				AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */,
 				76853AE729B1F9F8009428DA /* GifTogether */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
@@ -462,7 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				76BFE81029C06930005B01E5 /* SearchView.swift */,
-				AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,6 +538,8 @@
 				76BFE82A29C06CFE005B01E5 /* Category.swift */,
 				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
 				AF7AE96229D56A7A00002135 /* GifticonQuery.swift */,
+				AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */,
+				AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -953,7 +950,6 @@
 				AFD0908129DB023C002A3CA6 /* View+.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
-				AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */,
 				AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */,
 				76311D6429D17F92008555D5 /* GridView.swift in Sources */,
 				76817F1729DC2C8B0034232F /* FavoriteViewModel.swift in Sources */,
