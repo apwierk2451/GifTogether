@@ -10,6 +10,7 @@ import Foundation
 final class SearchViewModel: ObservableObject {
     
     private let searchGifticonUseCase: SearchGifticonUseCase
+    private let searchBrandUseCase: SearchBrandUseCase
     private let fetchRecentGifticonQueriesUseCase: FetchRecentGifticonQueriesUseCase
     private let deleteAllGifticonQueriesUseCase: DeleteAllGifticonQueriesUseCase
     
@@ -18,10 +19,12 @@ final class SearchViewModel: ObservableObject {
     
     init(
         searchGifticonUseCase: SearchGifticonUseCase,
+        searchBrandUseCase: SearchBrandUseCase,
         fetchRecentGifticonQueriesUseCase: FetchRecentGifticonQueriesUseCase,
         deleteAllGifticonQueriesUseCase: DeleteAllGifticonQueriesUseCase
     ) {
         self.searchGifticonUseCase = searchGifticonUseCase
+        self.searchBrandUseCase = searchBrandUseCase
         self.fetchRecentGifticonQueriesUseCase = fetchRecentGifticonQueriesUseCase
         self.deleteAllGifticonQueriesUseCase = deleteAllGifticonQueriesUseCase
         updateQuery(maxCount: 10)
@@ -29,6 +32,20 @@ final class SearchViewModel: ObservableObject {
     
     func search(text: String, maxCount: Int, _ completion: @escaping () -> Void ) {
         searchGifticonUseCase.execute(searchText: text) { [weak self] result in
+            switch result {
+            case .success(let result):
+                self?.searchedGifticon = result
+                completion()
+            case .failure(let error):
+                self?.searchedGifticon = []
+                completion()
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func search(brand: Brand, _ completion: @escaping () -> Void) {
+        searchBrandUseCase.execute(searchBrand: brand) { [weak self] result in
             switch result {
             case .success(let result):
                 self?.searchedGifticon = result

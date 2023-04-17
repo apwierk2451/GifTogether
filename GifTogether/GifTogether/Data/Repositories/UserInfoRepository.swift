@@ -38,6 +38,23 @@ final class UserInfoRepository: FirestoreRepository {
         }
     }
     
+    func readOne(uuid: String, _ completion: @escaping (UserInfo?) -> Void) {
+        db.collection(UserInfo.id)
+            .document(uuid)
+            .getDocument { documentSnapshot, error in
+                guard error == nil else {
+                    completion(nil)
+                    return
+                }
+                guard let dic = documentSnapshot?.data() else {
+                    completion(nil)
+                    return
+                }
+                let userInfo = UserInfo.toEntity(dic: dic)
+                completion(userInfo)
+            }
+    }
+    
     func update(documentId: String, to modifiedEntity: UserInfo) {
         db.collection(UserInfo.id)
             .document(documentId)

@@ -52,9 +52,6 @@ struct MainView: View {
                 }
                 .tag(Tab.profile)
         }
-        .onAppear {
-            myPageViewModel.fetchUserInfo()
-        }
     }
 }
 

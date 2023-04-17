@@ -15,45 +15,65 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText, shouldShowNextView: $shouldShowNextView)
+                SearchBar(text: $searchText,
+                          shouldShowNextView: $shouldShowNextView,
+                          viewModel: viewModel)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 
+                Text(viewModel.searchQueries.isEmpty ? "최근 검색어 없음" : "최근 검색어 목록")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(
+                            searchText == "" ? viewModel.searchQueries : viewModel.searchQueries.filter { $0.query.hasPrefix(searchText)},
+                            id: \.id
+                        ) { gifticonQuery in
+                            Text(gifticonQuery.query)
+                                .padding(.leading)
+                                .padding(.trailing)
+                                .padding(.top, 5)
+                                .padding(.bottom, 5)
+                                .background(Color(.secondarySystemBackground))
+                                .cornerRadius(8)
+                                .onTapGesture {
+                                    viewModel.search(text: gifticonQuery.query, maxCount: 10) {
+                                        searchText = gifticonQuery.query
+                                        shouldShowNextView = true
+                                    }
+                                }
+                        }
+                    }
+                }
+                .padding()
+                .onChange(of: shouldShowNextView) { newValue in
+                    guard newValue == false else {
+                        return
+                    }
+                    viewModel.updateQuery(maxCount: 10)
+                }
+                
+                if searchText == "" && viewModel.searchQueries.isEmpty == false {
+                    HStack {
+                        Spacer()
+                        Button("히스토리 삭제") {
+                            viewModel.deleteAllGifticonQueries()
+                        }
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                        Spacer()
+                    }
+                    .padding()
+                }
+                
+                Spacer()
+                
                 NavigationLink(isActive: $shouldShowNextView) {
-                    GridTestView(title: searchText)
+                    GridView(gifticons: viewModel.searchedGifticon,title: searchText)
                 } label: {
                     EmptyView()
                 }
-                
-                List {
-                    Text(viewModel.searchQueries.isEmpty ? "최근 검색어 없음" : "최근 검색어 목록")
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                    ForEach(
-                        searchText == "" ? viewModel.searchQueries : viewModel.searchQueries.filter { $0.query.hasPrefix(searchText)},
-                        id: \.id
-                    ) { gifticonQuery in
-                        NavigationLink {
-                            GridTestView(
-                                title: gifticonQuery.query
-                            )
-                        } label: {
-                            Text(gifticonQuery.query)
-                        }
-                    }
-                    
-                    if searchText == "" && viewModel.searchQueries.isEmpty == false {
-                        HStack {
-                            Spacer()
-                            Button("히스토리 삭제") {
-                                viewModel.deleteAllGifticonQueries()
-                            }
-                            .font(.subheadline)
-                            .foregroundColor(.red)
-                            Spacer()
-                        }
-                    }
-                }
-                .listStyle(PlainListStyle())
             }
             .navigationTitle("기프티콘 검색")
             .navigationBarTitleDisplayMode(.inline)

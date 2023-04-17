@@ -15,6 +15,7 @@ struct UserInfo: Entity {
     let email: String
     let phoneNumber: String
     var favoriteList: [String]
+    var salesList: [String]
     
     func toDictionary() -> Dictionary<String, Any> {
         return [
@@ -22,7 +23,8 @@ struct UserInfo: Entity {
             "name": name,
             "email": email,
             "phoneNumber": phoneNumber,
-            "favoriteList": favoriteList
+            "favoriteList": favoriteList,
+            "salesList": salesList
         ]
     }
     
@@ -31,7 +33,8 @@ struct UserInfo: Entity {
               let name = dic["name"] as? String,
               let email = dic["email"] as? String,
               let phoneNumber = dic["phoneNumber"] as? String,
-              let favoriteList = dic["favoriteList"] as? [String] else {
+              let favoriteList = dic["favoriteList"] as? [String],
+              let salesList = dic["salesList"] as? [String] else {
             return .stub()
         }
         
@@ -39,7 +42,8 @@ struct UserInfo: Entity {
                         name: name,
                         email: email,
                         phoneNumber: phoneNumber,
-                        favoriteList: favoriteList)
+                        favoriteList: favoriteList,
+                        salesList: salesList)
     }
 }
 
@@ -49,11 +53,14 @@ extension UserInfo {
                      name: String = "",
                      email: String = "",
                      phoneNumber: String = "",
-                     favoriteList: [String] = []) -> Self {
+                     favoriteList: [String] = [],
+                     salesList: [String] = []) -> Self {
+        
         .init(uuid: uuid,
               name: name,
               email: email,
               phoneNumber: phoneNumber,
-              favoriteList: favoriteList)
+              favoriteList: favoriteList,
+              salesList: salesList)
     }
 }

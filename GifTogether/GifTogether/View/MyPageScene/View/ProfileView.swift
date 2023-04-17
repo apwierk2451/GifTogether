@@ -30,7 +30,10 @@ struct ProfileView: View {
                         .foregroundColor(.secondary)
                         .font(.title3)
                     
-                    SaleGifticonList()
+                    SaleGifticonList(salesList: viewModel.salesList)
+                }
+                .onAppear {
+                    viewModel.fetchUserInfo()
                 }
                 .navigationTitle("마이페이지")
                 .navigationBarTitleDisplayMode(.inline)

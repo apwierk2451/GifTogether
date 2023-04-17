@@ -11,14 +11,24 @@ final class HomeViewModel: ObservableObject {
     @Published var gifticonsInfo: [Gifticon] = []
     
     private let fetchAllGifticonsUseCase: FetchAllGifticonsUseCase
+    private let registerGifticonUseCase: RegisterGifticonUseCase
     
-    init(fetchAllGifticonsUseCase: FetchAllGifticonsUseCase) {
+    init(
+        fetchAllGifticonsUseCase: FetchAllGifticonsUseCase,
+        registerGifticonUseCase: RegisterGifticonUseCase
+    ) {
         self.fetchAllGifticonsUseCase = fetchAllGifticonsUseCase
+        self.registerGifticonUseCase = registerGifticonUseCase
     }
     
     func request() {
         fetchAllGifticonsUseCase.execute { [self] gifticons in
             gifticonsInfo = gifticons
         }
+    }
+    
+    func register(gifticon: Gifticon, _ completion: @escaping () -> Void) {
+        registerGifticonUseCase.execute(with: gifticon)
+        completion()
     }
 }

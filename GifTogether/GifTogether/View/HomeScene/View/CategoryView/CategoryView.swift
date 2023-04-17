@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CategoryView: View {
+    private let viewModel = DIContainer().makeSearchViewModel()
     @State var category: Category
+    @State private var brandName: String = ""
+    @State private var shouldShowNextView: Bool = false
     
     var columns = [
         GridItem(spacing: 0),
@@ -17,12 +20,22 @@ struct CategoryView: View {
     ]
     
     var body: some View {
+        NavigationLink(isActive: $shouldShowNextView) {
+            GridView(gifticons: viewModel.searchedGifticon, title: brandName)
+        } label: {
+            EmptyView()
+        }
         VStack {
             CategoryList(category: $category)
             LazyVGrid(columns: columns) {
                 ForEach(category.brand, id: \.name) { brand in
                     BrandLogo(brand: brand)
-                    // TODO: Brand의 상품들을 보여주는 GridView로 이동하는 NavigationLink연결
+                        .onTapGesture {
+                            viewModel.search(brand: brand) {
+                                brandName = brand.name
+                                shouldShowNextView = true
+                            }
+                        }
                 }
             }
             Spacer()

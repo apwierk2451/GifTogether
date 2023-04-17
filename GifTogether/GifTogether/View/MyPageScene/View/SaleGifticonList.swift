@@ -8,18 +8,7 @@
 import SwiftUI
 
 struct SaleGifticonList: View {
-    var salesList: [Gifticon] = Array(
-        repeating: Gifticon.stub(uuid: "123123",
-                                 name: "아메리카노",
-                                 codeNumber: "123",
-                                 brand: .starbucks,
-                                 category: .chicken,
-                                 originalPrice: "5000",
-                                 discountedPrice: "4500",
-                                 imageURL: "https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/pd/v2/7/2/3/2/2/3/lgClf/4076723223_B.jpg"),
-        count: 9
-    )
-        
+    var salesList: [Gifticon]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -27,7 +16,8 @@ struct SaleGifticonList: View {
                 
                 ForEach(salesList, id: \.uuid) { gifticon in
                     NavigationLink {
-                        // TODO: DetailView
+                        // TODO: 삭제/수정을 수행할 수 있는 메뉴 보이도록 DetailView 설정
+                        DetailView(gifticon: gifticon)
                     } label: {
                         SaleItem(gifticon: gifticon)
                     }
@@ -40,6 +30,11 @@ struct SaleGifticonList: View {
 
 struct SaleGifticonList_Previews: PreviewProvider {
     static var previews: some View {
-        SaleGifticonList()
+        SaleGifticonList(
+            salesList: [.stub(uuid: "", name: "테스트", codeNumber: "123",
+                              brand: .bbq, category: .bakery, originalPrice: "200",
+                              discountedPrice: "130", imageURL: "",
+                              expirationDate: "2022-12-12", providerUID: "",
+                              favoriteCount: 2)])
     }
 }

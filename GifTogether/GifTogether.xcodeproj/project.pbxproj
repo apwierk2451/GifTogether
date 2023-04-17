@@ -71,14 +71,20 @@
 		AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C80B29B9C45C00FBC6E9 /* API.swift */; };
 		AF95C80E29B9C5BC00FBC6E9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C80D29B9C5BC00FBC6E9 /* APIClient.swift */; };
 		AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */; };
-		AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */; };
+		AF95C81529B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81429B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift */; };
 		AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81729B9D0AE00FBC6E9 /* Entity.swift */; };
 		AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */; };
 		AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81B29B9D2AB00FBC6E9 /* APIConfiguration.swift */; };
 		AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C81D29B9D31100FBC6E9 /* APIError.swift */; };
 		AF9790F629C57AA5009AB08D /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9790F529C57AA5009AB08D /* ProfileRow.swift */; };
 		AF98867229CD3A8000F85EE4 /* BrandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF98867129CD3A8000F85EE4 /* BrandLogo.swift */; };
+		AF9BE08329E6919E008E7540 /* BrandSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BE08029E6919E008E7540 /* BrandSelectView.swift */; };
+		AF9BE08429E6919E008E7540 /* GifticonRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BE08129E6919E008E7540 /* GifticonRegisterView.swift */; };
+		AF9BE08529E6919E008E7540 /* CategorySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BE08229E6919E008E7540 /* CategorySelectView.swift */; };
+		AF9BE08729E6A9F3008E7540 /* FetchGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9BE08629E6A9F3008E7540 /* FetchGifticonUseCase.swift */; };
 		AF9C26C629C0502F00AE1144 /* FetchUseInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */; };
+		AFA48ACA29E3F9FB0025DB61 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA48AC929E3F9FB0025DB61 /* DateManager.swift */; };
+		AFA48ACC29E406F10025DB61 /* SearchBrandUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA48ACB29E406F10025DB61 /* SearchBrandUseCase.swift */; };
 		AFA5EA0C29C6999A0041C1BD /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA0B29C6999A0041C1BD /* MyPageViewModel.swift */; };
 		AFA5EA0E29C6A3270041C1BD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA0D29C6A3270041C1BD /* SettingView.swift */; };
 		AFA5EA1029C6A5F20041C1BD /* AgreementOfUtilization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA0F29C6A5F20041C1BD /* AgreementOfUtilization.swift */; };
@@ -88,7 +94,6 @@
 		AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */; };
 		AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */; };
 		AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */; };
-		AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */; };
 		AFD0908129DB023C002A3CA6 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0908029DB023C002A3CA6 /* View+.swift */; };
 		AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */; };
 		AFD2E84F29C01E520081CBA4 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */; };
@@ -171,6 +176,7 @@
 		AF211D4E29CC25D50024F5F4 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
+		AF6A2C9929E003C9007DDEEA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesRepository.swift; sourceTree = "<group>"; };
 		AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGifticonQueriesRepository.swift; sourceTree = "<group>"; };
 		AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonUseCase.swift; sourceTree = "<group>"; };
@@ -188,14 +194,20 @@
 		AF95C80B29B9C45C00FBC6E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		AF95C80D29B9C5BC00FBC6E9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		AF95C81129B9CFDC00FBC6E9 /* FirestoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepository.swift; sourceTree = "<group>"; };
-		AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonListUseCase.swift; sourceTree = "<group>"; };
+		AF95C81429B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllGifticonsUseCase.swift; sourceTree = "<group>"; };
 		AF95C81729B9D0AE00FBC6E9 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterGifticonUseCase.swift; sourceTree = "<group>"; };
 		AF95C81B29B9D2AB00FBC6E9 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		AF95C81D29B9D31100FBC6E9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		AF9790F529C57AA5009AB08D /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		AF98867129CD3A8000F85EE4 /* BrandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandLogo.swift; sourceTree = "<group>"; };
+		AF9BE08029E6919E008E7540 /* BrandSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandSelectView.swift; sourceTree = "<group>"; };
+		AF9BE08129E6919E008E7540 /* GifticonRegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifticonRegisterView.swift; sourceTree = "<group>"; };
+		AF9BE08229E6919E008E7540 /* CategorySelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectView.swift; sourceTree = "<group>"; };
+		AF9BE08629E6A9F3008E7540 /* FetchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchGifticonUseCase.swift; sourceTree = "<group>"; };
 		AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUseInfoUseCase.swift; sourceTree = "<group>"; };
+		AFA48AC929E3F9FB0025DB61 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		AFA48ACB29E406F10025DB61 /* SearchBrandUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBrandUseCase.swift; sourceTree = "<group>"; };
 		AFA5EA0B29C6999A0041C1BD /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		AFA5EA0D29C6A3270041C1BD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		AFA5EA0F29C6A5F20041C1BD /* AgreementOfUtilization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementOfUtilization.swift; sourceTree = "<group>"; };
@@ -205,7 +217,6 @@
 		AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRepository.swift; sourceTree = "<group>"; };
-		AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTestView.swift; sourceTree = "<group>"; };
 		AFD0908029DB023C002A3CA6 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirebaseAuthService.swift; sourceTree = "<group>"; };
 		AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -213,6 +224,8 @@
 		AFD2E85229C0212D0081CBA4 /* UserInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRepository.swift; sourceTree = "<group>"; };
 		AFDFA32529C8190E00D456FE /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		AFDFA32729C8239900D456FE /* CategoryIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIndicator.swift; sourceTree = "<group>"; };
+		AFE8BA7729E14B6800B61F9D /* GifticonRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRegisterView.swift; sourceTree = "<group>"; };
+		AFF6EA1929E012F700C805C3 /* CategorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchView.swift; sourceTree = "<group>"; };
 		AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AFF8DC1429C427EA003FB914 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AFF8DC1629C43371003FB914 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -273,14 +286,13 @@
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
-				AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */,
-				AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */,
 				76853AE729B1F9F8009428DA /* GifTogether */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
 				76853B0229B1F9F9009428DA /* GifTogetherUITests */,
 				76853AE629B1F9F8009428DA /* Products */,
 				AF480EDE29BDF333000AEC8D /* Frameworks */,
+				AFC7396A29E68B7800B2F509 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +408,7 @@
 				AF98867329CD425600F85EE4 /* CategoryView */,
 				76BBE68A29E5477F005FC494 /* HomeView */,
 				76BBE68B29E5478E005FC494 /* DetailView */,
+				AF9BE07F29E6919E008E7540 /* RegisterView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,7 +458,6 @@
 			isa = PBXGroup;
 			children = (
 				76BFE81029C06930005B01E5 /* SearchView.swift */,
-				AFC6DAAC29D6DD1500D89601 /* GridTestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,6 +538,8 @@
 				76BFE82A29C06CFE005B01E5 /* Category.swift */,
 				AF7E181729B3201200BD3D61 /* UserInfo.swift */,
 				AF7AE96229D56A7A00002135 /* GifticonQuery.swift */,
+				AF1ECBDC29D573B2005F635D /* GifticonQueryEntity+CoreDataClass.swift */,
+				AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -557,8 +571,10 @@
 				AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */,
 				AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */,
 				AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */,
-				AF95C81429B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift */,
+				AF95C81429B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift */,
+				AF9BE08629E6A9F3008E7540 /* FetchGifticonUseCase.swift */,
 				AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */,
+				AFA48ACB29E406F10025DB61 /* SearchBrandUseCase.swift */,
 				AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */,
 				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
 				AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */,
@@ -585,6 +601,16 @@
 				AF98867129CD3A8000F85EE4 /* BrandLogo.swift */,
 			);
 			path = CategoryView;
+			sourceTree = "<group>";
+		};
+		AF9BE07F29E6919E008E7540 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				AF9BE08229E6919E008E7540 /* CategorySelectView.swift */,
+				AF9BE08029E6919E008E7540 /* BrandSelectView.swift */,
+				AF9BE08129E6919E008E7540 /* GifticonRegisterView.swift */,
+			);
+			path = RegisterView;
 			sourceTree = "<group>";
 		};
 		AFA5EA0A29C6998B0041C1BD /* ViewModel */ = {
@@ -649,6 +675,16 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		AFC7396A29E68B7800B2F509 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				AFF6EA1929E012F700C805C3 /* CategorySearchView.swift */,
+				AFE8BA7729E14B6800B61F9D /* GifticonRegisterView.swift */,
+				AF6A2C9929E003C9007DDEEA /* RegisterView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		AFD2E84B29C01E040081CBA4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +710,7 @@
 				76F1699E29DABF0C00A9923E /* HalfSheet.swift */,
 				AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */,
 				AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */,
+				AFA48AC929E3F9FB0025DB61 /* DateManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -858,6 +895,7 @@
 				AFF8DC1A29C43A21003FB914 /* String+.swift in Sources */,
 				AFA5EA1229C6A6370041C1BD /* PersonalInfomation.swift in Sources */,
 				AFF6EA1C29E0171A00C805C3 /* SearchBar.swift in Sources */,
+				AF9BE08329E6919E008E7540 /* BrandSelectView.swift in Sources */,
 				AFF8DC2229C44CE9003FB914 /* MainView.swift in Sources */,
 				76311D6029D17F5B008555D5 /* FilterBar.swift in Sources */,
 				AFA5EA1429C6CCF10041C1BD /* SaleGifticonList.swift in Sources */,
@@ -865,12 +903,13 @@
 				AFA5EA1029C6A5F20041C1BD /* AgreementOfUtilization.swift in Sources */,
 				76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */,
 				AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */,
-				AF95C81529B9D03B00FBC6E9 /* SearchGifticonListUseCase.swift in Sources */,
+				AF95C81529B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift in Sources */,
 				AFF8DC2029C446DE003FB914 /* LoginViewModel.swift in Sources */,
 				AF18058229BE077E00E181D2 /* FirebaseAuthService.swift in Sources */,
 				76853AE929B1F9F8009428DA /* GifTogetherApp.swift in Sources */,
 				76BFE81929C06931005B01E5 /* FavoriteView.swift in Sources */,
 				AF95C81C29B9D2AB00FBC6E9 /* APIConfiguration.swift in Sources */,
+				AFA48ACC29E406F10025DB61 /* SearchBrandUseCase.swift in Sources */,
 				AFA5EA0C29C6999A0041C1BD /* MyPageViewModel.swift in Sources */,
 				AF5A89A329DC3B8F004BDCBD /* DeleteAccountUseCase.swift in Sources */,
 				AF00628729CAD49100727953 /* CategoryView.swift in Sources */,
@@ -878,11 +917,13 @@
 				AFF8DC2429C453F5003FB914 /* DIContainer.swift in Sources */,
 				76BFE81B29C06931005B01E5 /* SearchView.swift in Sources */,
 				AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */,
+				AF9BE08729E6A9F3008E7540 /* FetchGifticonUseCase.swift in Sources */,
 				AFDFA32629C8190E00D456FE /* CategoryList.swift in Sources */,
 				AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */,
 				AFD2E85129C01E7D0081CBA4 /* CreateUserUseCase.swift in Sources */,
 				7687476D29C30A7E00F6067D /* DetailView.swift in Sources */,
 				76BFE81C29C06931005B01E5 /* BannerView.swift in Sources */,
+				AF9BE08529E6919E008E7540 /* CategorySelectView.swift in Sources */,
 				76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */,
 				AF1ECBDF29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift in Sources */,
 				AF95C81829B9D0AE00FBC6E9 /* Entity.swift in Sources */,
@@ -894,6 +935,7 @@
 				7609DD2329C843C000C9CCBB /* PaymentGifticon.swift in Sources */,
 				7609DD2529C844C200C9CCBB /* PaymentPrice.swift in Sources */,
 				AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */,
+				AFA48ACA29E3F9FB0025DB61 /* DateManager.swift in Sources */,
 				7609DD2729C8493100C9CCBB /* PaymentButton.swift in Sources */,
 				AF9790F629C57AA5009AB08D /* ProfileRow.swift in Sources */,
 				AFF8DC1529C427EA003FB914 /* LoginView.swift in Sources */,
@@ -902,12 +944,12 @@
 				AF95C81229B9CFDC00FBC6E9 /* FirestoreRepository.swift in Sources */,
 				762A506129E3E2AC00317450 /* UpdateGifticonUseCase.swift in Sources */,
 				76817F1929DD825C0034232F /* UpdateUserInfoUseCase.swift in Sources */,
+				AF9BE08429E6919E008E7540 /* GifticonRegisterView.swift in Sources */,
 				AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */,
 				AF7CFD2E29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift in Sources */,
 				AFD0908129DB023C002A3CA6 /* View+.swift in Sources */,
 				76BFE81E29C06931005B01E5 /* CategoryItem.swift in Sources */,
 				AF95C81E29B9D31100FBC6E9 /* APIError.swift in Sources */,
-				AFC6DAAD29D6DD1500D89601 /* GridTestView.swift in Sources */,
 				AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */,
 				76311D6429D17F92008555D5 /* GridView.swift in Sources */,
 				76817F1729DC2C8B0034232F /* FavoriteViewModel.swift in Sources */,
@@ -1085,7 +1127,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = RF7GLLKTJB;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1099,7 +1141,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1115,7 +1157,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = RF7GLLKTJB;
+				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1129,7 +1171,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether;
+				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

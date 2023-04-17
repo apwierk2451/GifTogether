@@ -24,13 +24,17 @@ final class DIContainer {
     
     // MARK: - Home ViewModel
     func makeHomeViewModel() -> HomeViewModel {
-        return HomeViewModel(fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase())
+        return HomeViewModel(
+            fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase(),
+            registerGifticonUseCase: makeRegisterGifticonUseCase()
+        )
     }
     
     // MARK: - MyPage ViewModel
     func makeMyPageViewModel() -> MyPageViewModel {
         return MyPageViewModel(
             fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
+            fetchGifticonUseCase: makeFetchGifticonUseCase(),
             deleteAccountUseCase: makeDeleteAccountUseCase()
         )
     }
@@ -39,6 +43,7 @@ final class DIContainer {
     func makeSearchViewModel() -> SearchViewModel {
         return SearchViewModel(
             searchGifticonUseCase: makeSearchGifticonUseCase(),
+            searchBrandUseCase: makeSearchBrandUseCase(),
             fetchRecentGifticonQueriesUseCase: makeFetchRecentGifticonQueriesUseCase(),
             deleteAllGifticonQueriesUseCase: makeDeleteAllGifticonQueriesUseCase()
         )
@@ -112,6 +117,25 @@ final class DIContainer {
         return DefaultDeleteAccountUseCase(
             firebaseAuthService: makeFirebaseAuthService(),
             userInfoRepository: makeUserInfoRepository()
+        )
+    }
+    
+    func makeRegisterGifticonUseCase() -> RegisterGifticonUseCase {
+        return DefaultRegisterGifticonUseCase(
+            userInfoRepository: makeUserInfoRepository(),
+            gifticonRepository: makeGifticonRepository()
+        )
+    }
+    
+    func makeSearchBrandUseCase() -> SearchBrandUseCase {
+        return DefaultSearchBrandUseCase(
+            gifticonRepository: makeGifticonRepository()
+        )
+    }
+    
+    func makeFetchGifticonUseCase() -> FetchGifticonUseCase {
+        return DefaultFetchGifticonUseCase(
+            gifticonRepository: makeGifticonRepository()
         )
     }
     
