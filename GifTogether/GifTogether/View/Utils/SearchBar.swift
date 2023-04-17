@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     @Binding var shouldShowNextView: Bool
+    var viewModel: SearchViewModel?
     
     var body: some View {
         HStack {
@@ -29,7 +30,9 @@ struct SearchBar: View {
                         }
                     }
                     .onSubmit {
-                        shouldShowNextView = true
+                        viewModel?.search(text: text, maxCount: 10) {
+                            shouldShowNextView = true
+                        }
                     }
                     .submitLabel(.search)
                 
