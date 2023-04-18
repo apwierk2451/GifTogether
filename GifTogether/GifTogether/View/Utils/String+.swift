@@ -36,4 +36,12 @@ extension String {
             return false
         }
     }
+    
+    func toDouble() -> Double {
+        return Double(self) ?? 0
+    }
+    
+    func toInt() -> Int {
+        return Int(self) ?? 0
+    }
 }
