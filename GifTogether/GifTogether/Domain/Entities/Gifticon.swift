@@ -8,6 +8,7 @@
 import Foundation
 
 struct Gifticon: Entity {
+    
     static let id: String = "gifticon"
     
     let uuid: String
@@ -21,6 +22,10 @@ struct Gifticon: Entity {
     let expirationDate: String
     let providerUID: String
     var favoriteCount: Int
+    
+    var discountRate: Int {
+        return Int(round((originalPrice.toDouble() - discountedPrice.toDouble()) / originalPrice.toDouble() * 100))
+    }
     
     func toDictionary() -> Dictionary<String, Any> {
         return [

@@ -58,7 +58,7 @@ struct GifticonDetail: View {
             .padding()
             
             HStack(spacing: 20) {
-                Text("\(50)%")
+                Text("\(gifticon.discountRate)%")
                     .foregroundColor(.red)
                 Text(gifticon.discountedPrice)
                 Text(gifticon.originalPrice)
