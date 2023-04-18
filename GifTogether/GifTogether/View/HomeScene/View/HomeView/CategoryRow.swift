@@ -24,6 +24,7 @@ struct CategoryRow: View {
                     ForEach(items, id: \.brand) { category in
                         NavigationLink {
                             CategoryView(category: category)
+                                .environmentObject(DIContainer().makeSearchViewModel())
                         } label: {
                             CategoryItem(category: category)
                         }
