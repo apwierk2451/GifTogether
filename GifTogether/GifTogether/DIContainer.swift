@@ -35,7 +35,8 @@ final class DIContainer {
         return MyPageViewModel(
             fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
             fetchGifticonUseCase: makeFetchGifticonUseCase(),
-            deleteAccountUseCase: makeDeleteAccountUseCase()
+            deleteAccountUseCase: makeDeleteAccountUseCase(),
+            deleteGifticonUseCase: makeDeleteGifticonUseCase()
         )
     }
     
@@ -69,6 +70,13 @@ final class DIContainer {
             firestoreService: makeUserInfoRepository()
         )
     }
+    
+    func makeDeleteGifticonUseCase() -> DeleteGifticonUseCase {
+           return DefaultDeleteGifticonUseCase(
+               gifticonRepository: makeGifticonRepository(),
+               userInfoRepository: makeUserInfoRepository()
+           )
+       }
     
     func makeFetchAllGifticonsUseCase() -> FetchAllGifticonsUseCase {
         return DefaultFetchAllGifticonsUseCase(
