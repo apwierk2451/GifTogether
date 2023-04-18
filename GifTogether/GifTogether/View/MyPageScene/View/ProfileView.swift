@@ -30,7 +30,7 @@ struct ProfileView: View {
                         .foregroundColor(.secondary)
                         .font(.title3)
                     
-                    SaleGifticonList(salesList: viewModel.salesList)
+                    SaleGifticonList()
                 }
                 .onAppear {
                     viewModel.fetchUserInfo()
