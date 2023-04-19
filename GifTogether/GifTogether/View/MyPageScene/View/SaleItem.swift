@@ -9,10 +9,12 @@ import SwiftUI
 
 struct SaleItem: View {
     var gifticon: Gifticon
+    @EnvironmentObject var viewModel: MyPageViewModel
+    @Binding var showDeleteAlert: Bool
     
     var body: some View {
         VStack() {
-            AsyncImage(url: URL(string:gifticon.imageURL)) { phase in
+            AsyncImage(url: URL(string: gifticon.imageURL)) { phase in
                 if let image = phase.image {
                     image
                         .resizable()
@@ -46,11 +48,37 @@ struct SaleItem: View {
         .background(Color(.systemBackground))
         .cornerRadius(16)
         .shadow(radius: 6)
+        .overlay {
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        showDeleteAlert = true
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                            .foregroundColor(.red)
+                            .alert("삭제 하시겠습니까?", isPresented: $showDeleteAlert) {
+                                Button("예", role: .cancel) {
+                                    viewModel.deleteGifticon(gifticonUUID: gifticon.uuid) {
+                                        viewModel.fetchUserInfo()
+                                        showDeleteAlert = false
+                                    }
+                                }
+                                Button("아니오", role: .destructive) {}
+                            }
+                            .padding()
+                    }
+                    
+                }
+                Spacer()
+            }
+        }
     }
 }
 
 struct SaleItem_Previews: PreviewProvider {
     static var previews: some View {
-        SaleItem(gifticon: .stub())
+        SaleItem(gifticon: .stub(), showDeleteAlert: .constant(false))
     }
 }

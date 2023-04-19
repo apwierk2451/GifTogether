@@ -9,14 +9,14 @@ import SwiftUI
 
 struct GifticonRow: View {
     var categoryName: String
-    var items: [Gifticon]
+    @Binding var items: [Gifticon]
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
                
                 NavigationLink {
-                    GridView(gifticons: items, title: categoryName)
+                    GridView(gifticons: $items, title: categoryName)
                 } label: {
                     Text(categoryName)
                         .font(.title)
@@ -53,7 +53,7 @@ struct GifticonRow_Previews: PreviewProvider {
     static var previews: some View {
         GifticonRow(
             categoryName: "추천상품",
-            items: gifticons
+            items: .constant(gifticons)
         )
     }
 }

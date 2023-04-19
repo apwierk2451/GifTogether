@@ -12,7 +12,7 @@ struct FavoriteView: View {
     
     var body: some View {
         NavigationView {
-            GridView(gifticons: favoriteViewModel.filteredGifticons, title: "찜한 상품")
+            GridView(gifticons: $favoriteViewModel.filteredGifticons, title: "찜한 상품")
         }
         .task {
             favoriteViewModel.fetchFavoriteGifticons()
