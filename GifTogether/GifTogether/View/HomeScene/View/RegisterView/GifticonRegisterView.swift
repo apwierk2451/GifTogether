@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Vision
+import VisionKit
 
 struct GifticonRegisterView: View {
     @EnvironmentObject var viewModel: HomeViewModel
@@ -60,6 +62,7 @@ struct GifticonRegisterView: View {
                         
                         self.pickedImage = Image(uiImage: image)
                         
+                        recognizeText(image: image)
                     }
                 }
             }
@@ -170,6 +173,43 @@ struct GifticonRegisterView: View {
             }
         }
         .padding()
+    }
+    
+    private func recognizeText(image: UIImage?) {
+        guard let cgImage = image?.cgImage else {
+            fatalError("could not get image")
+        }
+        
+        let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        let request = VNRecognizeTextRequest{ request, error in
+            
+            guard let observations = request.results as? [VNRecognizedTextObservation],
+                  error == nil else{
+                return
+            }
+            
+            let gifticonNumber = observations.filter {
+                $0.topCandidates(1).first!.string.isCodeNumber()
+            }.first?.topCandidates(1).first?.string
+
+            let expirationDate = observations.filter {
+                $0.topCandidates(1).first!.string.isDate()
+            }.first?.topCandidates(1).first?.string
+
+            guard let gifticonNumber = gifticonNumber,
+                  let expirationDate = expirationDate?.toDate() else { return }
+
+            codeNumberText = gifticonNumber
+            selectedDate = expirationDate
+        }
+            request.recognitionLanguages =  ["ko-KR"]
+            request.usesLanguageCorrection = true
+    
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
     }
 }
 
