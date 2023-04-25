@@ -23,6 +23,9 @@ struct GifticonRegisterView: View {
     @State private var expirationDateText: String = ""
     @State private var selectedDate: Date = Date()
     
+    @State private var showingImagePicker = false
+    @State var pickedImage: Image?
+    
     var category: Category
     var brand: Brand
     var isValidButton: Binding<Bool> {
@@ -45,6 +48,20 @@ struct GifticonRegisterView: View {
                     .cornerRadius(16)
                     .padding(.leading)
                     .padding(.trailing)
+                
+                Spacer()
+                
+                Button(action: {
+                    self.showingImagePicker.toggle()
+                }, label: {
+                    Text("Image Picker")
+                }).sheet(isPresented: $showingImagePicker) {
+                    ImagePicker(sourceType: .photoLibrary) { image in
+                        
+                        self.pickedImage = Image(uiImage: image)
+                        
+                    }
+                }
             }
             
             HStack {
