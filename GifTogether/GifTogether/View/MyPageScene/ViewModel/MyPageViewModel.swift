@@ -29,14 +29,20 @@ final class MyPageViewModel: ObservableObject {
     }
     
     private func fetchSalesList(with uuidList: [String]) {
-        guard uuidList.isEmpty == false else { return }
-        for uuid in uuidList {
-            fetchGifticonUseCase.execute(uuid: uuid) { [weak self] gifticon in
-                guard let gifticon = gifticon,
-                      self?.salesList.contains(where: { element in
-                          element.uuid == gifticon.uuid }) == false else { return }
+        guard uuidList.isEmpty == false else {
+            salesList = []
+            return
+        }
+        guard Set(uuidList) != Set(salesList.map { $0.uuid }) else { return }
+        if uuidList.count > salesList.count {
+            let addedUUID = Set(uuidList).subtracting(Set(salesList.map { $0.uuid }))
+            fetchGifticonUseCase.execute(uuid: addedUUID.first ?? "") { [weak self] gifticon in
+                guard let gifticon = gifticon else { return }
                 self?.salesList.append(gifticon)
             }
+        } else {
+            let deletedUUID = Set(salesList.map { $0.uuid }).subtracting(Set(uuidList))
+            salesList = salesList.filter { $0.uuid != deletedUUID.first ?? "" }
         }
     }
     
@@ -69,7 +75,6 @@ final class MyPageViewModel: ObservableObject {
             
             let changedsalesList = userInfo.salesList.filter { $0 != gifticonUUID }
             userInfo.salesList = changedsalesList
-            print(userInfo)
             self.deleteGifticonUseCase.execute(gifticonUUID: gifticonUUID, userInfo: userInfo) {
                 completion()
             }

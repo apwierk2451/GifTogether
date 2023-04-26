@@ -31,5 +31,6 @@ struct SaleGifticonList: View {
 struct SaleGifticonList_Previews: PreviewProvider {
     static var previews: some View {
         SaleGifticonList()
+            .environmentObject(DIContainer().makeMyPageViewModel())
     }
 }
