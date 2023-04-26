@@ -69,7 +69,6 @@ struct SaleItem: View {
                             }
                             .padding()
                     }
-                    
                 }
                 Spacer()
             }

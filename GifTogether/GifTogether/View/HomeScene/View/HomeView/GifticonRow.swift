@@ -22,6 +22,7 @@ struct GifticonRow: View {
                         .font(.title)
                         .foregroundColor(.black)
                         .bold()
+                        .padding()
                 }
                 .padding(.trailing)
             }
