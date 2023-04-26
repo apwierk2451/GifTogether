@@ -189,11 +189,11 @@ struct GifticonRegisterView: View {
             }
             
             let gifticonNumber = observations.filter {
-                $0.topCandidates(1).first!.string.isCodeNumber()
+                $0.topCandidates(1).first?.string.isCodeNumber() ?? false
             }.first?.topCandidates(1).first?.string
 
             let expirationDate = observations.filter {
-                $0.topCandidates(1).first!.string.isDate()
+                $0.topCandidates(1).first?.string.isDate() ?? false
             }.first?.topCandidates(1).first?.string
 
             guard let gifticonNumber = gifticonNumber,
