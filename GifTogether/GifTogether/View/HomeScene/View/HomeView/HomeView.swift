@@ -22,11 +22,11 @@ struct HomeView: View {
                     .listRowInsets(EdgeInsets())
                 GifticonRow(
                     categoryName: "추천상품",
-                    items: $homeViewModel.gifticonsInfo
+                    items: $homeViewModel.recommendGifticon
                 )
                 GifticonRow(
                     categoryName: "30% ❤️",
-                    items: $homeViewModel.gifticonsInfo
+                    items: $homeViewModel.mostDiscountGifticon
                 )
             }
             .listRowInsets(EdgeInsets())

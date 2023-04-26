@@ -47,8 +47,8 @@ struct GridGifticonItem: View {
                 Text(gifticon.brand.name)
                 Text(gifticon.name)
                 HStack {
-                    Text("\(gifticon.discountedPrice)원")
-                    Text("\(gifticon.originalPrice)원")
+                    Text("\(NumberManager.shared.toDecimal(gifticon.discountedPrice) ?? "0")원")
+                    Text("\(NumberManager.shared.toDecimal(gifticon.originalPrice) ?? "0")원")
                         .foregroundColor(.gray)
                         .strikethrough()
                 }

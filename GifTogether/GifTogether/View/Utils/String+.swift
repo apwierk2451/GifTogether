@@ -44,4 +44,23 @@ extension String {
     func toInt() -> Int {
         return Int(self) ?? 0
     }
+    
+    func isCodeNumber() -> Bool {
+        let codeNumberRegEx = "^[0-9]{4} [0-9]{4} [0-9]{4}$"
+        let codeNumberTest = NSPredicate(format: "SELF MATCHES %@", codeNumberRegEx)
+        return codeNumberTest.evaluate(with: self)
+    }
+    
+    func isDate() -> Bool {
+        let dateRegEx = "^2[0-9]{3}[가-힣] [0-1][0-9][가-힣] [0-9]{2}[가-힣]$"
+        let dateTest = NSPredicate(format: "SELF MATCHES %@", dateRegEx)
+        return dateTest.evaluate(with: self)
+    }
+    
+    func toDate() -> Date? {
+        let stringDate = self.replacingOccurrences(of: " ", with: "-").components(separatedBy: ["년", "월", "일"]).joined()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: stringDate)
+    }
 }
