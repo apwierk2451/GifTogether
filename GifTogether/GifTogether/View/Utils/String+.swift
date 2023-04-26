@@ -9,12 +9,6 @@ import Foundation
 
 extension String {
     
-    var toDecimal: String? {
-        let numberFommater: NumberFormatter = NumberFormatter()
-        numberFommater.numberStyle = .decimal
-        return numberFommater.string(for: Int(self))
-    }
-    
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+_]+@[A-Z0-9a-z.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)

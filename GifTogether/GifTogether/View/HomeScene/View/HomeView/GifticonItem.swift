@@ -28,7 +28,7 @@ struct GifticonItem: View {
                 Text(gifticon.name)
                     .font(.subheadline)
                     .foregroundColor(.black)
-                Text("\(gifticon.originalPrice.toDecimal ?? "0")원")
+                Text("\(NumberManager.shared.toDecimal(gifticon.originalPrice) ?? "0")원")
                     .font(.subheadline)
                     .foregroundColor(.black)
             }
