@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FilterBar: View {
-    var gifticons: [Gifticon]
-    @State private var filter: Filter = .최신순
+    @Binding var gifticons: [Gifticon]
+    @Binding var filter: Filter
     @State private var shouldShowSheetPresent = false
     
     var body: some View {
@@ -32,14 +32,6 @@ struct FilterBar: View {
             })
         }
         .padding()
-    }
-    
-    enum Filter: String, CaseIterable {
-        case 최신순
-        case 인기순
-        case 할인율순
-        case 낮은가격순
-        case 높은가격순
     }
     
     var filterSheet: some View {
@@ -67,7 +59,14 @@ struct FilterBar_Previews: PreviewProvider {
     static var gifticons = [Gifticon.stub()]
     
     static var previews: some View {
-        FilterBar(gifticons: gifticons)
+        FilterBar(gifticons: .constant(gifticons), filter: .constant(.마감임박순))
     }
 }
 
+enum Filter: String, CaseIterable {
+    case 마감임박순
+    case 인기순
+    case 할인율순
+    case 낮은가격순
+    case 높은가격순
+}

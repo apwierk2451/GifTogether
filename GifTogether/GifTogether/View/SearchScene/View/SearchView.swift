@@ -70,7 +70,7 @@ struct SearchView: View {
                 Spacer()
                 
                 NavigationLink(isActive: $shouldShowNextView) {
-                    GridView(gifticons: viewModel.searchedGifticon,title: searchText)
+                    GridView(gifticons: $viewModel.searchedGifticon,title: searchText)
                 } label: {
                     EmptyView()
                 }

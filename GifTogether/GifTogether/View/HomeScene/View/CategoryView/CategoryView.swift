@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryView: View {
-    private let viewModel = DIContainer().makeSearchViewModel()
+    @EnvironmentObject var viewModel: SearchViewModel
     @State var category: Category
     @State private var brandName: String = ""
     @State private var shouldShowNextView: Bool = false
@@ -21,7 +21,7 @@ struct CategoryView: View {
     
     var body: some View {
         NavigationLink(isActive: $shouldShowNextView) {
-            GridView(gifticons: viewModel.searchedGifticon, title: brandName)
+            GridView(gifticons: $viewModel.searchedGifticon, title: brandName)
         } label: {
             EmptyView()
         }

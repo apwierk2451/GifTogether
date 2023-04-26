@@ -22,11 +22,14 @@ struct HomeView: View {
                     .listRowInsets(EdgeInsets())
                 GifticonRow(
                     categoryName: "추천상품",
-                    items: homeViewModel.gifticonsInfo
+                    items: $homeViewModel.recommendGifticon
                 )
-                .padding(.top)
-                .listRowInsets(EdgeInsets())
+                GifticonRow(
+                    categoryName: "30% ❤️",
+                    items: $homeViewModel.mostDiscountGifticon
+                )
             }
+            .listRowInsets(EdgeInsets())
             .listStyle(.inset)
             .navigationTitle("GifTogether")
             .navigationBarTitleDisplayMode(.inline)
