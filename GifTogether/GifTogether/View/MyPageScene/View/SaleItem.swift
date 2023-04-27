@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SaleItem: View {
-    var gifticon: Gifticon
+    let gifticon: Gifticon
     @EnvironmentObject var viewModel: MyPageViewModel
     @Binding var showDeleteAlert: Bool
     
@@ -61,6 +61,7 @@ struct SaleItem: View {
                             .alert("삭제 하시겠습니까?", isPresented: $showDeleteAlert) {
                                 Button("예", role: .cancel) {
                                     viewModel.deleteGifticon(gifticonUUID: gifticon.uuid) {
+                                        print("SaleItem에서 지정되는 uuid: \(gifticon.uuid)")
                                         viewModel.fetchUserInfo()
                                         showDeleteAlert = false
                                     }

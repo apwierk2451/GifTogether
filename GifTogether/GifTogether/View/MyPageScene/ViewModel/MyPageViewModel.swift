@@ -36,9 +36,11 @@ final class MyPageViewModel: ObservableObject {
         guard Set(uuidList) != Set(salesList.map { $0.uuid }) else { return }
         if uuidList.count > salesList.count {
             let addedUUID = Set(uuidList).subtracting(Set(salesList.map { $0.uuid }))
-            fetchGifticonUseCase.execute(uuid: addedUUID.first ?? "") { [weak self] gifticon in
-                guard let gifticon = gifticon else { return }
-                self?.salesList.append(gifticon)
+            for uuid in addedUUID {
+                fetchGifticonUseCase.execute(uuid: uuid) { [weak self] gifticon in
+                    guard let gifticon = gifticon else { return }
+                    self?.salesList.append(gifticon)
+                }
             }
         } else {
             let deletedUUID = Set(salesList.map { $0.uuid }).subtracting(Set(uuidList))
@@ -66,10 +68,15 @@ final class MyPageViewModel: ObservableObject {
         }
     }
     
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "userUID")
+    }
+    
     func deleteGifticon(gifticonUUID: String, _ completion: @escaping () -> Void) {
         guard let userUID = UserDefaults.standard.object(forKey: "userUID") as? String else {
             return
         }
+        print(gifticonUUID)
         fetchUserInfoUseCase.execute(with: userUID) { userInfo in
             guard var userInfo = userInfo else { return }
             

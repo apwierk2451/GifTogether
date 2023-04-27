@@ -11,13 +11,22 @@ import Combine
 final class LoginViewModel: ObservableObject {
     private let loginUseCase: LoginUseCase
     private let createUserUseCase: CreateUserUseCase
+    private let verifyPhoneNumberUseCase: RequestVerificationCodeUseCase
+    private let verifyCodeUseCase: VerifyCodeUseCase
     
     @Published var isSuccessLogin: Bool = false
     @Published var isSuccessSignup: Bool = false
     
-    init(loginUseCase: LoginUseCase, createUserUseCase: CreateUserUseCase) {
+    init(
+        loginUseCase: LoginUseCase,
+        createUserUseCase: CreateUserUseCase,
+        verifyPhoneNumberUseCase: RequestVerificationCodeUseCase,
+        verifyCodeUseCase: VerifyCodeUseCase
+    ) {
         self.loginUseCase = loginUseCase
         self.createUserUseCase = createUserUseCase
+        self.verifyPhoneNumberUseCase = verifyPhoneNumberUseCase
+        self.verifyCodeUseCase = verifyCodeUseCase
     }
     
     func login(with email: String, password: String, _ completion: @escaping (Bool) -> Void) {
@@ -48,5 +57,21 @@ final class LoginViewModel: ObservableObject {
                 completion(false)
             }
         }
+    }
+    
+    func verifyPhoneNumber(phoneNumber: String,
+                           _ completion: @escaping (Bool) -> Void) {
+        verifyPhoneNumberUseCase.execute(
+            phoneNumber: phoneNumber,
+            completion
+        )
+    }
+    
+    func verifyCode(verificationCode: String,
+                    _ completion: @escaping (Bool) -> Void) {
+        verifyCodeUseCase.execute(
+            verificationCode: verificationCode,
+            completion
+        )
     }
 }

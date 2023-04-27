@@ -18,7 +18,9 @@ final class DIContainer {
     func makeLoginViewModel() -> LoginViewModel {
         return LoginViewModel(
             loginUseCase: makeLoginUseCase(),
-            createUserUseCase: makeCreateUserUseCase()
+            createUserUseCase: makeCreateUserUseCase(),
+            verifyPhoneNumberUseCase: makeVerifyPhoneNumberUseCase(),
+            verifyCodeUseCase: makeVerifyCodeUseCase()
         )
     }
     
@@ -144,6 +146,18 @@ final class DIContainer {
     func makeFetchGifticonUseCase() -> FetchGifticonUseCase {
         return DefaultFetchGifticonUseCase(
             gifticonRepository: makeGifticonRepository()
+        )
+    }
+    
+    func makeVerifyPhoneNumberUseCase() -> RequestVerificationCodeUseCase {
+        return DefaultRequestVerificationCodeUseCase(
+            firebaseAuthService: makeFirebaseAuthService()
+        )
+    }
+    
+    func makeVerifyCodeUseCase() -> VerifyCodeUseCase {
+        return DefaultVerifyCodeUseCase(
+            firebaseAuthService: makeFirebaseAuthService()
         )
     }
     

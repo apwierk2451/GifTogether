@@ -17,6 +17,12 @@ protocol FirebaseAuthService {
     func fetchUserUID() throws -> String
     
     func deleteAccount()
+    
+    func requestVerificationCode(to phoneNumber: String,
+                _ completion: @escaping (Bool) -> Void)
+    
+    func verifyCode(verificationCode: String,
+                    _ completion: @escaping (Bool) -> Void)
 }
 
 enum FirebaseAuthServiceError: LocalizedError {
