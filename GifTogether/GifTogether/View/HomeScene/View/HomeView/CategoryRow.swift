@@ -27,8 +27,8 @@ struct CategoryRow: View {
                                 .environmentObject(DIContainer().makeSearchViewModel())
                         } label: {
                             CategoryItem(category: category)
+                                .padding()
                         }
-                        .padding()
                     }
                 }
             }
