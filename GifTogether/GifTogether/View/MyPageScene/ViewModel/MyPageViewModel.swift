@@ -36,9 +36,11 @@ final class MyPageViewModel: ObservableObject {
         guard Set(uuidList) != Set(salesList.map { $0.uuid }) else { return }
         if uuidList.count > salesList.count {
             let addedUUID = Set(uuidList).subtracting(Set(salesList.map { $0.uuid }))
-            fetchGifticonUseCase.execute(uuid: addedUUID.first ?? "") { [weak self] gifticon in
-                guard let gifticon = gifticon else { return }
-                self?.salesList.append(gifticon)
+            for uuid in addedUUID {
+                fetchGifticonUseCase.execute(uuid: uuid) { [weak self] gifticon in
+                    guard let gifticon = gifticon else { return }
+                    self?.salesList.append(gifticon)
+                }
             }
         } else {
             let deletedUUID = Set(salesList.map { $0.uuid }).subtracting(Set(uuidList))

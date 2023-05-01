@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SaleGifticonList: View {
     @EnvironmentObject var viewModel: MyPageViewModel
-    @State var showDeleteAlert: Bool = false
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -19,7 +18,7 @@ struct SaleGifticonList: View {
                     NavigationLink {
                         DetailView(gifticon: gifticon)
                     } label: {
-                        SaleItem(gifticon: gifticon, showDeleteAlert: $showDeleteAlert)
+                        SaleItem(gifticon: gifticon)
                     }
                     .padding()
                 }

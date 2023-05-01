@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SaleItem: View {
-    var gifticon: Gifticon
+    let gifticon: Gifticon
     @EnvironmentObject var viewModel: MyPageViewModel
-    @Binding var showDeleteAlert: Bool
+    @State private var showDeleteAlert: Bool = false
     
     var body: some View {
         VStack() {
@@ -21,10 +21,10 @@ struct SaleItem: View {
                         .scaledToFit()
                         .frame(width: 150, height: 150)
                 } else if phase.error != nil || phase.image == nil {
-                    Image(systemName: "nosign")
+                    Image("placeholder")
                         .resizable()
                         .scaledToFit()
-                        .scaleEffect(0.6)
+                        .scaleEffect(0.7)
                         .frame(width: 150, height: 150)
                 } else {
                     ProgressView()
@@ -78,6 +78,6 @@ struct SaleItem: View {
 
 struct SaleItem_Previews: PreviewProvider {
     static var previews: some View {
-        SaleItem(gifticon: .stub(), showDeleteAlert: .constant(false))
+        SaleItem(gifticon: .stub())
     }
 }
