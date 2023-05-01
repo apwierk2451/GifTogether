@@ -14,10 +14,21 @@ struct GridGifticonItem: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: gifticon.imageURL)) { image in
-                    image.resizable()
-            } placeholder: {
-                ProgressView()
+            AsyncImage(url: URL(string: gifticon.imageURL)) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                } else if phase.error != nil || phase.image == nil {
+                    Image("placeholder")
+                        .resizable()
+                        .scaledToFit()
+                        .scaleEffect(0.7)
+                        .frame(width: 150, height: 150)
+                } else {
+                    ProgressView()
+                }
             }
             .frame(width: 100, height: 100)
             .cornerRadius(16)

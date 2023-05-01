@@ -32,8 +32,10 @@ struct GifticonRegisterView: View {
     var brand: Brand
     var isValidButton: Binding<Bool> {
         .init {
-            nameText.isEmpty == false && codeNumberText.isEmpty == false &&
-            originalPriceText.isEmpty == false && discountedPriceText.isEmpty == false
+            nameText.isEmpty == false &&
+            codeNumberText.isEmpty == false &&
+            originalPriceText.isEmpty == false &&
+            discountedPriceText.isEmpty == false
         } set: { _ in
             
         }
@@ -151,7 +153,11 @@ struct GifticonRegisterView: View {
                         showSuccessAlert = true
                     }
                 }
+                .disabled(!isValidButton.wrappedValue)
             Spacer()
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .overlay {
             if showProgress {

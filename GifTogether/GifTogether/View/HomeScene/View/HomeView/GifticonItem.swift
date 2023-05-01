@@ -12,10 +12,17 @@ struct GifticonItem: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: gifticon.imageURL)) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
+            AsyncImage(url: URL(string: gifticon.imageURL)) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                } else if phase.error != nil || phase.image == nil {
+                    Image("placeholder")
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    ProgressView()
+                }
             }
             .clipShape(Circle())
             .frame(width: 100, height: 100)
