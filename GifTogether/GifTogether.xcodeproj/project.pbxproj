@@ -54,13 +54,13 @@
 		AF211D4F29CC25D50024F5F4 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF211D4E29CC25D50024F5F4 /* Brand.swift */; };
 		AF480EE029BDF333000AEC8D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF480EDF29BDF333000AEC8D /* FirebaseFirestore */; };
 		AF556C6E29DEBFB7001FF7D6 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */; };
-		AF590AC029F9FA6D00E8266C /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF590ABF29F9FA6D00E8266C /* UIApplication+.swift */; };
 		AF5A89A329DC3B8F004BDCBD /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */; };
 		AF6C035C29D59AC80023FE23 /* GifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */; };
 		AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */; };
 		AF6C036029D59C800023FE23 /* SearchGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */; };
 		AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */; };
 		AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */; };
+		AF6F4BBB29FFB91A0091D3BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */; };
 		AF7AE95B29D50EA900002135 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */; };
 		AF7AE95E29D50ED400002135 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */; };
 		AF7AE96129D56A1700002135 /* GifticonQueriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */; };
@@ -181,7 +181,6 @@
 		AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+Mapping.swift"; sourceTree = "<group>"; };
 		AF211D4E29CC25D50024F5F4 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
-		AF590ABF29F9FA6D00E8266C /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
 		AF6A2C9929E003C9007DDEEA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesRepository.swift; sourceTree = "<group>"; };
@@ -189,6 +188,7 @@
 		AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonUseCase.swift; sourceTree = "<group>"; };
 		AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecentGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
+		AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesStorage.swift; sourceTree = "<group>"; };
@@ -292,6 +292,7 @@
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
+				AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */,
 				76853AE729B1F9F8009428DA /* GifTogether */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
@@ -713,7 +714,6 @@
 			children = (
 				AFF8DC1929C43A21003FB914 /* String+.swift */,
 				AFD0908029DB023C002A3CA6 /* View+.swift */,
-				AF590ABF29F9FA6D00E8266C /* UIApplication+.swift */,
 				76F1699E29DABF0C00A9923E /* HalfSheet.swift */,
 				AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */,
 				AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */,
@@ -859,6 +859,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76853AF029B1F9F8009428DA /* Preview Assets.xcassets in Resources */,
+				AF6F4BBB29FFB91A0091D3BD /* GoogleService-Info.plist in Resources */,
 				76BFE82629C069C4005B01E5 /* categories.json in Resources */,
 				76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */,
 			);
@@ -928,7 +929,6 @@
 				AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */,
 				AF9BE08729E6A9F3008E7540 /* FetchGifticonUseCase.swift in Sources */,
 				AFDFA32629C8190E00D456FE /* CategoryList.swift in Sources */,
-				AF590AC029F9FA6D00E8266C /* UIApplication+.swift in Sources */,
 				762F648929F8FE14002C3401 /* NumberManager.swift in Sources */,
 				AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */,
 				AFD2E85129C01E7D0081CBA4 /* CreateUserUseCase.swift in Sources */,
