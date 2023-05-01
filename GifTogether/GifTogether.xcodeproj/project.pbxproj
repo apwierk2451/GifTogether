@@ -68,7 +68,6 @@
 		AF7CFD2E29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */; };
 		AF7D02EF29BB085500878A91 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AF7D02EE29BB085500878A91 /* FirebaseAuth */; };
 		AF7D02F129BB085500878A91 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AF7D02F029BB085500878A91 /* FirebaseFirestore */; };
-		AF7D02F329BB220600878A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF7D02F229BB220600878A91 /* GoogleService-Info.plist */; };
 		AF7E181629B3137A00BD3D61 /* Gifticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181529B3137A00BD3D61 /* Gifticon.swift */; };
 		AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7E181729B3201200BD3D61 /* UserInfo.swift */; };
 		AF95C80C29B9C45C00FBC6E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95C80B29B9C45C00FBC6E9 /* API.swift */; };
@@ -194,7 +193,6 @@
 		AF7AE96229D56A7A00002135 /* GifticonQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQuery.swift; sourceTree = "<group>"; };
 		AF7AE96529D56B4000002135 /* CoreDataGifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGifticonQueriesStorage.swift; sourceTree = "<group>"; };
 		AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
-		AF7D02F229BB220600878A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AF7E181529B3137A00BD3D61 /* Gifticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gifticon.swift; sourceTree = "<group>"; };
 		AF7E181729B3201200BD3D61 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		AF95C80B29B9C45C00FBC6E9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 		76853AE729B1F9F8009428DA /* GifTogether */ = {
 			isa = PBXGroup;
 			children = (
-				AF7D02F229BB220600878A91 /* GoogleService-Info.plist */,
 				76853AE829B1F9F8009428DA /* GifTogetherApp.swift */,
 				AFF8DC2329C453F5003FB914 /* DIContainer.swift */,
 				AFC0E8C329B9A20F004CD1E5 /* View */,
@@ -861,7 +858,6 @@
 				76853AF029B1F9F8009428DA /* Preview Assets.xcassets in Resources */,
 				76BFE82629C069C4005B01E5 /* categories.json in Resources */,
 				76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */,
-				AF7D02F329BB220600878A91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
