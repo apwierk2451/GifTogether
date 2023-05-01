@@ -13,11 +13,17 @@ struct GifticonDetail: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                AsyncImage(url: URL(string: gifticon.imageURL)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
-                }
+                AsyncImage(url: URL(string: gifticon.imageURL)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                    } else if phase.error != nil || phase.image == nil {
+                        Image("placeholder")
+                            .resizable()
+                    } else {
+                        ProgressView()
+                    }
+                } 
                 .frame(height: 350)
                 .cornerRadius(10)
                 
