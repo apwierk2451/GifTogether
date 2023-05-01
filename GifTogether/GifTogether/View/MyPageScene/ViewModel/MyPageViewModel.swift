@@ -68,6 +68,10 @@ final class MyPageViewModel: ObservableObject {
         }
     }
     
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "userUID")
+    }
+    
     func deleteGifticon(gifticonUUID: String, _ completion: @escaping () -> Void) {
         guard let userUID = UserDefaults.standard.object(forKey: "userUID") as? String else {
             return

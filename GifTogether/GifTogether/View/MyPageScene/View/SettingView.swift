@@ -64,6 +64,7 @@ struct SettingView: View {
                     .foregroundColor(.black)
                     .alert("로그아웃 하시겠습니까?", isPresented: $showLogoutAlert) {
                         Button("예", role: .cancel) {
+                            viewModel.logout()
                             isMainViewPresented = false
                         }
                         Button("아니오", role: .destructive) {}
