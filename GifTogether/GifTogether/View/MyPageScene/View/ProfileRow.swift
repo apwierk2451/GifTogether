@@ -23,8 +23,6 @@ struct ProfileRow: View {
                 Text(userInfo.name)
                     .font(.title2)
                     .bold()
-                Text("거래내역 : 2건")
-                Text("총 판매금액 : 9,400원")
             }
             .padding(.trailing, 60)
         }
