@@ -5,7 +5,7 @@
 //  Created by 이은찬 on 2023/03/10.
 //
 
-import SwiftUI
+import Combine
 
 final class HomeViewModel: ObservableObject {
     @Published var gifticonsInfo: [Gifticon] = []

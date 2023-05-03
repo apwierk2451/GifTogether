@@ -19,7 +19,7 @@ struct FilterBar: View {
             Spacer()
             
             Button {
-                self.shouldShowSheetPresent.toggle()
+                self.shouldShowSheetPresent = true
             } label: {
                 Text("\(filter.rawValue)")
                 
@@ -27,9 +27,11 @@ struct FilterBar: View {
                     .rotationEffect(Angle(degrees: 270))
             }
             .foregroundColor(.black)
-            .halfSheet(showSheet: $shouldShowSheetPresent, sheetView: {
+            .halfSheet(showSheet: $shouldShowSheetPresent) {
                 filterSheet
-            })
+            } onDismiss: {
+                self.shouldShowSheetPresent = false
+            }
         }
         .padding()
     }
@@ -42,7 +44,7 @@ struct FilterBar: View {
                 ForEach(Filter.allCases, id: \.self) { filter in
                     Button {
                         self.filter = filter
-                        shouldShowSheetPresent = false
+                        self.shouldShowSheetPresent = false
                     } label: {
                         Text("\(filter.rawValue)")
                             .padding()
