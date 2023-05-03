@@ -35,6 +35,9 @@ final class FavoriteViewModel: ObservableObject {
                 guard let userInfo = userInfo else { return }
                 self.fetchAllGifticonsUseCase.execute { [weak self] gifticons in
                     self?.filteredGifticons = gifticons.filter { userInfo.favoriteList.contains($0.uuid) }
+                    self?.filteredGifticons.sort {
+                        return $0.expirationDate < $1.expirationDate
+                    }
                 }
             }
         }
