@@ -59,6 +59,12 @@ final class DIContainer {
         )
     }
     
+    func makeReportViewModel() -> ReportViewModel {
+        return ReportViewModel(
+            createReportUseCase: makeCreateReportUseCase()
+        )
+    }
+    
     // MARK: - UseCases
     func makeLoginUseCase() -> LoginUseCase {
         return DefaultLoginUseCase(firebaseAuthService: makeFirebaseAuthService())
@@ -72,11 +78,11 @@ final class DIContainer {
     }
     
     func makeDeleteGifticonUseCase() -> DeleteGifticonUseCase {
-           return DefaultDeleteGifticonUseCase(
-               gifticonRepository: makeGifticonRepository(),
-               userInfoRepository: makeUserInfoRepository()
-           )
-       }
+        return DefaultDeleteGifticonUseCase(
+            gifticonRepository: makeGifticonRepository(),
+            userInfoRepository: makeUserInfoRepository()
+        )
+    }
     
     func makeFetchAllGifticonsUseCase() -> FetchAllGifticonsUseCase {
         return DefaultFetchAllGifticonsUseCase(
@@ -147,6 +153,12 @@ final class DIContainer {
         )
     }
     
+    func makeCreateReportUseCase() -> CreateReportUseCase {
+        return DefaultCreateReportUseCase(
+            reportRepository: makeReportRepository()
+        )
+    }
+    
     // MARK: - Data
     func makeFirebaseAuthService() -> DefaultFirebaseAuthService {
         return DefaultFirebaseAuthService()
@@ -158,6 +170,10 @@ final class DIContainer {
     
     func makeGifticonRepository() -> GifticonRepository {
         return GifticonRepository()
+    }
+    
+    func makeReportRepository() -> ReportRepository {
+        return ReportRepository()
     }
     
     func makeGifticonQueriesRepository() -> GifticonQueriesRepository {

@@ -28,7 +28,7 @@ struct PurchaseSheet: View {
             }
             
             Button("결제하기") {
-                isSheetPresented.toggle()
+                isSheetPresented = false
                 isPaymentPresented.toggle()
             }
             .foregroundColor(.white)

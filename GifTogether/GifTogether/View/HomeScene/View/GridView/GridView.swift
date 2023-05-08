@@ -28,9 +28,6 @@ struct GridView: View {
                          } label: {
                              GridGifticon(gifticon: gifticon)
                                  .padding()
-                                 .onAppear {
-                                     sortGifticons(to: filter)
-                                 }
                          }
                      }
                  }
