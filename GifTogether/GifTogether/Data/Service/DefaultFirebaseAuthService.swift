@@ -59,4 +59,37 @@ final class DefaultFirebaseAuthService: FirebaseAuthService {
             }
         })
     }
+    
+    func requestVerificationCode(to phoneNumber: String,
+                                 _ completion: @escaping (Bool) -> Void) {
+        PhoneAuthProvider.provider()
+            .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion(false)
+                    return
+                }
+                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                completion(true)
+            }
+    }
+    
+    func verifyCode(verificationCode: String,
+                    _ completion: @escaping (Bool) -> Void) {
+        guard let verificationID = UserDefaults.standard.string(forKey: "authVerificationID") else {
+            completion(false)
+            return
+        }
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: verificationID,
+            verificationCode: verificationCode
+        )
+        Auth.auth().signIn(with: credential) { authResult, error in
+            guard error == nil else {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -18,6 +19,36 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    func application(
+        _ application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        Auth.auth().setAPNSToken(deviceToken, type: .sandbox)
+    }
+    
+    func application(
+        _ application: UIApplication,
+        didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
+    ) {
+        if Auth.auth().canHandleNotification(userInfo) {
+            print(userInfo)
+            completionHandler(.noData)
+            return
+        }
+    }
+    
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+        if Auth.auth().canHandle(url) {
+            return true
+        }
+        return false
+    }
 }
 
 @main
@@ -27,6 +58,10 @@ struct GifTogetherApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { url in
+                    print("Received URL: \(url)")
+                    Auth.auth().canHandle(url)
+                }
         }
     }
 }

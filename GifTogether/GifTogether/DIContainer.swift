@@ -18,7 +18,9 @@ final class DIContainer {
     func makeLoginViewModel() -> LoginViewModel {
         return LoginViewModel(
             loginUseCase: makeLoginUseCase(),
-            createUserUseCase: makeCreateUserUseCase()
+            createUserUseCase: makeCreateUserUseCase(),
+            verifyPhoneNumberUseCase: makeVerifyPhoneNumberUseCase(),
+            verifyCodeUseCase: makeVerifyCodeUseCase()
         )
     }
     
@@ -26,7 +28,8 @@ final class DIContainer {
     func makeHomeViewModel() -> HomeViewModel {
         return HomeViewModel(
             fetchAllGifticonsUseCase: makeFetchAllGifticonsUseCase(),
-            registerGifticonUseCase: makeRegisterGifticonUseCase()
+            registerGifticonUseCase: makeRegisterGifticonUseCase(),
+            registerImageUseCase: makeRegisterImageUseCase()
         )
     }
     
@@ -159,6 +162,24 @@ final class DIContainer {
         )
     }
     
+    func makeRegisterImageUseCase() -> RegisterImageUseCase {
+        return DefaultRegisterImageUseCase(
+            firestorageRepository: makeFirestorageRepository()
+		)
+	}
+
+    func makeVerifyPhoneNumberUseCase() -> RequestVerificationCodeUseCase {
+        return DefaultRequestVerificationCodeUseCase(
+            firebaseAuthService: makeFirebaseAuthService()
+        )
+    }
+    
+    func makeVerifyCodeUseCase() -> VerifyCodeUseCase {
+        return DefaultVerifyCodeUseCase(
+            firebaseAuthService: makeFirebaseAuthService()
+        )
+    }
+    
     // MARK: - Data
     func makeFirebaseAuthService() -> DefaultFirebaseAuthService {
         return DefaultFirebaseAuthService()
@@ -180,5 +201,9 @@ final class DIContainer {
         return DefaultGifticonQueriesRepository(
             gifticonQueriesPersistentStorage: gifticonQueriesStorage
         )
+    }
+    
+    func makeFirestorageRepository() -> FirestorageRepository {
+        return DefaultFirestorageRepository()
     }
 }
