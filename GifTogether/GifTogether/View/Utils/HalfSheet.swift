@@ -69,22 +69,10 @@ final class CustomHostingController<Content: View>: UIHostingController<Content>
                 .large()
             ]
             
-            //MARK: - sheet grabber visbility
             presentationController.prefersGrabberVisible = true
             presentationController.prefersScrollingExpandsWhenScrolledToEdge = false
             
-            //MARK: - sheet corner radius
             presentationController.preferredCornerRadius = 30
         }
-    }
-}
-
-public struct LazyView<Content: View>: View {
-    private let build: () -> Content
-    public init(_ build: @autoclosure @escaping () -> Content) {
-        self.build = build
-    }
-    public var body: Content {
-        build()
     }
 }
