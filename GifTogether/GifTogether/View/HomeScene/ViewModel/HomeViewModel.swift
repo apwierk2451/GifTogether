@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var gifticonsInfo: [Gifticon] = []
@@ -14,19 +15,31 @@ final class HomeViewModel: ObservableObject {
     
     private let fetchAllGifticonsUseCase: FetchAllGifticonsUseCase
     private let registerGifticonUseCase: RegisterGifticonUseCase
+    private let registerImageUseCase: RegisterImageUseCase
     
     init(
         fetchAllGifticonsUseCase: FetchAllGifticonsUseCase,
-        registerGifticonUseCase: RegisterGifticonUseCase
+        registerGifticonUseCase: RegisterGifticonUseCase,
+        registerImageUseCase: RegisterImageUseCase
     ) {
         self.fetchAllGifticonsUseCase = fetchAllGifticonsUseCase
         self.registerGifticonUseCase = registerGifticonUseCase
+        self.registerImageUseCase = registerImageUseCase
     }
     
     func request() {
         fetchAllGifticonsUseCase.execute { [self] gifticons in
             gifticonsInfo = gifticons
             filteringGifticon()
+        }
+    }
+    
+    func fetchImageURL(from data: Data,
+                       fileName: String,
+                       _ completion: @escaping (URL?) -> Void) {
+        
+        registerImageUseCase.execute(with: data, fileName: fileName) { imageURL in
+            completion(imageURL)
         }
     }
     
