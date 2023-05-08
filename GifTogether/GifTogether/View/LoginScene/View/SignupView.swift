@@ -109,7 +109,8 @@ struct SignupView: View {
             Spacer()
             ZStack {
                 ToastMessage(isSuccessAlert: false, message: "회원가입에 실패했습니다 😭")
-                    .scaleEffect(showError ? 1.0 : 0.0)
+                    .opacity(showError ? 1 : 0)
+                    .scaleEffect(showError ? 1 : 0.2)
                     .animation(.ripple(), value: showError)
                     .onChange(of: showError) { isShowError in
                         guard isShowError else { return }
@@ -119,7 +120,8 @@ struct SignupView: View {
                     }
                 
                 ToastMessage(isSuccessAlert: true, message: "회원가입에 성공했습니다 🎉")
-                    .scaleEffect(showSuccessAlert ? 1.0 : 0.0)
+                    .opacity(showSuccessAlert ? 1 : 0)
+                    .scaleEffect(showSuccessAlert ? 1 : 0.2)
                     .animation(.ripple(), value: showSuccessAlert)
                     .onChange(of: showSuccessAlert) { isShowSuccessAlert in
                         guard isShowSuccessAlert else { return }
@@ -131,6 +133,9 @@ struct SignupView: View {
             }
         }
         .padding(.top, 30)
+        .background(Color(.tertiarySystemBackground).onTapGesture {
+            hideKeyboard()
+        })
         .overlay {
             if showLoading && !viewModel.isSuccessSignup {
                 ProgressView().controlSize(.large)

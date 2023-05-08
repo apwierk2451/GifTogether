@@ -28,8 +28,12 @@ struct BrandSelectView: View {
                 ForEach(category.brand, id: \.name) { brand in
                     if brand.name.hasPrefix(searchText) || searchText.isEmpty {
                         NavigationLink {
-                            GifticonRegisterView(shouldPresent: $shouldPresent, category: category, brand: brand)
-                                .environmentObject(viewModel)
+                            GifticonRegisterView(
+                                shouldPresent: $shouldPresent,
+                                category: category,
+                                brand: brand
+                            )
+                            .environmentObject(viewModel)
                         } label: {
                             BrandLogo(brand: brand)
                         }

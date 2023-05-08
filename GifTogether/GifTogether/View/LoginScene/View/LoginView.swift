@@ -91,7 +91,8 @@ struct LoginView: View {
                 Spacer()
                 
                 ToastMessage(isSuccessAlert: false, message: "사용자 정보가 존재하지 않습니다.")
-                    .scaleEffect(showError ? 1.0 : 0.0)
+                    .opacity(showError ? 1 : 0)
+                    .scaleEffect(showError ? 1.0 : 0.2)
                     .animation(.ripple(), value: showError)
                     .onChange(of: showError) { isShowError in
                         guard isShowError else { return }
@@ -101,6 +102,9 @@ struct LoginView: View {
                     }
             }
             .padding(.top, 100)
+            .background(Color(.tertiarySystemBackground).onTapGesture {
+                hideKeyboard()
+            })
         }
         .overlay {
             if showLoading && !viewModel.isSuccessLogin {

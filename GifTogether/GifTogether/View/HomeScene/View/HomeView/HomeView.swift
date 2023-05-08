@@ -72,7 +72,8 @@ struct HomeView: View {
                                 .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
                                 .background(Color(uiColor: .orange).cornerRadius(8))
                                 .offset(x: showHiddenMenu ? -20 : 0, y: showHiddenMenu ? -60 : 0)
-                                .scaleEffect(showHiddenMenu ? 1.0 : 0)
+                                .scaleEffect(showHiddenMenu ? 1.0 : 0.01)
+                                .opacity(showHiddenMenu ? 1 : 0)
                                 .animation(.ripple(), value: showHiddenMenu)
                                 .sheet(isPresented: $showModal) {
                                     CategorySelectView(shouldPresent: $showModal)
