@@ -27,7 +27,7 @@ struct GifticonRegisterView: View {
     
     @State private var showingImagePicker = false
     @State var pickedImage: Image?
-    
+    @State var pickedUIImage: UIImage?
     var category: Category
     var brand: Brand
     var isValidButton: Binding<Bool> {
@@ -42,37 +42,57 @@ struct GifticonRegisterView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("카테고리 : ")
-                Text(category.title)
-                    .foregroundColor(Color(uiColor: .systemGray))
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-                
-                Spacer()
-                
-                Button(action: {
-                    self.showingImagePicker.toggle()
-                }, label: {
-                    Text("Image Picker")
-                }).sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(sourceType: .photoLibrary) { image in
-                        
-                        self.pickedImage = Image(uiImage: image)
-                        
-                        recognizeText(image: image)
-                    }
+        
+        VStack(spacing: 8) {
+            if pickedImage == nil {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150)
+                    .foregroundColor(.gray)
+            } else {
+                pickedImage?.resizable()
+                    .scaledToFit()
+                    .frame(width: 150)
+            }
+            
+            Button(action: {
+                self.showingImagePicker.toggle()
+            }, label: {
+                Text("기프티콘 이미지 선택")
+            }).sheet(isPresented: $showingImagePicker) {
+                ImagePicker(sourceType: .photoLibrary) { image in
+                    self.pickedUIImage = image
+                    self.pickedImage = Image(uiImage: image)
+                    recognizeText(image: image)
                 }
             }
             
             HStack {
-                Text("브랜드 : ")
+                Text("카테고리 : ")
+                Text(category.title)
+                    .foregroundColor(Color(uiColor: .systemGray))
+                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                    .background(Color(uiColor: .secondarySystemBackground))
+                    .cornerRadius(16)
+                Text("  브랜드 : ")
                 Text(brand.name)
                     .foregroundColor(Color(uiColor: .systemGray))
+                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                    .background(Color(uiColor: .secondarySystemBackground))
+                    .cornerRadius(16)
+            }
+            
+            HStack {
+                Text("유효기간 : ")
+                DatePicker(selection: $selectedDate, displayedComponents: [.date]) {}
+                    .labelsHidden()
+                    .environment(\.locale, Locale.init(identifier: "ko_KR"))
+            }
+            
+            HStack {
+                Text("코드번호 : ")
+                TextField("", text: $codeNumberText)
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(16)
@@ -83,16 +103,6 @@ struct GifticonRegisterView: View {
             HStack {
                 Text("이름 : ")
                 TextField("", text: $nameText)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-            }
-            
-            HStack {
-                Text("코드번호 : ")
-                TextField("", text: $codeNumberText)
                     .padding()
                     .background(Color(uiColor: .secondarySystemBackground))
                     .cornerRadius(16)
@@ -122,12 +132,6 @@ struct GifticonRegisterView: View {
                     .keyboardType(.decimalPad)
             }
             
-            HStack {
-                DatePicker("유효기간",
-                           selection: $selectedDate,
-                           displayedComponents: [.date])
-            }
-            
             NormalButton(isValid: isValidButton, title: "등록하기")
                 .padding(.top, 30)
                 .onTapGesture {
@@ -137,28 +141,15 @@ struct GifticonRegisterView: View {
                     guard let userUID = UserDefaults.standard.string(forKey: "userUID") else {
                         return
                     }
-                    viewModel.register(gifticon: .init(uuid: UUID().uuidString,
-                                                       name: nameText,
-                                                       codeNumber: codeNumberText,
-                                                       brand: brand,
-                                                       category: category,
-                                                       originalPrice: originalPriceText,
-                                                       discountedPrice: discountedPriceText,
-                                                       imageURL: "",
-                                                       expirationDate:
-                                                       DateManager.shared.toString(date: selectedDate),
-                                                       providerUID: userUID,
-                                                       favoriteCount: 0)) {
-                        showProgress = false
-                        showSuccessAlert = true
-                    }
+                    let imageUUID = UUID().uuidString
+                    registerGifticon(with: imageUUID, user: userUID)
                 }
                 .disabled(!isValidButton.wrappedValue)
-            Spacer()
         }
-        .onTapGesture {
+        .padding()
+        .background(Color(.tertiarySystemBackground).onTapGesture {
             hideKeyboard()
-        }
+        })
         .overlay {
             if showProgress {
                 ProgressView()
@@ -167,7 +158,8 @@ struct GifticonRegisterView: View {
             VStack {
                 Spacer()
                 ToastMessage(isSuccessAlert: true, message: "기프티콘이 등록되었습니다 🎉")
-                    .scaleEffect(showSuccessAlert ? 1.0 : 0.0)
+                    .scaleEffect(showSuccessAlert ? 1.0 : 0.2)
+                    .opacity(showSuccessAlert ? 1 : 0)
                     .animation(.ripple(), value: showSuccessAlert)
                     .onChange(of: showSuccessAlert) { isShowSuccessAlert in
                         guard isShowSuccessAlert else { return }
@@ -178,7 +170,6 @@ struct GifticonRegisterView: View {
                     }
             }
         }
-        .padding()
     }
     
     private func recognizeText(image: UIImage?) {
@@ -197,24 +188,52 @@ struct GifticonRegisterView: View {
             let gifticonNumber = observations.filter {
                 $0.topCandidates(1).first?.string.isCodeNumber() ?? false
             }.first?.topCandidates(1).first?.string
-
+            
             let expirationDate = observations.filter {
                 $0.topCandidates(1).first?.string.isDate() ?? false
             }.first?.topCandidates(1).first?.string
-
+            
             guard let gifticonNumber = gifticonNumber,
                   let expirationDate = expirationDate?.toDate() else { return }
-
+            
             codeNumberText = gifticonNumber
             selectedDate = expirationDate
         }
-            request.recognitionLanguages =  ["ko-KR"]
-            request.usesLanguageCorrection = true
-    
+        request.recognitionLanguages =  ["ko-KR"]
+        request.usesLanguageCorrection = true
+        
         do {
             try handler.perform([request])
         } catch {
             print(error)
+        }
+    }
+    
+    private func registerGifticon(with imageUUID: String, user userUID: String) {
+        
+        viewModel.fetchImageURL(
+            from: pickedUIImage?.jpegData(compressionQuality: 1) ?? Data(),
+            fileName: imageUUID
+        ) { url in
+            
+            viewModel.register(
+                gifticon: .init(
+                    uuid: imageUUID,
+                    name: nameText,
+                    codeNumber: codeNumberText,
+                    brand: brand,
+                    category: category,
+                    originalPrice: originalPriceText,
+                    discountedPrice: discountedPriceText,
+                    imageURL: url?.absoluteString ?? "",
+                    expirationDate: DateManager.shared.toString(date: selectedDate),
+                    providerUID: userUID,
+                    favoriteCount: 0
+                )
+            ) {
+                showProgress = false
+                showSuccessAlert = true
+            }
         }
     }
 }
