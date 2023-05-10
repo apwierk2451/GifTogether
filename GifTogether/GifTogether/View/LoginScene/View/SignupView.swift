@@ -51,7 +51,7 @@ struct SignupView: View {
             NormalTextField(
                 value: $email,
                 isValid: $isValidEmail,
-                placeholder: .constant("이메일을 입력해주세요.")
+                placeholder: .constant("ex) example@gmail.com")
             )
             .onChange(of: email) { newValue in
                 if newValue.isValidEmail() {
@@ -66,7 +66,7 @@ struct SignupView: View {
                 NormalTextField(
                     value: $phoneNumber,
                     isValid: $isValidPhoneNumber,
-                    placeholder: .constant("전화번호를 입력해주세요.")
+                    placeholder: .constant("ex) 010-0000-0000")
                 )
                 .onChange(of: phoneNumber) { newValue in
                     if newValue.isValidPhoneNumber() {
@@ -87,6 +87,7 @@ struct SignupView: View {
                 .padding(.trailing)
                 .disabled(!isValidPhoneNumber || isCompleteReceiveCode)
             }
+            
             
             if isCompleteReceiveCode {
                 

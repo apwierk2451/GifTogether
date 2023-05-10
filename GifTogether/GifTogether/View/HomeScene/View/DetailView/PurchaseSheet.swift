@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PurchaseSheet: View {
     var gifticon: Gifticon
+    var userInfo: UserInfo
     @Binding var isSheetPresented: Bool
-    @Binding var isPaymentPresented: Bool
     
     var body: some View {
         VStack {
@@ -23,13 +23,20 @@ struct PurchaseSheet: View {
                         .foregroundColor(.gray)
                     Text("\(gifticon.name)")
                 }
+                .padding()
                 Text("결제가격 : \(gifticon.discountedPrice)")
+                    .foregroundColor(Color("writeColor"))
                     .padding()
             }
             
-            Button("결제하기") {
+            Button("판매자와 SMS 하기") {
                 isSheetPresented = false
-                isPaymentPresented.toggle()
+                let message = "안녕하세요.\nGifTogether 상품 \"\(gifticon.name)\" 확인하고 연락드립니다.\n해당 상품 구매하고 싶어서 연락드립니다!"
+                guard let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+                      let phoneURL = URL(string: "sms:\(userInfo.phoneNumber)&body=\(encodedMessage)") else { return }
+                if UIApplication.shared.canOpenURL(phoneURL) {
+                    UIApplication.shared.open(phoneURL)
+                }
             }
             .foregroundColor(.white)
             .frame(height: 20)
@@ -44,11 +51,12 @@ struct PurchaseSheet: View {
 
 struct PurchaseSheet_Previews: PreviewProvider {
     static var gifticon = Gifticon.stub()
+    static var userInfo = UserInfo.stub()
     
     static var previews: some View {
         PurchaseSheet(gifticon: gifticon,
-                      isSheetPresented: .constant(true),
-                      isPaymentPresented: .constant(true)
+                      userInfo: userInfo,
+                      isSheetPresented: .constant(true)
         )
     }
 }

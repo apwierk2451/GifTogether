@@ -56,9 +56,12 @@ struct GridGifticonItem: View {
             }
             VStack {
                 Text(gifticon.brand.name)
+                    .foregroundColor(Color("writeColor"))
                 Text(gifticon.name)
+                    .foregroundColor(Color("writeColor"))
                 HStack {
                     Text("\(NumberManager.shared.toDecimal(gifticon.discountedPrice) ?? "0")원")
+                        .foregroundColor(Color("writeColor"))
                     Text("\(NumberManager.shared.toDecimal(gifticon.originalPrice) ?? "0")원")
                         .foregroundColor(.gray)
                         .strikethrough()

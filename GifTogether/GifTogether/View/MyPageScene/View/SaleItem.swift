@@ -36,10 +36,10 @@ struct SaleItem: View {
                     .foregroundColor(.gray)
                 Text(gifticon.name)
                     .font(.headline)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
                 Text("\(gifticon.originalPrice)원")
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
             }
             .padding(.leading)
             .padding(.trailing)

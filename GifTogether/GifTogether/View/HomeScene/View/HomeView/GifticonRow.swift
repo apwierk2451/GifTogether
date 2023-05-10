@@ -20,7 +20,7 @@ struct GifticonRow: View {
                 } label: {
                     Text(categoryName)
                         .font(.title)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color("writeColor"))
                         .bold()
                         .padding()
                 }

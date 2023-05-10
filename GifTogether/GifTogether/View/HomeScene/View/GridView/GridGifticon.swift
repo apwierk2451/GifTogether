@@ -15,7 +15,7 @@ struct GridGifticon: View {
     var body: some View {
         Rectangle()
             .frame(width: 150, height: 200)
-            .foregroundColor(.white)
+            .foregroundColor(Color(.tertiarySystemBackground))
             .cornerRadius(16)
             .shadow(radius: 8)
             .overlay {

@@ -22,7 +22,7 @@ struct CategoryItem: View {
                 Text(category.title)
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
             }
         }
     }

@@ -12,41 +12,49 @@ struct GifticonDetail: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
+                
                 AsyncImage(url: URL(string: gifticon.imageURL)) { phase in
                     if let image = phase.image {
                         image
                             .resizable()
+                            .scaledToFit()
                     } else if phase.error != nil || phase.image == nil {
                         Image("placeholder")
                             .resizable()
                     } else {
                         ProgressView()
                     }
-                } 
+                }
                 .frame(height: 350)
                 .cornerRadius(10)
-                
-                Text(gifticon.name)
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .bold()
-                
-                Text(gifticon.brand.name)
-                    .foregroundColor(.gray)
-                
-                Spacer()
-                
-                priceView
-                    .padding()
-                    .frame(height: 120)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.red, lineWidth: 1)
-                    )
-                    .padding()
-                
-                ExDivider()
+                VStack(alignment: .center) {
+                    VStack(alignment: .leading) {
+                        Text(gifticon.name)
+                            .font(.title)
+                            .foregroundColor(Color("writeColor"))
+                            .bold()
+                        
+                        Text(gifticon.brand.name)
+                            .foregroundColor(.gray)
+                        
+                        Spacer()
+                        
+                        priceView
+                            .padding()
+                            .frame(height: 120)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.red, lineWidth: 1)
+                            )
+                            .padding()
+                    }
+                    ExDivider()
+                    
+                    Text("본 상품의 유효기간은 \(gifticon.expirationDate) 입니다")
+                        .font(.body)
+                        .foregroundColor(Color("writeColor"))
+                }
             }
             .padding()
         }

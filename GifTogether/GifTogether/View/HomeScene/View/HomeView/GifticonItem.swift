@@ -34,10 +34,10 @@ struct GifticonItem: View {
                     .foregroundColor(.gray)
                 Text(gifticon.name)
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
                 Text("\(NumberManager.shared.toDecimal(gifticon.originalPrice) ?? "0")원")
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
             }
         }
     }

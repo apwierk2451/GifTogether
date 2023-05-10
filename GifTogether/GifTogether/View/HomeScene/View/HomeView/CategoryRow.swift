@@ -14,7 +14,7 @@ struct CategoryRow: View {
         VStack(alignment: .leading) {
             Text("카테고리")
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(Color("writeColor"))
                 .bold()
                 .padding(.leading, 15)
             

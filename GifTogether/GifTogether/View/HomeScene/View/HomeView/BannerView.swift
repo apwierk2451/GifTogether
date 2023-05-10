@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BannerView: View {
     var body: some View {
-        AsyncImage(url: URL(string: "https://user-images.githubusercontent.com/95114036/224049941-6126a647-21a9-4df9-8acd-4c2e40930f85.png")) { image in
+        AsyncImage(url: URL(string: "https://user-images.githubusercontent.com/95114036/237077511-6304797b-b773-4f39-9404-86f8cac22881.png")) { image in
             image.resizable()
         } placeholder: {
             ProgressView()

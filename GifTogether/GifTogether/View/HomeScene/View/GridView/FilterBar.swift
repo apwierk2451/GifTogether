@@ -26,7 +26,7 @@ struct FilterBar: View {
                 Image(systemName: "slider.vertical.3")
                     .rotationEffect(Angle(degrees: 270))
             }
-            .foregroundColor(.black)
+            .foregroundColor(Color("writeColor"))
             .halfSheet(showSheet: $shouldShowSheetPresent) {
                 filterSheet
             } onDismiss: {
@@ -52,8 +52,9 @@ struct FilterBar: View {
                     Divider()
                 }
             }
-            .foregroundColor(.black)
+            .foregroundColor(Color("writeColor"))
         }
+        .background(Color(.secondarySystemBackground))
     }
 }
 

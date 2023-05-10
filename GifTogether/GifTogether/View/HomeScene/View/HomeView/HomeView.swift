@@ -37,7 +37,6 @@ struct HomeView: View {
                     .listStyle(.inset)
                     .navigationTitle("GifTogether")
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarItems(trailing: Image(systemName: "bell"))
                     .navigationBarBackButtonHidden()
                     .onChange(of: isTapped) {
                         if $0 == true {

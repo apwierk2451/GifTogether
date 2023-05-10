@@ -61,7 +61,7 @@ struct SettingView: View {
                     Button("로그아웃") {
                         showLogoutAlert = true
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
                     .alert("로그아웃 하시겠습니까?", isPresented: $showLogoutAlert) {
                         Button("예", role: .cancel) {
                             viewModel.logout()
@@ -73,7 +73,7 @@ struct SettingView: View {
                     Button("탈퇴하기") {
                         showDeleteAccountAlert = true
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("writeColor"))
                     .alert("회원탈퇴 하시겠습니까?",
                            isPresented: $showDeleteAccountAlert) {
                         Button("예", role: .cancel) {

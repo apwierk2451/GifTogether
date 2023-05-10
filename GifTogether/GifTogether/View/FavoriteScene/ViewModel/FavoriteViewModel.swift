@@ -43,6 +43,14 @@ final class FavoriteViewModel: ObservableObject {
         }
     }
     
+    func fetchUserInfo(uid: String, completion: @escaping (UserInfo) -> Void) {
+        fetchUserInfoUseCase.execute(with: uid) { userInfo in
+            guard let userInfo = userInfo else { return }
+            
+            completion(userInfo)
+        }
+    }
+    
     func checkFavortieGifticon(uuid: String, completion: @escaping (Bool) -> Void) {
         if let userUID = userUID {
             fetchUserInfoUseCase.execute(with: userUID) { userInfo in

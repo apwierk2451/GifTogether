@@ -9,8 +9,8 @@ import SwiftUI
 
 struct GifticonPurchase: View {
     var gifticon: Gifticon
+    @State private var userInfo: UserInfo = .stub()
     @State private var shouldShowSheetPresent = false
-    @State private var shouldShowPaymentPresent = false
     @State var favoriteCount: Int = 0
     @State var isHeart: Bool = true
     @EnvironmentObject var viewModel: FavoriteViewModel
@@ -47,6 +47,9 @@ struct GifticonPurchase: View {
                 viewModel.fetchGifticonInfo(gifticonUUID: gifticon.uuid) { gifticon in
                     favoriteCount = gifticon.favoriteCount
                 }
+                viewModel.fetchUserInfo(uid: gifticon.providerUID) { userInfo in
+                    self.userInfo = userInfo
+                }
             }
             
             Button {
@@ -60,21 +63,16 @@ struct GifticonPurchase: View {
                     .background(Color.red)
                     .cornerRadius(15)
             }
-            .halfSheet(showSheet: self.$shouldShowSheetPresent, sheetView: {
+            .halfSheet(showSheet: $shouldShowSheetPresent) {
                 PurchaseSheet(gifticon: gifticon,
-                              isSheetPresented: self.$shouldShowSheetPresent,
-                              isPaymentPresented: $shouldShowPaymentPresent
+                              userInfo: userInfo,
+                              isSheetPresented: self.$shouldShowSheetPresent
                 )
-            }, onDismiss: {
+            } onDismiss: {
                 self.shouldShowSheetPresent = false
-            })
+            }
         }
         .padding()
-        
-        NavigationLink(destination: PaymentView(gifticon: gifticon),
-                       isActive: self.$shouldShowPaymentPresent) {
-            EmptyView()
-        }.hidden()
     }
 }
 
