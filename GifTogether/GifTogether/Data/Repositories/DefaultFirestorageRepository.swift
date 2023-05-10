@@ -42,35 +42,16 @@ final class DefaultFirestorageRepository: FirestorageRepository {
         }
     }
     
-    func putFile(from localFile: URL, _ completion: @escaping (URL?) -> Void) {
+    func delete(fileName: String, _ completion: @escaping (Bool) -> Void) {
         let storageRef = storage.reference()
-        let riverRef = storageRef.child("images/river.jpg")
-        
-        let uploadTask = riverRef.putFile(from: localFile) { metadata, error in
-            guard let metadata = metadata else {
-                completion(nil)
-                return
-            }
-            let size = metadata.size
-            
-            riverRef.downloadURL { url, error in
-                guard let downloadURL = url else {
-                    completion(nil)
-                    return
-                }
-                completion(downloadURL)
-            }
-        }
-    }
-    
-    func delete(path: String) {
-        let storageRef = storage.reference()
-        let desertRef = storageRef.child("desert.jpg") // path
+        let desertRef = storageRef.child("images/\(fileName).jpg")
         desertRef.delete { error in
             if let error = error {
                 print(error.localizedDescription)
+                completion(false)
             } else {
                 print("삭제 성공!")
+                completion(true)
             }
         }
     }
