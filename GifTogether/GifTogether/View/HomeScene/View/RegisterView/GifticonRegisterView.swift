@@ -33,7 +33,6 @@ struct GifticonRegisterView: View {
     var isValidButton: Binding<Bool> {
         .init {
             nameText.isEmpty == false &&
-            codeNumberText.isEmpty == false &&
             originalPriceText.isEmpty == false &&
             discountedPriceText.isEmpty == false
         } set: { _ in
@@ -42,132 +41,133 @@ struct GifticonRegisterView: View {
     }
     
     var body: some View {
-        
-        VStack(spacing: 8) {
-            if pickedImage == nil {
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150)
-                    .foregroundColor(.gray)
-            } else {
-                pickedImage?.resizable()
-                    .scaledToFit()
-                    .frame(width: 150)
-            }
-            
-            Button(action: {
-                self.showingImagePicker.toggle()
-            }, label: {
-                Text("기프티콘 이미지 선택")
-            }).sheet(isPresented: $showingImagePicker) {
-                ImagePicker(sourceType: .photoLibrary) { image in
-                    self.pickedUIImage = image
-                    self.pickedImage = Image(uiImage: image)
-                    recognizeText(image: image)
+        ScrollView {
+            VStack(spacing: 8) {
+                if pickedImage == nil {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150)
+                        .foregroundColor(.gray)
+                } else {
+                    pickedImage?.resizable()
+                        .scaledToFit()
+                        .frame(width: 150)
                 }
-            }
-            
-            HStack {
-                Text("카테고리 : ")
-                Text(category.title)
-                    .foregroundColor(Color(uiColor: .systemGray))
-                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                Text("  브랜드 : ")
-                Text(brand.name)
-                    .foregroundColor(Color(uiColor: .systemGray))
-                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-            }
-            
-            HStack {
-                Text("유효기간 : ")
-                DatePicker(selection: $selectedDate, displayedComponents: [.date]) {}
-                    .labelsHidden()
-                    .environment(\.locale, Locale.init(identifier: "ko_KR"))
-            }
-            
-            HStack {
-                Text("코드번호 : ")
-                TextField("", text: $codeNumberText)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-            }
-            
-            HStack {
-                Text("이름 : ")
-                TextField("", text: $nameText)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-            }
-            
-            HStack {
-                Text("원가 : ")
-                TextField("", text: $originalPriceText)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .keyboardType(.decimalPad)
-            }
-            
-            HStack {
-                Text("할인가 : ")
-                TextField("", text: $discountedPriceText)
-                    .padding()
-                    .background(Color(uiColor: .secondarySystemBackground))
-                    .cornerRadius(16)
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .keyboardType(.decimalPad)
-            }
-            
-            NormalButton(isValid: isValidButton, title: "등록하기")
-                .padding(.top, 30)
-                .onTapGesture {
-                    hideKeyboard()
-                    showProgress = true
-                    
-                    guard let userUID = UserDefaults.standard.string(forKey: "userUID") else {
-                        return
+                
+                Button(action: {
+                    self.showingImagePicker.toggle()
+                }, label: {
+                    Text("기프티콘 이미지 선택")
+                }).sheet(isPresented: $showingImagePicker) {
+                    ImagePicker(sourceType: .photoLibrary) { image in
+                        self.pickedUIImage = image
+                        self.pickedImage = Image(uiImage: image)
+                        recognizeText(image: image)
                     }
-                    let imageUUID = UUID().uuidString
-                    registerGifticon(with: imageUUID, user: userUID)
                 }
-                .disabled(!isValidButton.wrappedValue)
-        }
-        .padding()
-        .background(Color(.tertiarySystemBackground).onTapGesture {
-            hideKeyboard()
-        })
-        .overlay {
-            if showProgress {
-                ProgressView()
-                    .controlSize(.large)
-            }
-            VStack {
-                Spacer()
-                ToastMessage(isSuccessAlert: true, message: "기프티콘이 등록되었습니다 🎉")
-                    .scaleEffect(showSuccessAlert ? 1.0 : 0.2)
-                    .opacity(showSuccessAlert ? 1 : 0)
-                    .animation(.ripple(), value: showSuccessAlert)
-                    .onChange(of: showSuccessAlert) { isShowSuccessAlert in
-                        guard isShowSuccessAlert else { return }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                            showSuccessAlert = false
-                            shouldPresent = false
+                .padding()
+                
+                Text("기프티콘의 코드번호와 바코드가 유출되지 않도록 유의해주세요!")
+                    .font(.callout)
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(Color(.systemRed).opacity(0.9))
+                    .cornerRadius(8)
+                    .padding()
+                
+                HStack {
+                    Text("카테고리 : ")
+                    Text(category.title)
+                        .foregroundColor(Color(uiColor: .systemGray))
+                        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(16)
+                    Text("  브랜드 : ")
+                    Text(brand.name)
+                        .foregroundColor(Color(uiColor: .systemGray))
+                        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(16)
+                }
+                
+                HStack {
+                    Text("유효기간 : ")
+                    DatePicker(selection: $selectedDate, displayedComponents: [.date]) {}
+                        .labelsHidden()
+                        .environment(\.locale, Locale.init(identifier: "ko_KR"))
+                }
+                
+                HStack {
+                    Text("이름 : ")
+                    TextField("", text: $nameText)
+                        .padding()
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(16)
+                        .padding(.leading)
+                        .padding(.trailing)
+                }
+                
+                HStack {
+                    Text("원가 : ")
+                    TextField("", text: $originalPriceText)
+                        .padding()
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(16)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .keyboardType(.decimalPad)
+                }
+                
+                HStack {
+                    Text("할인가 : ")
+                    TextField("", text: $discountedPriceText)
+                        .padding()
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        .cornerRadius(16)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .keyboardType(.decimalPad)
+                }
+                
+                NormalButton(isValid: isValidButton, title: "등록하기")
+                    .padding(.top, 30)
+                    .onTapGesture {
+                        hideKeyboard()
+                        showProgress = true
+                        
+                        guard let userUID = UserDefaults.standard.string(forKey: "userUID") else {
+                            return
                         }
+                        let imageUUID = UUID().uuidString
+                        registerGifticon(with: imageUUID, user: userUID)
                     }
+                    .disabled(!isValidButton.wrappedValue)
+                Spacer()
+            }
+            .padding()
+            .background(Color(.tertiarySystemBackground).onTapGesture {
+                hideKeyboard()
+            })
+            .overlay {
+                if showProgress {
+                    ProgressView()
+                        .controlSize(.large)
+                }
+                VStack {
+                    Spacer()
+                    ToastMessage(isSuccessAlert: true, message: "기프티콘이 등록되었습니다 🎉")
+                        .scaleEffect(showSuccessAlert ? 1.0 : 0.2)
+                        .opacity(showSuccessAlert ? 1 : 0)
+                        .animation(.ripple(), value: showSuccessAlert)
+                        .onChange(of: showSuccessAlert) { isShowSuccessAlert in
+                            guard isShowSuccessAlert else { return }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                                showSuccessAlert = false
+                                shouldPresent = false
+                            }
+                        }
+                }
             }
         }
     }
