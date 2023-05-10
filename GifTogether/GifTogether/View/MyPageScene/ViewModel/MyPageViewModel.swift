@@ -12,6 +12,7 @@ final class MyPageViewModel: ObservableObject {
     private let fetchGifticonUseCase: FetchGifticonUseCase
     private let deleteAccountUseCase: DeleteAccountUseCase
     private let deleteGifticonUseCase: DeleteGifticonUseCase
+    private let deleteImageUseCase: DeleteImageUseCase
     
     @Published var userInfo: UserInfo = .stub()
     @Published var salesList: [Gifticon] = []
@@ -20,12 +21,14 @@ final class MyPageViewModel: ObservableObject {
         fetchUserInfoUseCase: FetchUseInfoUseCase,
         fetchGifticonUseCase: FetchGifticonUseCase,
         deleteAccountUseCase: DeleteAccountUseCase,
-        deleteGifticonUseCase: DeleteGifticonUseCase
+        deleteGifticonUseCase: DeleteGifticonUseCase,
+        deleteImageUseCase: DeleteImageUseCase
     ) {
         self.fetchUserInfoUseCase = fetchUserInfoUseCase
         self.fetchGifticonUseCase = fetchGifticonUseCase
         self.deleteAccountUseCase = deleteAccountUseCase
         self.deleteGifticonUseCase = deleteGifticonUseCase
+        self.deleteImageUseCase = deleteImageUseCase
     }
     
     private func fetchSalesList(with uuidList: [String]) {
@@ -81,8 +84,12 @@ final class MyPageViewModel: ObservableObject {
             
             let changedsalesList = userInfo.salesList.filter { $0 != gifticonUUID }
             userInfo.salesList = changedsalesList
-            self.deleteGifticonUseCase.execute(gifticonUUID: gifticonUUID, userInfo: userInfo) {
-                completion()
+            self.deleteGifticonUseCase.execute(gifticonUUID: gifticonUUID, userInfo: userInfo) { [weak self] in
+                self?.deleteImageUseCase.execute(fileName: gifticonUUID) { isSuccessDelete in
+                    if isSuccessDelete {
+                        completion()
+                    }
+                }
             }
         }
     }
