@@ -63,15 +63,15 @@
 		AF1ECBDF29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */; };
 		AF1ECBE229D57519005F635D /* GifticonQueryEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */; };
 		AF211D4F29CC25D50024F5F4 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF211D4E29CC25D50024F5F4 /* Brand.swift */; };
+		AF40513D2A0A360E00CFE604 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF40513C2A0A360D00CFE604 /* GoogleService-Info.plist */; };
 		AF556C6E29DEBFB7001FF7D6 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */; };
 		AF5A89A329DC3B8F004BDCBD /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */; };
-		AF5F0CB529F96810006848A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5F0CB429F96810006848A0 /* GoogleService-Info.plist */; };
+		AF6549F02A0A69D200BAF212 /* DeleteImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6549EF2A0A69D200BAF212 /* DeleteImageUseCase.swift */; };
 		AF6C035C29D59AC80023FE23 /* GifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */; };
 		AF6C035E29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */; };
 		AF6C036029D59C800023FE23 /* SearchGifticonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */; };
 		AF6C036329D59F8A0023FE23 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */; };
 		AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */; };
-		AF6F4BBB29FFB91A0091D3BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */; };
 		AF7AE95B29D50EA900002135 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */; };
 		AF7AE95E29D50ED400002135 /* CoreDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE95C29D50ED400002135 /* CoreDataStorage.xcdatamodeld */; };
 		AF7AE96129D56A1700002135 /* GifticonQueriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */; };
@@ -199,16 +199,17 @@
 		AF1ECBDD29D573B2005F635D /* GifticonQueryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF1ECBE129D57519005F635D /* GifticonQueryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GifticonQueryEntity+Mapping.swift"; sourceTree = "<group>"; };
 		AF211D4E29CC25D50024F5F4 /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		AF40513C2A0A360D00CFE604 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF556C6D29DEBFB7001FF7D6 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
 		AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
 		AF5F0CB429F96810006848A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF6549EF2A0A69D200BAF212 /* DeleteImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteImageUseCase.swift; sourceTree = "<group>"; };
 		AF6A2C9929E003C9007DDEEA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		AF6C035B29D59AC80023FE23 /* GifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesRepository.swift; sourceTree = "<group>"; };
 		AF6C035D29D59B680023FE23 /* DefaultGifticonQueriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultGifticonQueriesRepository.swift; sourceTree = "<group>"; };
 		AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGifticonUseCase.swift; sourceTree = "<group>"; };
 		AF6C036229D59F8A0023FE23 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRecentGifticonQueriesUseCase.swift; sourceTree = "<group>"; };
-		AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF7AE95A29D50EA900002135 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		AF7AE95D29D50ED400002135 /* CoreDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataStorage.xcdatamodel; sourceTree = "<group>"; };
 		AF7AE96029D56A1700002135 /* GifticonQueriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonQueriesStorage.swift; sourceTree = "<group>"; };
@@ -324,7 +325,7 @@
 		76853ADC29B1F9F8009428DA = {
 			isa = PBXGroup;
 			children = (
-				AF6F4BBA29FFB91A0091D3BD /* GoogleService-Info.plist */,
+				AF40513C2A0A360D00CFE604 /* GoogleService-Info.plist */,
 				76853AE729B1F9F8009428DA /* GifTogether */,
 				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
@@ -629,6 +630,7 @@
 				76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */,
 				762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */,
 				AF04E90D2A027BAF002ED76D /* RegisterImageUseCase.swift */,
+				AF6549EF2A0A69D200BAF212 /* DeleteImageUseCase.swift */,
 				764789992A0781A100B8F072 /* CreateReportUseCase.swift */,
 				AFF47B5C29F7FF0A008C4456 /* RequestVerificationCodeUseCase.swift */,
 				AFEC9E4B29F970690044BE56 /* VerifyCodeUseCase.swift */,
@@ -905,7 +907,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76853AF029B1F9F8009428DA /* Preview Assets.xcassets in Resources */,
-				AF6F4BBB29FFB91A0091D3BD /* GoogleService-Info.plist in Resources */,
+				AF40513D2A0A360E00CFE604 /* GoogleService-Info.plist in Resources */,
 				76BFE82629C069C4005B01E5 /* categories.json in Resources */,
 				76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */,
 			);
@@ -938,6 +940,7 @@
 				764789942A064CD600B8F072 /* ReportView.swift in Sources */,
 				AF6C036529D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift in Sources */,
 				AF95C81A29B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift in Sources */,
+				AF6549F02A0A69D200BAF212 /* DeleteImageUseCase.swift in Sources */,
 				AFA5EA0E29C6A3270041C1BD /* SettingView.swift in Sources */,
 				AF7E181829B3201200BD3D61 /* UserInfo.swift in Sources */,
 				76853AEB29B1F9F8009428DA /* ContentView.swift in Sources */,
@@ -1227,6 +1230,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GifTogether/GifTogether.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GifTogether/Preview Content\"";
@@ -1247,6 +1251,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
