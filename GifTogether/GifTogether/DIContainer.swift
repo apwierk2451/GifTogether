@@ -39,7 +39,8 @@ final class DIContainer {
             fetchUserInfoUseCase: makeFetchUserInfoUseCase(),
             fetchGifticonUseCase: makeFetchGifticonUseCase(),
             deleteAccountUseCase: makeDeleteAccountUseCase(),
-            deleteGifticonUseCase: makeDeleteGifticonUseCase()
+            deleteGifticonUseCase: makeDeleteGifticonUseCase(),
+            deleteImageUseCase: makeDeleteImageUseCase()
         )
     }
     
@@ -177,6 +178,12 @@ final class DIContainer {
     func makeVerifyCodeUseCase() -> VerifyCodeUseCase {
         return DefaultVerifyCodeUseCase(
             firebaseAuthService: makeFirebaseAuthService()
+        )
+    }
+    
+    func makeDeleteImageUseCase() -> DeleteImageUseCase {
+        return DefaultDeleteImageUseCase(
+            firestorageRepository: makeFirestorageRepository()
         )
     }
     
