@@ -44,7 +44,6 @@
 		76BFE82029C06931005B01E5 /* GifticonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81629C06931005B01E5 /* GifticonItem.swift */; };
 		76BFE82129C06931005B01E5 /* GifticonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81729C06931005B01E5 /* GifticonRow.swift */; };
 		76BFE82229C06931005B01E5 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE81829C06931005B01E5 /* CategoryRow.swift */; };
-		76BFE82629C069C4005B01E5 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 76BFE82429C069C4005B01E5 /* categories.json */; };
 		76BFE82B29C06CFF005B01E5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFE82A29C06CFE005B01E5 /* Category.swift */; };
 		76F1699F29DABF0C00A9923E /* HalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1699E29DABF0C00A9923E /* HalfSheet.swift */; };
 		AF00628729CAD49100727953 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00628629CAD49100727953 /* CategoryView.swift */; };
@@ -100,6 +99,7 @@
 		AFA5EA1629C6CED40041C1BD /* SaleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA5EA1529C6CED40041C1BD /* SaleItem.swift */; };
 		AFAD7E0429C5F4BE0006DE3C /* NormalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */; };
 		AFAD7E0629C5F7310006DE3C /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */; };
+		AFB206C32A0B9B4E00132047 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFB206C22A0B9B4E00132047 /* GoogleService-Info.plist */; };
 		AFC0E8C629B9A23F004CD1E5 /* GifticonRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */; };
 		AFD0908129DB023C002A3CA6 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD0908029DB023C002A3CA6 /* View+.swift */; };
 		AFD2E84D29C01E120081CBA4 /* DefaultFirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */; };
@@ -178,7 +178,6 @@
 		76BFE81629C06931005B01E5 /* GifticonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifticonItem.swift; sourceTree = "<group>"; };
 		76BFE81729C06931005B01E5 /* GifticonRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifticonRow.swift; sourceTree = "<group>"; };
 		76BFE81829C06931005B01E5 /* CategoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
-		76BFE82429C069C4005B01E5 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
 		76BFE82A29C06CFE005B01E5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		76F1699E29DABF0C00A9923E /* HalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheet.swift; sourceTree = "<group>"; };
 		AF00628629CAD49100727953 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -232,6 +231,7 @@
 		AFA5EA1529C6CED40041C1BD /* SaleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleItem.swift; sourceTree = "<group>"; };
 		AFAD7E0329C5F4BE0006DE3C /* NormalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTextField.swift; sourceTree = "<group>"; };
 		AFAD7E0529C5F7310006DE3C /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		AFB206C22A0B9B4E00132047 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "GifTogether/Resources/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AFC0E8C529B9A23F004CD1E5 /* GifticonRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRepository.swift; sourceTree = "<group>"; };
 		AFD0908029DB023C002A3CA6 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		AFD2E84C29C01E120081CBA4 /* DefaultFirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFirebaseAuthService.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		AFE8BA7729E14B6800B61F9D /* GifticonRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifticonRegisterView.swift; sourceTree = "<group>"; };
 		AFEC9E4B29F970690044BE56 /* VerifyCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeUseCase.swift; sourceTree = "<group>"; };
 		AFF47B5A29F7F698008C4456 /* GifTogether.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GifTogether.entitlements; sourceTree = "<group>"; };
-		AFF47B5B29F7F6A3008C4456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AFF47B5B29F7F6A3008C4456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFF47B5C29F7FF0A008C4456 /* RequestVerificationCodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVerificationCodeUseCase.swift; sourceTree = "<group>"; };
 		AFF6EA1929E012F700C805C3 /* CategorySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchView.swift; sourceTree = "<group>"; };
 		AFF6EA1B29E0171A00C805C3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -315,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				76853AE729B1F9F8009428DA /* GifTogether */,
-				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 				76853AF829B1F9F9009428DA /* GifTogetherTests */,
 				76853B0229B1F9F9009428DA /* GifTogetherUITests */,
 				76853AE629B1F9F8009428DA /* Products */,
@@ -337,16 +336,13 @@
 		76853AE729B1F9F8009428DA /* GifTogether */ = {
 			isa = PBXGroup;
 			children = (
-				AFF47B5B29F7F6A3008C4456 /* Info.plist */,
-				AFF47B5A29F7F698008C4456 /* GifTogether.entitlements */,
-				76853AE829B1F9F8009428DA /* GifTogetherApp.swift */,
-				AFF8DC2329C453F5003FB914 /* DIContainer.swift */,
-				AFC0E8C329B9A20F004CD1E5 /* View */,
+				AFB206C82A0BC94700132047 /* Application */,
+				AFC0E8C329B9A20F004CD1E5 /* Presentation */,
 				AFC0E8C229B9A1F5004CD1E5 /* Domain */,
 				AFC0E8C429B9A227004CD1E5 /* Data */,
 				AFC0E8C729B9AA9B004CD1E5 /* Infrastructure */,
-				76853AEE29B1F9F8009428DA /* Preview Content */,
 				76BFE82329C069C4005B01E5 /* Resources */,
+				76853AEE29B1F9F8009428DA /* Preview Content */,
 			);
 			path = GifTogether;
 			sourceTree = "<group>";
@@ -413,7 +409,10 @@
 		76BFE82329C069C4005B01E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				76BFE82429C069C4005B01E5 /* categories.json */,
+				AFF47B5A29F7F698008C4456 /* GifTogether.entitlements */,
+				AFB206C22A0B9B4E00132047 /* GoogleService-Info.plist */,
+				AFF47B5B29F7F6A3008C4456 /* Info.plist */,
+				76853AEC29B1F9F8009428DA /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -598,25 +597,10 @@
 		AF95C81329B9D01A00FBC6E9 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */,
-				AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */,
-				AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */,
-				764F143629EE8AFB009E0B21 /* DeleteGifticonUseCase.swift */,
-				AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */,
-				AF95C81429B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift */,
-				AF9BE08629E6A9F3008E7540 /* FetchGifticonUseCase.swift */,
-				AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */,
-				AFA48ACB29E406F10025DB61 /* SearchBrandUseCase.swift */,
-				AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */,
-				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
-				AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */,
-				76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */,
-				762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */,
-				AF04E90D2A027BAF002ED76D /* RegisterImageUseCase.swift */,
-				AF6549EF2A0A69D200BAF212 /* DeleteImageUseCase.swift */,
-				764789992A0781A100B8F072 /* CreateReportUseCase.swift */,
-				AFF47B5C29F7FF0A008C4456 /* RequestVerificationCodeUseCase.swift */,
-				AFEC9E4B29F970690044BE56 /* VerifyCodeUseCase.swift */,
+				AFB206C72A0BC56100132047 /* Report */,
+				AFB206C62A0BC53100132047 /* Gifticon */,
+				AFB206C52A0BC51200132047 /* UserInfo */,
+				AFB206C42A0BC4D100132047 /* Account */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -658,6 +642,62 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		AFB206C42A0BC4D100132047 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AFF47B5C29F7FF0A008C4456 /* RequestVerificationCodeUseCase.swift */,
+				AFEC9E4B29F970690044BE56 /* VerifyCodeUseCase.swift */,
+				AFD2E85029C01E7D0081CBA4 /* CreateUserUseCase.swift */,
+				AFD2E84E29C01E520081CBA4 /* LoginUseCase.swift */,
+				AF5A89A229DC3B8F004BDCBD /* DeleteAccountUseCase.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		AFB206C52A0BC51200132047 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C26C529C0502F00AE1144 /* FetchUseInfoUseCase.swift */,
+				76817F1829DD825C0034232F /* UpdateUserInfoUseCase.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		AFB206C62A0BC53100132047 /* Gifticon */ = {
+			isa = PBXGroup;
+			children = (
+				AFA48ACB29E406F10025DB61 /* SearchBrandUseCase.swift */,
+				AF04E90D2A027BAF002ED76D /* RegisterImageUseCase.swift */,
+				AF6549EF2A0A69D200BAF212 /* DeleteImageUseCase.swift */,
+				AF6C035F29D59C800023FE23 /* SearchGifticonUseCase.swift */,
+				AF9BE08629E6A9F3008E7540 /* FetchGifticonUseCase.swift */,
+				764F143629EE8AFB009E0B21 /* DeleteGifticonUseCase.swift */,
+				AF95C81429B9D03B00FBC6E9 /* FetchAllGifticonsUseCase.swift */,
+				AF95C81929B9D1B500FBC6E9 /* RegisterGifticonUseCase.swift */,
+				762A506029E3E2AC00317450 /* UpdateGifticonUseCase.swift */,
+				AF6C036429D5A1380023FE23 /* FetchRecentGifticonQueriesUseCase.swift */,
+				AF7CFD2D29DACB3E006C9C1C /* DeleteAllGifticonQueriesUseCase.swift */,
+			);
+			path = Gifticon;
+			sourceTree = "<group>";
+		};
+		AFB206C72A0BC56100132047 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				764789992A0781A100B8F072 /* CreateReportUseCase.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		AFB206C82A0BC94700132047 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				76853AE829B1F9F8009428DA /* GifTogetherApp.swift */,
+				AFF8DC2329C453F5003FB914 /* DIContainer.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		AFC0E8C229B9A1F5004CD1E5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,7 +708,7 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		AFC0E8C329B9A20F004CD1E5 /* View */ = {
+		AFC0E8C329B9A20F004CD1E5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				76853AEA29B1F9F8009428DA /* ContentView.swift */,
@@ -680,7 +720,7 @@
 				AF0AD2D429C074D100EBAC5E /* FavoriteScene */,
 				AF0AD2D129C0749D00EBAC5E /* MyPageScene */,
 			);
-			path = View;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		AFC0E8C429B9A227004CD1E5 /* Data */ = {
@@ -890,7 +930,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76853AF029B1F9F8009428DA /* Preview Assets.xcassets in Resources */,
-				76BFE82629C069C4005B01E5 /* categories.json in Resources */,
+				AFB206C32A0B9B4E00132047 /* GoogleService-Info.plist in Resources */,
 				76853AED29B1F9F8009428DA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1173,7 +1213,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GifTogether/GifTogether.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = GifTogether/Resources/GifTogether.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1181,12 +1222,14 @@
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GifTogether/Info.plist;
+				INFOPLIST_FILE = GifTogether/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GifTogether;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1196,9 +1239,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1207,7 +1253,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GifTogether/GifTogether.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = GifTogether/Resources/GifTogether.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1215,12 +1262,14 @@
 				DEVELOPMENT_TEAM = SWPBG3YXG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GifTogether/Info.plist;
+				INFOPLIST_FILE = GifTogether/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GifTogether;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1230,9 +1279,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.Wonf.GifTogether2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
